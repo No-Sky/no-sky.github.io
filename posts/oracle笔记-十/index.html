@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81/"/>
+
+  
+
+  <title>Oracle笔记 （十） &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81/'>Oracle笔记 （十）</a></h2>
+          <span class="date">2017.11.30</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="建表">建表</h1>
+
+<h2 id="一-建表">一、建表</h2>
+
+<p>格式：</p>
+
+<pre>
+create table 表名
+      (
+      列名1   类型   约束,
+      列名2   类型   约束,
+      ......            
+      );
+</pre>
+
+<p>如：</p>
+
+<p>--创建出版社表</p>
+
+<pre><code class="language-SQL">    create table 出版社（
+        编号 varchar2(2),
+        出版社名称 varchar2(30),
+        地址 varchar2(30),
+        联系电话 varchar2(20)
+    ）;
+</code></pre>
+
+<p>--创建图书表</p>
+
+<pre><code class="language-SQL">    create table 图书 (
+        图书编号 VARCHAR2(5),
+        图书名称 VARCHAR2(30),
+        出版社编号 VARCHAR2(2),
+        作者 VARCHAR2(10),
+        出版日期 DATE,
+        数量 NUMBER(3),
+        单价 NUMBER(7,2)  
+    );
+</code></pre>
+
+<h2 id="二-通过子查询建表">二、通过子查询建表</h2>
+
+<p>步骤1：完全复制图书表到“图书1”</p>
+
+<pre><code class="language-SQL">create table 图书1 as select * from 图书;
+</code></pre>
+
+<p>步骤2：创建新的图书表“图书2”，只包含书名和单价</p>
+
+<pre><code class="language-SQL">create table 图书2（书名，单价） as seelct 图书名称，单价 from 图书；
+</code></pre>
+
+<p>步骤3：创建新的图书表“图书3”，只包含书名和单价，不复制内容</p>
+
+<pre><code class="language-SQL">create table 图书3（书名，单价） as select 图书名称，单价 from 图书 where 1=2；
+</code></pre>
+
+<h2 id="三-添加表的约束">三、添加表的约束</h2>
+
+<pre>
+主键     primary key      PK
+唯一     unique           UQ
+默认值   default          DF
+检查约束 check            CK
+外键约束 foreign key      FK
+</pre>
+
+<h3 id="方法一-建表的同时添加约束">方法一：建表的同时添加约束</h3>
+
+<p>如：</p>
+
+<pre>
+create table stuinfo(
+ sno int primary key not null,       --主键
+ sname varchar2(10) unique not null,       --唯一
+ sex char(2) default '男' check(sex='男' or sex = '女') not null,   --默认及检查
+ saddress varchar2(50) not null,
+ phone char(11),
+ email varchar2(50)
+);
+create table stumarks(
+ marksId int,
+ sno int references stuinfo(sno) not null,     --外键
+ score number(5,1),
+ examDate date default sysdate
+);
+</pre>
+
+<h3 id="方法二-建表完成后-再添加约束">方法二:建表完成后，再添加约束</h3>
+
+<p>如：（之前已建好了出版社表及图书表）</p>
+
+<p>--主键约束</p>
+
+<pre><code class="language-SQL">alter table 出版社 add constraint PK_编号 primary key (编号);
+</code></pre>
+
+<p>--唯一约束</p>
+
+<pre><code class="language-SQL">alter table 出版社 add constraint UQ_地址 unique (地址);
+</code></pre>
+
+<p>--检查约束</p>
+
+<pre><code class="language-SQL">alter table 出版社 add constraint CK_联系电话 check (联系电话 like '1%');
+</code></pre>
+
+<p>--默认值</p>
+
+<pre><code class="language-SQL">alter table 出版社 modify 地址 default '湘潭';
+</code></pre>
+
+<p>--外键约束</p>
+
+<pre><code class="language-SQL">alter table 图书 add constraint FK_图书编号 foreign key (图书编号) references 出版社(编号);
+</code></pre>
+
+<p>--外键约束</p>
+
+<pre><code class="language-SQL">alter table 图书 add constraint FK_图书编号 foreign key (图书编号) references 出版社(编号);
+</code></pre>
+
+<h2 id="四-查看约束条件">四、查看约束条件</h2>
+
+<p><strong>数据字典<code>USER_CONSTRAINTS</code>中包含了当前模式用户的约束条件信息。其中，CONSTRAINTS_TYPE 显示的约束类型为：</strong></p>
+
+<pre>       
+C：CHECK约束。
+
+P：PRIMARY KEY约束。
+​       
+U：UNIQUE约束。
+​       
+R：FOREIGN KEY约束。
+</pre>  
+
+<p><em>其他信息可根据需要进行查询显示，可用DESCRIBE命令查看<code>USER_CONSTRAINTS的</code>结构。</em></p>
+
+<p>如:检查表的约束信息：</p>
+
+<pre><code class="language-SQL">SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCHCONDITON
+FROM USER_CONSTRAINTS
+WHERE TABLE_NAME='图书';
+</code></pre>
+
+<h2 id="五-删除约束条件">五、删除约束条件</h2>
+
+<pre><code class="language-SQL">ALTER TABLE 表名 DROP CONSTRAINT 约束名;
+</code></pre>
+
+<h2 id="六-表的操作">六、表的操作</h2>
+
+<pre>
+1、删除表    drop table 表名
+2、重命名表  RENAME 表名 TO 新表名;
+3、查看表
+</pre>
+
+<p><em>可以通过对数据字典<code>USER_OBJECTS</code>的查询，显示当前模式用户的所有表。</em>
+​<br />
+如： 显示当前用户的所有表。</p>
+
+<pre><code class="language-SQL">SELECT object_name FROM user_objects WHERE object_type='TABLE';
+</code></pre>
+
+<h2 id="七-修改表">七、修改表</h2>
+
+<h3 id="1-增加新列">1、增加新列:</h3>
+
+<p>如： 为“出版社”增加一列“电子邮件”：</p>
+
+<pre><code class="language-SQL">ALTER TABLE 出版社     
+ADD 电子邮件 VARCHAR2(30) CHECK(电子邮件 LIKE '%@%');
+</code></pre>
+
+<h3 id="2-修改列">2、修改列</h3>
+
+<p>修改列定义有以下一些特点：</p>
+
+<pre>
+(1) 列的宽度可以增加或减小，在表的列没有数据或数据为NULL时才能减小宽度。
+(2) 在表的列没有数据或数据为NULL时才能改变数据类型，CHAR和VARCHAR2之间可以随意转换。
+(3) 只有当列的值非空时，才能增加约束条件NOT NULL。
+(4) 修改列的默认值，只影响以后插入的数据。如：修改“出版社”表“电子邮件”列的宽度为40。
+</pre>  
+
+<pre><code class="language-SQL">ALTER TABLE 出版社 MODIFY 电子邮件 VARCHAR2(40);
+</code></pre>
+
+<h3 id="3-删除列">3、删除列</h3>
+
+<p>如：删除“出版社”表的“电子邮件”列。</p>
+
+<pre><code class="language-SQL">ALTER TABLE 出版社 DROP COLUMN 电子邮件;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/oracel/">oracel</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

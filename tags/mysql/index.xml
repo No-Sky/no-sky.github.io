@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on 学习笔记</title>
+    <link>https://example.com/tags/mysql/</link>
+    <description>Recent content in mysql on 学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Nov 2017 21:28:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql高版本连接问题</title>
+      <link>https://example.com/posts/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 17 Nov 2017 21:28:50 +0000</pubDate>
+      
+      <guid>https://example.com/posts/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

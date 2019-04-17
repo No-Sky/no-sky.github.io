@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/mybatis%E4%B9%8Bcrud%E6%93%8D%E4%BD%9C/"/>
+
+  
+
+  <title>Mybatis之CRUD操作 &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/mybatis%E4%B9%8Bcrud%E6%93%8D%E4%BD%9C/'>Mybatis之CRUD操作</a></h2>
+          <span class="date">2018.02.03</span>
+        </div>
+        <div class="post_content markdown"><h1>Mybatis详解第二弹——编写基于mybatis的操作Emp表的CRUD操作的dao类</h1>
+
+<p><strong>用xml配置的方式</strong></p>
+
+<p>1、定义sql映射的xml文件 如：</p>
+
+<pre><code class="language-xml">	id: 是sql语句在xml文件的位置
+	parameterType: 需要传递参数的类型
+	resultType: sql语句执行后返回的类型 
+
+	&lt;select id=&quot;getEmpByName&quot; parameterType=&quot;string&quot; reaultType=&quot;com.model.Emp&quot; &gt;
+	    select * from emp where ename = #{ename};
+	&lt;/select&gt;
+
+	&lt;insert id=&quot;insertEmp&quot; parameterType=&quot;com.model.Emp&quot; resultType=&quot;int&quot;&gt;
+	    insert into emp values (#{empno,#{ename},#{job},#{mgr},#{hiredate},#{sql},#{comm},#{deptno})
+	&lt;/insert&gt;            
+
+	&lt;delete id=&quot;deleteByNo&quot; parameterType=&quot;int&quot;&gt;
+	    delete from emp where empno = #{empno}
+	&lt;delete&gt;
+
+	&lt;update id=&quot;updateByNo&quot; parameterType=&quot;com.model.Emp&quot; resultType=&quot;int&quot;&gt;
+	    update emp set ename=#{ename},job=#{job},... where empno=#{empno} 
+	&lt;/update&gt;
+</code></pre>
+
+<p>2、在mybatis配置文件中注册实体对应的SQL映射</p>
+
+<pre><code class="language-xml">	&lt;mappers&gt;
+	    &lt;mapper resource=&quot;com/mapper/EmpMapper.xml&quot;/&gt;
+	&lt;/mappers&gt;
+</code></pre>
+
+<p>3、在dao中使用</p>
+
+<pre><code class="language-java">	public Emp getEmpByName(String ename) {
+
+	        创建SessionFactory的代码省略
+
+	        SqlSession session = sessionFactory.openSession();
+	        User user = session.selectOne(&quot;com.mapper.EmpMapper.getEmpByName&quot;, ename);
+	        return Emp;
+	    }
+	    .........
+</code></pre>
+
+<p><strong>用注解的方式</strong></p>
+
+<p>1、 定义SQL映射的接口</p>
+
+<pre><code class="language-java">	public interface EmpMapper {
+
+	    @Select(&quot;select * from emp where ename = #{ename}&quot;)
+	    public Emp getEmpByName(String name);
+
+	    @Delete(&quot;delete from emp where empno = #{empno}&quot;)
+	    public int deleteByNo(int empno);
+
+	    @Insert(&quot;insert into emp values (#{empno,#{ename},#{job},#{mgr},#{hiredate},#{sql},#{comm},#{deptno})&quot;)
+	    public int insertEmp(Emp emp);
+
+	    @Update(&quot;update emp set ename=#{ename},job=#{job},... where empno=#{empno} &quot;)
+	    public int updateBuNo(Emp emp);
+	}
+</code></pre>
+
+<p>2、在mybatis配置文件中注册实体对应的SQL映射</p>
+
+<pre><code>&lt;mappers&gt;
+    &lt;mapper resource=&quot;com/mapper/EmpMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+
+<p>3、在dao中使用</p>
+
+<pre><code class="language-java">	public Emp getEmpByName(String ename) {
+
+	        创建SessionFactory的代码省略
+
+	        SqlSession session = sessionFactory.openSession();
+	        EmpMapper mapper = session.getMapper(EmpMapper.class);
+	        Emp emp = mapper.getEmpByNo
+	        return Emp;
+	    }
+	    .......
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/mybatis/">mybatis</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

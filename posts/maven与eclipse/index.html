@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/maven%E4%B8%8Eeclipse/"/>
+
+  
+
+  <title>Maven与eclipse &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/maven%E4%B8%8Eeclipse/'>Maven与eclipse</a></h2>
+          <span class="date">2018.04.04</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1>Maven配置与eclipse配置Maven仓库</h1>
+
+<h1 id="下载与安装">下载与安装</h1>
+
+<p>1、前往 <a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a> 下载最新版的Maven程序：</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/mavendownload.png" alt="" />
+<!-- more -->
+2、将文件解压到F:\Program Files\Apache\apache-maven-3.5.3（此处是我的安装路径）目录下:
+​<br />
+<img src="https://github.com/No-Sky/storage/raw/master/images/maven/maveninstaller.png" alt="" /></p>
+
+<p>3、新建环境变量MAVEN_HOME，赋值F:\Program Files\Apache\apache-maven-3.5.3
+​<br />
+<img src="https://github.com/No-Sky/storage/raw/master/images/maven/mavenpath1.png" alt="" /></p>
+
+<p>4、编辑环境变量Path，追加<code>%MAVEN_HOME%\bin\;</code></p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/mavenpath2.png" alt="" /></p>
+
+<p>5、至此，maven已经完成了安装，我们可以通过DOS命令检查一下我们是否安装成功
+​<br />
+​   mvn -v</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/mavenversion.png" alt="" /></p>
+
+<h1 id="配置maven本地仓库">配置Maven本地仓库</h1>
+
+<p>1、在F:\Program Files\Apache\目录下新建maven-repository文件夹，该目录用作maven的本地库。</p>
+
+<p>2、打开F:\Program Files\Apache\apache-maven-3.5.3\conf\settings.xml文件，查找下面这行代码：
+​<br />
+​   <localRepository>/path/to/local/repo</localRepository>
+<em>localRepository节点默认是被注释掉的，需要把它移到注释之外，然后将localRepository节点的值改为我们在3.1中创建的目录F:\Program Files\Apache\maven-repository</em></p>
+
+<p>3、localRepository节点用于配置本地仓库，本地仓库其实起到了一个缓存的作用，它的默认地址是 C:\Users\用户名.m2。</p>
+
+<p>当我们从maven中获取jar包的时候，maven首先会在本地仓库中查找，如果本地仓库有则返回；如果没有则从远程仓库中获取包，并在本地库中保存。</p>
+
+<p>此外，我们在maven项目中运行mvn install，项目将会自动打包并安装到本地仓库中。</p>
+
+<p>4、运行一下DOS命令</p>
+
+<pre><code>mvn help:system
+</code></pre>
+
+<p><em>如果前面的配置成功，那么F:\Program Files\Apache\maven-repository会出现一些文件。</em></p>
+
+<h1 id="配置eclipse的maven环境">配置Eclipse的Maven环境</h1>
+
+<p>1、Eclipse Oxygen，打开Window-&gt;Preferences-&gt;Maven-&gt;Installations，右侧点击Add。</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/maven-eclipse01.png" alt="" /></p>
+
+<p>2、设置maven的安装目录，然后Finish</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/maveneclipse02.png" alt="" /></p>
+
+<p>3、 选中刚刚添加的maven，并Apply。</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/maveneclipse03.png" alt="" /></p>
+
+<p>4、 打开Window-&gt;Preferences-&gt;Maven-&gt;User Settings，配置如下并Apply：</p>
+
+<p><img src="https://github.com/No-Sky/storage/raw/master/images/maven/maveneclipse04.png" alt="" /></p>
+
+<p>至此，Maven的安装和配置全部结束。</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/maven/">Maven</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

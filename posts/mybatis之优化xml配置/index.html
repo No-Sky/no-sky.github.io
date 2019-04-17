@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content="Mybatis详解第三弹——优化xml配置使用 ** 数据库配置优化 **
+原：
+&amp;lt;environments default=&amp;quot;development&amp;quot;&amp;gt; &amp;lt;environment id=&amp;quot;development&amp;quot;&amp;gt; &amp;lt;transactionManager type=&amp;quot;JDBC&amp;quot; /&amp;gt; &amp;lt;dataSource type=&amp;quot;POOLED&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;driver&amp;quot; value=&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;jdbc:oracle:thin:@127.0.0.1:1521:ORCL&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;username&amp;quot; value=&amp;quot;scott&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;password&amp;quot; value=&amp;quot;tiger&amp;quot; /&amp;gt; &amp;lt;/dataSource&amp;gt; &amp;lt;/environment&amp;gt; &amp;lt;/environments&amp;gt; "/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/mybatis%E4%B9%8B%E4%BC%98%E5%8C%96xml%E9%85%8D%E7%BD%AE/"/>
+
+  
+
+  <title>Mybatis之优化XML配置 &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/mybatis%E4%B9%8B%E4%BC%98%E5%8C%96xml%E9%85%8D%E7%BD%AE/'>Mybatis之优化XML配置</a></h2>
+          <span class="date">2018.02.03</span>
+        </div>
+        <div class="post_content markdown"><h1>Mybatis详解第三弹——优化xml配置使用</h1>
+
+<p>** 数据库配置优化 **</p>
+
+<p>原：</p>
+
+<pre><code class="language-XML">    &lt;environments default=&quot;development&quot;&gt;
+	    &lt;environment id=&quot;development&quot;&gt;
+	            &lt;transactionManager type=&quot;JDBC&quot; /&gt;
+	            &lt;dataSource type=&quot;POOLED&quot;&gt;
+	                &lt;property name=&quot;driver&quot; value=&quot;oracle.jdbc.driver.OracleDriver&quot; /&gt;
+	                &lt;property name=&quot;url&quot; value=&quot;jdbc:oracle:thin:@127.0.0.1:1521:ORCL&quot; /&gt;
+	                &lt;property name=&quot;username&quot; value=&quot;scott&quot; /&gt;
+	                &lt;property name=&quot;password&quot; value=&quot;tiger&quot; /&gt;
+	        &lt;/dataSource&gt;
+	    &lt;/environment&gt;
+    &lt;/environments&gt;
+</code></pre>
+
+<p>把对应的数据库配置信息写到一个properties文件中去</p>
+
+<p><em>db.propertise</em></p>
+
+<pre><code class="language-properties">        driver=oracle.jdbc.driver.OracleDriver
+        url=jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+        username=scott
+        password=tiger
+</code></pre>
+
+<p>改：</p>
+
+<pre><code class="language-properties">    &lt;properties resource=&quot;db.properties&quot; /&gt;     
+        &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot; /&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot; /&gt;
+                &lt;property name=&quot;url&quot; value=&quot;${url}&quot; /&gt;
+                &lt;property name=&quot;username&quot; value=&quot;${username}&quot; /&gt;
+                &lt;property name=&quot;password&quot; value=&quot;${password}&quot; /&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+</code></pre>
+
+<p>** 为实体类定义别名,简化sql映射xml文件中的引用 **</p>
+
+<pre><code class="language-xml">	&lt;typeAliases&gt;
+	    &lt;typeAlias type=&quot;com.model.Emp&quot; alias=&quot;_Emp&quot;/&gt;
+	&lt;/typeAliases&gt;  
+</code></pre>
+
+<p>注意： 将要使用的别名配置写在mybatis配置文件中而不是实体映射文件</p>
+
+<p>添加log4j.jar，打印日志信息</p>
+
+<p>在src目录下以下文件</p>
+
+<p>log4j.properties</p>
+
+<pre><code class="language-properties">    log4j.rootLogger=DEBUG, Console
+    #Console
+    log4j.appender.Console=org.apache.log4j.ConsoleAppender
+    log4j.appender.Console.layout=org.apache.log4j.PatternLayout
+    log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+    log4j.logger.java.sql.ResultSet=INFO
+    log4j.logger.org.apache=INFO
+    log4j.logger.java.sql.Connection=DEBUG
+    log4j.logger.java.sql.Statement=DEBUG
+    log4j.logger.java.sql.PreparedStatement=DEBUG
+</code></pre>
+
+<p>log4j.xml</p>
+
+<pre><code class="language-xml">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+    &lt;!DOCTYPE log4j:configuration SYSTEM &quot;log4j.dtd&quot;&gt;
+    &lt;log4j:configuration xmlns:log4j=&quot;http://jakarta.apache.org/log4j/&quot;&gt;
+        &lt;appender name=&quot;STDOUT&quot; class=&quot;org.apache.log4j.ConsoleAppender&quot;&gt;
+            &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
+                &lt;param name=&quot;ConversionPattern&quot; value=&quot;%-5p %d{MM-dd HH:mm:ss,SSS} %m  (%F:%L) \n&quot; /&gt;
+            &lt;/layout&gt;
+        &lt;/appender&gt;
+        &lt;logger name=&quot;java.sql&quot;&gt;
+            &lt;level value=&quot;debug&quot; /&gt;
+        &lt;/logger&gt;
+        &lt;logger name=&quot;org.apache.ibatis&quot;&gt;
+            &lt;level value=&quot;debug&quot; /&gt;
+        &lt;/logger&gt;
+        &lt;root&gt;
+            &lt;level value=&quot;debug&quot; /&gt;
+            &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/log4j:configuration&gt;
+</code></pre>
+
+<p>** 解决表的字段名与实体类的属性名不相同的冲突 **</p>
+
+<p>a. 准备表和数据：</p>
+
+<pre><code class="language-SQL">    CREATE TABLE orders(
+        order_id INT PRIMARY KEY AUTO_INCREMENT,
+        order_no VARCHAR(20), 
+        order_price FLOAT
+    );
+    INSERT INTO orders(order_no, order_price) VALUES('aaaa', 23);
+    INSERT INTO orders(order_no, order_price) VALUES('bbbb', 33);
+    INSERT INTO orders(order_no, order_price) VALUES('cccc', 22);
+</code></pre>
+
+<p>b. 定义实体类：</p>
+
+<pre><code class="language-java">    public class Order {
+        private int id;
+        private String orderNo;
+        private float price;
+    }
+</code></pre>
+
+<p>c. 实现getOrderById(id)的查询</p>
+
+<ul>
+<li>c1. 通过在sql语句中定义别名
+<code>xml
+&lt;select id=&quot;selectOrder&quot; parameterType=&quot;int&quot; resultType=&quot;_Order&quot;&gt;
+    select order_id id, order_no orderNo,order_price price from orders where order_id=#{id}
+&lt;/select&gt;
+</code></li>
+
+<li><p>c2. 定义<resultMap></p>
+
+<pre><code class="language-xml">&lt;select id=&quot;selectOrderResultMap&quot; parameterType=&quot;int&quot; resultMap=&quot;orderResultMap&quot;&gt;
+    select * from orders where order_id=#{id}
+&lt;/select&gt;
+
+&lt;resultMap type=&quot;_Order&quot; id=&quot;orderResultMap&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;order_id&quot;/&gt;
+    &lt;result property=&quot;orderNo&quot; column=&quot;order_no&quot;/&gt;
+    &lt;result property=&quot;price&quot; column=&quot;order_price&quot;/&gt;
+&lt;/resultMap&gt;
+</code></pre></li>
+</ul></div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/mybatis/">mybatis</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

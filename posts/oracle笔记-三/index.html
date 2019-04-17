@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/"/>
+
+  
+
+  <title>Oracle笔记 （三） &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/'>Oracle笔记 （三）</a></h2>
+          <span class="date">2017.11.23</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="oracle的基本查询">Oracle的基本查询</h1>
+
+<h2 id="一-基本查询">一、基本查询</h2>
+
+<p><em>select格式：</em><br>
+&nbsp;&nbsp;&nbsp;&nbsp;select 列名 from 表名 ；
+&nbsp;&nbsp;&nbsp;&nbsp;where 查询条件
+&nbsp;&nbsp;&nbsp;&nbsp;group by 分组列
+&nbsp;&nbsp;&nbsp;&nbsp;having 分组后条件
+&nbsp;&nbsp;&nbsp;&nbsp;order by 排序列 asc[desc]</p>
+
+<p>如：查询部门10的雇员
+​</p>
+
+<pre><code class="language-SQL">select * from emp where deptno=10;
+</code></pre>
+
+<h2 id="二-行号-rownum">二、行号（rownum）</h2>
+
+<p><strong>每个表都有一个虚列ROWNUM，它用来显示结果中记录的行号。我们在查询中也可以显示这个列。</strong></p>
+
+<p>如：显示emp表的行号</p>
+
+<pre><code class="language-SQL">select rownum,ename from emp;
+</code></pre>
+
+<p>如：显示前三行</p>
+
+<pre><code class="language-SQL">select * from emp where rownum&lt;=3;
+</code></pre>
+
+<h2 id="三-查询进行计算">三、查询进行计算</h2>
+
+<p>如：显示雇员工资上浮20%的结果
+​   select ename,sal,sal*(1+20%) from emp;
+如：显示每个员工的总工资（工资+奖金）
+​   update emp set comm = o where comm is null;    //因为null的特殊性，它与任何值运算都等于null，所以先要把它更新为0，后面我们会学到一个函数来处理null值
+​   select ename,sal+comm from emp;</p>
+
+<h2 id="四-使用别名">四、使用别名</h2>
+
+<p>如：在查询中使用列别名</p>
+
+<pre><code class="language-SQL">select ename as 名称，sal as 工资 from emp; //建议省略as
+</code></pre>
+
+<p><em>另，在别名为关键字或有特殊符号时需要加双引号</em></p>
+
+<p>如：</p>
+
+<pre><code class="language-SQL">select ename as &quot;select&quot;,sal*12+5000 as &quot;年度工资（加年终奖）&quot; from emp;
+</code></pre>
+
+<h2 id="五-连接运算符">五、连接运算符</h2>
+
+<p><strong>连接运算符是双竖线“||”。通过连接运算可以将两个字符串连接在一起。</strong></p>
+
+<p>如：在查询中使用连接运算</p>
+
+<pre><code class="language-SQL">select ename||job as &quot;雇员和职务表&quot; from emp;
+</code></pre>
+
+<p>*注意：'5'||5结果为'55'&nbsp;&nbsp;&nbsp;&nbsp;'5'+5结果为 10 *</p>
+
+<h2 id="六-消除重复行-distinct">六、消除重复行（distinct）</h2>
+
+<p><strong>如果在显示结果中存在重复行，可以使用关键字<code>distinct</code>消除重复显示</strong>
+如：统计职务的数量</p>
+
+<pre><code class="language-SQL">select count(distinct job) from emp;
+</code></pre>
+
+<h2 id="七-排序">七、排序</h2>
+
+<p><strong>1、升序（默认为升序<code>asc</code>,所以可以忽略）</strong></p>
+
+<p>如：查询雇员姓名和工资，并按工资从小到大排序</p>
+
+<pre><code class="language-SQL">select ename,sal from emp order by sal asc;
+</code></pre>
+
+<p><strong>2、降序（<code>desc</code>不可忽略）</strong></p>
+
+<p>如：查询雇员姓名和雇佣日期，并按雇佣日期排序，后雇佣的先显示</p>
+
+<pre><code class="language-SQL">select ename,hiredate from emp order by hiredate desc;
+</code></pre>
+
+<p><strong>3、多列排序</strong></p>
+
+<p><em>可以按多列进行排序，先按第一列，然后按第二列、第三列......。</em></p>
+
+<p>如：查询雇员信息，先按部门从小到大排序，再按雇佣时间的先后排序</p>
+
+<pre><code class="language-SQL">select ename,deptno,hiredate from emp order by deptno hiredate;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/oracel/">oracel</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

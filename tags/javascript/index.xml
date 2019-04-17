@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on 学习笔记</title>
+    <link>https://example.com/tags/javascript/</link>
+    <description>Recent content in javascript on 学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 22 Nov 2017 13:43:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JS的时间获取</title>
+      <link>https://example.com/posts/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/</link>
+      <pubDate>Wed, 22 Nov 2017 13:43:49 +0000</pubDate>
+      
+      <guid>https://example.com/posts/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E5%9B%9B/"/>
+
+  
+
+  <title>Oracle笔记 （十四） &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E5%9B%9B/'>Oracle笔记 （十四）</a></h2>
+          <span class="date">2017.12.12</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="游标-存储过程">游标、存储过程</h1>
+
+<p>##一、游标参数的传递
+例：</p>
+
+<pre><code class="language-SQL">SET SERVEROUTPUT ON
+DECLARE
+    V_empno NUMBER(5);
+    V_ename VARCHAR2(10);
+    CURSOR  emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job;
+BEGIN
+    OPEN emp_cursor(10, 'CLERK');
+    LOOP
+       FETCH emp_cursor INTO v_empno,v_ename;
+    EXIT WHEN emp_cursor%NOTFOUND;
+       DBMS_OUTPUT.PUT_LINE(v_empno||','||v_ename);
+    END LOOP;
+END; 
+</code></pre>
+
+<h2 id="二-异常处理">二、异常处理</h2>
+
+<p>错误处理的语法如下：</p>
+
+<pre><code class="language-SQL">EXCEPTION
+WHEN 错误1[OR 错误2] THEN 语句序列1;
+WHEN 错误3[OR 错误4] THEN 语句序列2;
+...
+WHEN OTHERS 语句序列n;
+  END;
+</code></pre>
+
+<p>例：</p>
+
+<pre><code class="language-SQL">SET SERVEROUTPUT ON
+DECLARE
+    v_name VARCHAR2(10);
+BEGIN
+    SELECT  ename  INTO v_name  FROM emp  WHERE empno = 1234;
+DBMS_OUTPUT.PUT_LINE('该雇员名字为：'|| v_name);
+EXCEPTION
+        WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('编号错误，没有找到相应雇员！');
+        WHEN OTHERS THEN DBMS_OUTPUT.PUT_LINE('发生其他错误！');
+END;
+</code></pre>
+
+<h2 id="三-存储过程">三、存储过程</h2>
+
+<h3 id="创建和删除存储过程">创建和删除存储过程</h3>
+
+<p>格式：</p>
+
+<pre><code class="language-SQL"> CREATE [OR REPLACE] PROCEDURE 存储过程名[(参数[IN|OUT|IN OUT] 数据类型...)]
+{AS|IS}
+    [说明部分]   --定义需要使用的临时变量
+BEGIN
+    语句集;
+    [EXCEPTION]
+        [错误处理部分]
+END [过程名];
+</code></pre>
+
+<p>删除：</p>
+
+<pre><code class="language-SQL">drop procedure 存储过程名;
+</code></pre>
+
+<h3 id="调用存储过程">调用存储过程</h3>
+
+<p>方法1：</p>
+
+<pre><code class="language-SQL">EXECUTE 模式名.存储过程名[(参数...)];   (适用于命今行窗口及sql窗口)
+</code></pre>
+
+<p>方法2： (适用于sql窗口)</p>
+
+<pre><code class="language-SQL">BEGIN
+  模式名.存储过程名[(参数...)];
+END;
+</code></pre>
+
+<p>例：编写显示雇员信息的存储过程EMP_LIST，并引用EMP_COUNT存储过程(无参存储过程 )。</p>
+
+<pre><code class="language-SQL">CREATE OR REPLACE PROCEDURE EMP_LIST
+AS
+   CURSOR emp_cursor IS SELECT empno,ename FROM emp;
+BEGIN
+    FOR Emp_record IN emp_cursor LOOP   
+            DBMS_OUTPUT.PUT_LINE(Emp_record.empno||Emp_record.ename);
+    END LOOP;
+    EMP_COUNT;
+END;
+</code></pre>
+
+<p>调用：</p>
+
+<pre><code class="language-SQL">begin
+    EMP_LIST;
+end;
+</code></pre>
+
+<h3 id="参数传递">参数传递</h3>
+
+<p>a.输入参数: 参数名  IN 数据类型 DEFAULT 值；</p>
+
+<p>例：编写给雇员增加工资的存储过程CHANGE_SALARY，通过IN类型的参数传递要增加工资的雇员编号和增加的工资额。</p>
+
+<pre><code class="language-SQL">CREATE OR REPLACE PROCEDURE CHANGE_SALARY(P_EMPNO IN NUMBER DEFAULT 7788,P_RAISE NUMBER DEFAULT 10)  --形参P_EMPNO及P_RAISE
+AS
+   V_ENAME VARCHAR2(10);
+   V_SAL NUMBER(5);
+BEGIN
+       SELECT ENAME,SAL INTO V_ENAME,V_SAL FROM EMP WHERE EMPNO=P_EMPNO;
+   UPDATE EMP SET SAL=SAL+P_RAISE WHERE EMPNO=P_EMPNO;
+   DBMS_OUTPUT.PUT_LINE('雇员'||V_ENAME||'的工资被改为'||TO_CHAR(V_SAL+P_RAISE));
+   COMMIT;
+EXCEPTION
+  WHEN OTHERS THEN DBMS_OUTPUT.PUT_LINE('发生错误，修改失败！');
+  ROLLBACK; --如果出了异常则撤消
+END;
+</code></pre>
+
+<p>调用：</p>
+
+<pre><code class="language-SQL">begin
+    CHANGE_SALARY(7788,80)
+end;
+</code></pre>
+
+<p>b.输出参数: 参数名 OUT 数据类型 DEFAULT  值；</p>
+
+<p>--例：统计雇员的人数</p>
+
+<pre><code class="language-SQL">CREATE OR REPLACE PROCEDURE EMP_COUNT(P_TOTAL OUT NUMBER)   --P_TOTAL为输出参数
+AS
+BEGIN
+    SELECT COUNT(*) INTO P_TOTAL FROM EMP;
+END;
+</code></pre>
+
+<p>调用：</p>
+
+<pre><code class="language-SQL">DECLARE
+V_EMPCOUNT NUMBER;   --定义变量接收过程求出的结果
+BEGIN
+    EMP_COUNT(V_EMPCOUNT);
+    DBMS_OUTPUT.PUT_LINE('雇员总人数为：'||V_EMPCOUNT);
+END;
+</code></pre>
+
+<p>c.输入输出参数： 参数名  IN OUT   数据类型   DEFAULT   值；</p>
+
+<p>--例：使用IN OUT类型的参数，给电话号码增加区码。</p>
+
+<pre><code class="language-SQL">CREATE OR REPLACE PROCEDURE ADD_REGION(P_HPONE_NUM IN OUT VARCHAR2)
+AS
+BEGIN
+   P_HPONE_NUM:='024-'||P_HPONE_NUM;
+END;
+</code></pre>
+
+<p>调用：</p>
+
+<pre><code class="language-SQL">DECLARE
+    V_PHONE_NUM VARCHAR2(15);
+BEGIN
+    V_PHONE_NUM:='26731092';
+    ADD_REGION(V_PHONE_NUM);
+    DBMS_OUTPUT.PUT_LINE('新的电话号码：'||V_PHONE_NUM);
+END;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/oracel/">oracel</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>

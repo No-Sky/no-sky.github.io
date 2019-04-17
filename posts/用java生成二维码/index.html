@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content=""/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://example.com/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+
+  
+
+  <title>用Java生成二维码 &middot; 学习笔记</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container">
+  <ul class="site_nav">
+    <li><span class="menu_icon"><i class="remixicon-terminal-fill"></i></span></li>
+    
+    <li>
+      <a href="/">首页</a>
+    </li>
+    
+    <li>
+      <a href="/posts/">归档</a>
+    </li>
+    
+    <li>
+      <a href="/tags/">标签</a>
+    </li>
+    
+    <li>
+      <a href="/about/">关于</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>学习笔记</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">路漫漫其修远兮，吾将上下而求索</p>
+      <div class="my_socials">
+        
+        
+        <a href="nosky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://example.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/'>用Java生成二维码</a></h2>
+          <span class="date">2018.01.20</span>
+        </div>
+        <div class="post_content markdown"><h1>java实现二维码开发</h1>
+
+<p>java开发二维码的流程</p>
+
+<p>1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。</p>
+
+<pre><code>	core-3.1.0.jar
+</code></pre>
+
+<p>2、编写二维码核心类</p>
+
+<pre><code class="language-java">	public static void zxingImg(String content,HttpServletResponse response) throws IOException{
+
+	    int width2 = 200;   //图片高度和宽度
+	    int height2 = 200; 
+
+	    //二维码的图片格式 
+	    String format = &quot;gif&quot;; 
+
+	    Hashtable hints = new Hashtable(); 
+
+	    //内容所使用编码 
+	    hints.put(EncodeHintType.CHARACTER_SET, &quot;UTF-8&quot;); 
+
+	    try {
+		    BitMatrix bitMatrix = new MultiFormatWriter().encode(content,BarcodeFormat.QR_CODE, width2, height2, hints);
+
+		    int width = bitMatrix.getWidth(); 
+		    int height = bitMatrix.getHeight(); 
+
+		    BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB); 
+
+			    for (int x = 0; x &lt; width; x++) { 
+			        for (int y = 0; y &lt; height; y++) { 
+			            image.setRGB(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF); //二维码图片为黑白两色
+			    	} 
+				}
+		    //输出二维码图片流
+		    ImageIO.write(image,&quot;gif&quot;,response.getOutputStream());
+
+		    //在本地生成二维码图片 
+		    //File outputFile = new File(&quot;d:&quot;+File.separator+&quot;new.gif&quot;); 
+		    //MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);
+
+			} catch (WriterException e) {
+			    e.printStackTrace();
+			} 
+		}
+</code></pre>
+
+<p>3、使用二维码核心类</p>
+
+<p>1）可以在Servlet中使用</p>
+
+<pre><code class="language-java">    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	    //设置编码
+	    request.setCharacterEncoding(&quot;UTF-8&quot;);
+	    response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+
+	    String content = new String(request.getParameter(&quot;content&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);
+	    QrcodeUtil.QrcodeImg(content, response);
+	}
+</code></pre>
+
+<p>2）使用SpringMVC(后续添加)</p>
+
+<p>4、在网页中显示</p>
+
+<pre><code class="language-html">	&lt;img src=&quot;QrcodeServlet?content=&lt;%=content %&gt;&quot; /&gt;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/qr-code/">QR Code</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>温故而知新</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</body>
+</html>
