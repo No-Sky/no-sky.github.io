@@ -17,7 +17,7 @@
       <pubDate>Tue, 05 Dec 2017 12:18:47 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/java%E4%B8%AD%E7%9A%84foreach%E4%B8%8Ejs%E4%B8%AD%E7%9A%84for-in%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description></description>
+      <description>js里的for in循环定义如下： 代码如下: for(var variable in obj) { ... } obj可以是一个普通的js对象或者一个数组。如果obj是js对象，那么variable在遍历中得到的是对象的属性的名字，而不是属性对应的值。如果</description>
     </item>
     
   </channel>

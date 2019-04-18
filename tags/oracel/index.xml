@@ -17,7 +17,7 @@
       <pubDate>Tue, 12 Dec 2017 19:38:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E5%9B%9B/</guid>
-      <description></description>
+      <description>游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &#39;CLERK&#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&#39;,&#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 05 Dec 2017 19:11:04 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E4%B8%89/</guid>
-      <description></description>
+      <description>PL/SQL空值语句、游标 一、IF语句 1、IF-THEN-END IF形式 IF 条件 then 语句集; END IF; 2、IF-THEN-ELSE-END IF形式 IF 条件 then 语句集1; ElSE 语句集2 END IF; 3．IF-THEN-ELSIF-</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 05 Dec 2017 18:40:55 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E4%BA%8C/</guid>
-      <description></description>
+      <description>索引、同义词、数据库链接、PL/SQL语句 一、索引 索引(INDEX)是为了加快数据的查找而创建的数据库对象，特别是对大表，索引可以有效地提高查找速度，也可以保证数据的惟一性 创建索引一般要掌握以下原则：</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sat, 02 Dec 2017 17:43:26 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E4%B8%80/</guid>
-      <description></description>
+      <description>分区、视图 一、分区表 在某些场合会使用非常大的表，比如人口信息统计表。如果一个表很大，就会降低查询的速度，并增加管理的难度。一旦发生磁盘损坏，可能整个表的数据就会丢失，恢复比较困难。根据这一情况，可以创</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Thu, 30 Nov 2017 21:10:31 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81/</guid>
-      <description></description>
+      <description>建表 一、建表 格式： create table 表名 ( 列名1 类型 约束, 列名2 类型 约束, ...... ); 如： --创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; --创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Wed, 29 Nov 2017 18:49:15 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B9%9D/</guid>
-      <description></description>
+      <description>表的增删改操作 一、增删改 增： insert into 表名(列名) values (值)； 删： delete from 表名 where 条件； 改： update 表名 set 列名1=值1，列名2=值2... where 条件； 二、复制数据 1、通过一条查询语句创建一个新表(要求目标表不存在) ```SQL create table manager as</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Tue, 28 Nov 2017 19:10:30 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%85%AB/</guid>
-      <description></description>
+      <description>子查询、集合运算 一、子查询 通过把一个查询的结果作为另一个查询的一部分,子查询一般出现在SELECT语句的WHERE子句中，Oracle也支持在FROM或HAVING子句中出现子查询。 子查询比主查询先执</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Mon, 27 Nov 2017 19:20:34 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%83/</guid>
-      <description></description>
+      <description>多表连接（二）、组函数、分组查询 一、不等连接 拿一个表作为另一表的查询条件或范围 如：显示雇员名称，工资和所属工资等级。 select e.ename,e.sal,s.grade from emp e,salgrade s where e.sal between s.losal and s.hisal; 二、自连接 自连接就是一个表，同本身进行连接。对于自连接可以想</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Sun, 26 Nov 2017 19:23:25 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%85%AD/</guid>
-      <description></description>
+      <description>一、相等连接 1、三个步骤 A、先列出要显示的列： select ename,job,comm,emp,deptno,dname B、列出查询的表： from emp,dept C、列出多表相连条件（主外键）：where emp.deptno=dept.deptno 注意：如果两个表有同名列，那么前面必须接表名 如： emp.deptno ,如果不是同名字段则表名可以省略 2</description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@
       <pubDate>Sat, 25 Nov 2017 19:20:38 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%94/</guid>
-      <description></description>
+      <description>函数（二 一、日期型函数 Oracle使用内部数字格式来保存时间和日期，包括世纪、年、月、日、小时、分、秒。缺省日期格式为 DD-MON-YY，如“08-05月-03”代表2003年5月8日。 1、SYSDA</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Fri, 24 Nov 2017 18:02:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%9B%9B/</guid>
-      <description></description>
+      <description>条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) * A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Thu, 23 Nov 2017 18:48:46 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/</guid>
-      <description></description>
+      <description>Oracle的基本查询 一、基本查询 select格式： &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;select 列名 from 表名 ； &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;where 查询条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;group by 分组列 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;having 分组后条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚列ROWNUM</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@
       <pubDate>Wed, 22 Nov 2017 13:23:45 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/</guid>
-      <description></description>
+      <description>一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &#39;文件路径&#39; size 文件大小 如： cerate tablespace myspace datafile &#39;D:\myspace.dbf&#39; size10MB; 删除表空间： drop tablespace myspace incluiding contents and datafile; 二、创建用户 格式</description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@
       <pubDate>Tue, 21 Nov 2017 18:33:44 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%80/</guid>
-      <description></description>
+      <description>配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器） &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;开始菜单中</description>
     </item>
     
   </channel>

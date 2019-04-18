@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content=""/>
+  <meta name="description" content="游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &#39;CLERK&#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&#39;,&#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3"/>
   
 
   

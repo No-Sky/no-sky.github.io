@@ -17,7 +17,7 @@
       <pubDate>Sat, 20 Jan 2018 20:50:43 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</guid>
-      <description></description>
+      <description>java实现二维码开发 java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; /</description>
     </item>
     
   </channel>
