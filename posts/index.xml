@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Apr 2019 16:26:42 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 17:03:01 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>向量的基本概念</title>
+      <link>https://no-sky.github.io/posts/vector-and-linear-operations_1/</link>
+      <pubDate>Mon, 22 Apr 2019 17:03:01 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/vector-and-linear-operations_1/</guid>
+      <description>向量的基本概念 向量：既有大小，又有方向的量。 数量：只有大小，没有方向的量。 向量表示法：用一条带箭头的线段（即有向线段）表示 如：$\overrightarrow{AB}​$ A为起点，B为终点 还可以用粗体</description>
+    </item>
     
     <item>
       <title>空间中两点的距离</title>
