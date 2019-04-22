@@ -39,15 +39,6 @@
     </item>
     
     <item>
-      <title>关于</title>
-      <link>https://no-sky.github.io/about/</link>
-      <pubDate>Wed, 17 Apr 2019 21:30:00 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/about/</guid>
-      <description>个人学习笔记</description>
-    </item>
-    
-    <item>
       <title>SpringBoot Jpa @OneByOne双向查询报栈溢出原因</title>
       <link>https://no-sky.github.io/posts/springboot-jpa-onebyone%E5%8F%8C%E5%90%91%E6%9F%A5%E8%AF%A2%E6%8A%A5%E6%A0%88%E6%BA%A2%E5%87%BA%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Sun, 14 Oct 2018 22:59:46 +0000</pubDate>
@@ -343,6 +334,15 @@
       
       <guid>https://no-sky.github.io/posts/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid>
       <description>Java使用mysql-jdbc连接MySQL出现如下警告： Establishing SSL connection without server&#39;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&#39;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &#39;false&#39;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification. 在mysq</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://no-sky.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://no-sky.github.io/about/</guid>
+      <description>个人学习笔记</description>
     </item>
     
   </channel>
