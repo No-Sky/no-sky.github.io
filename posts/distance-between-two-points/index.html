@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &#39;文件路径&#39; size 文件大小 如： cerate tablespace myspace datafile &#39;D:\myspace.dbf&#39; size10MB; 删除表空间： drop tablespace myspace incluiding contents and datafile; 二、创建用户 格式"/>
+  <meta name="description" content="前置：数轴上两点的距离 $$|M_1M_2| = |x_2 - x_1|$$ 前置：平面上两点的距离 $$|M_1M_2| = \sqrt{(x_2 - x_1)^2 &#43; (y_2 - y_1)^2}$$ 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为： $$|M_1M_2| = \sqrt{(x_2-x_1)^2"/>
   
 
   
@@ -19,11 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/distance-between-two-points/"/>
 
   
 
-  <title>Oracle笔记 （二） &middot; Note</title>
+  <title>空间中两点的距离 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -92,81 +92,36 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/'>Oracle笔记 （二）</a></h2>
-          <span class="date">2017.11.22</span>
+          <h2><a href='/posts/distance-between-two-points/'>空间中两点的距离</a></h2>
+          <span class="date">2019.04.22</span>
         </div>
         <div class="post_content markdown">
 
-<h2 id="一-创建表空间">一、 创建表空间</h2>
+<h1 id="前置-数轴上两点的距离">前置：数轴上两点的距离</h1>
 
-<p>（在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间）</p>
+<p>$$|M_1M_2| = |x_2 - x_1|$$</p>
 
-<p><em>格式：    create tablespace 表空间名 datafile '文件路径' size 文件大小</em></p>
+<h1 id="前置-平面上两点的距离">前置：平面上两点的距离</h1>
 
-<p>如：</p>
+<p>$$|M_1M_2| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</p>
 
-<pre><code class="language-SQL">cerate tablespace myspace datafile 'D:\myspace.dbf' size10MB;
-</code></pre>
+<h1 id="空间中两点的距离">空间中两点的距离</h1>
 
-<p>删除表空间：</p>
+<p><strong>假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为：</strong></p>
 
-<pre><code class="language-SQL">drop tablespace myspace incluiding contents and datafile;
-</code></pre>
+<p>$$|M_1M_2| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2 - z_1)^2}​$$</p>
 
-<h2 id="二-创建用户">二、创建用户</h2>
+<p><strong>特别的，点M(x, y, z)到原点O(0, 0, 0)的距离为：</strong></p>
 
-<p><em>格式： create user 用户名 identified by 密码 default tablespace 默认表空间</em></p>
+<p>$$|OM| = \sqrt{x^2 + y^2 + z^2}​$$</p>
 
-<p>如：</p>
+<p>例题1 <strong>在<code>z</code>轴上求两点A(3，1，-4)和B(5，3，2)等距离的点。</strong></p>
 
-<pre><code class="language-SQL">create user user1 identified by user1 default tablespace system;
-</code></pre>
+<p>解：设<code>z</code>轴上点为M(0, 0, z)，由题意|MA| = |MB|，即</p>
 
-<p><strong>删除用户：</strong></p>
+<p>​         $$\sqrt{(3-0)^2 + (1-0)^2 + (-4 - z)^2} = \sqrt{(5-0)^2 + (3-0)^2 + (2-z)^2}$$</p>
 
-<pre><code class="language-SQL">drop user user1 cascade;
-</code></pre>
-
-<h2 id="三-给用户授权">三、给用户授权</h2>
-
-<p><em>方式一：授予角色</em></p>
-
-<pre><code>connect     //登录
-resource    //普通权限，用于操作
-DBA         //管理员权限（慎用）
-</code></pre>
-
-<p>如：</p>
-
-<pre><code class="language-SQL">grant connect to user1;
-grant connect,resource to user1;
-</code></pre>
-
-<p><em>方式二：授予单个权限</em></p>
-
-<p>如：</p>
-
-<pre><code class="language-SQL">grant create table to user1;           //授予user1建表的权限
-grant drop table to user1;             //授予user1删表的权限
-</code></pre>
-
-<p><em>方式三：将某个对象的权限授予用户</em></p>
-
-<p>如：</p>
-
-<pre><code class="language-SQL">grant select on scott.emp to user1;      //将scott用户的emp表的查询权限授予user1
-grant all on scott.emp to user1;       //将scott用户的emp表的所有权限授予user1 
-</code></pre>
-
-<p><strong>收回权限：</strong></p>
-
-<p><em>格式： revoke 权限 from 用户</em></p>
-
-<p>如：</p>
-
-<pre><code class="language-SQL">revoke connect from user1;   //收回user1的connect权限
-revoke select on scott.emp from user1;    //收回user1对emp表的查询权限  
-</code></pre>
+<p>解得，z = 1，所求点位为M(0,0,1)。</p>
 </div>
         <div class="post_footer">
           
@@ -175,7 +130,9 @@ revoke select on scott.emp from user1;    //收回user1对emp表的查询权限
               <span class="field tags">
                 <i class="remixicon-stack-line"></i>
                 
-                <a href="https://no-sky.github.io/tags/oracel/">oracel</a>
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/vector-algebra-and-analytic-geometry/">Vector Algebra and Analytic Geometry</a>
                 
               </span>
             </div>

@@ -26,7 +26,7 @@
   <link rel="alternate" type="application/rss&#43;xml" href="https://no-sky.github.io/index.xml">
   
 
-  <title>学习笔记</title>
+  <title>Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -72,7 +72,7 @@
     <div class="site_title">
       <h1>
         <a href="https://no-sky.github.io/">
-          <span>学习笔记</span>
+          <span>Note</span>
           <img src="https://no-sky.github.io/images/logo.svg"/>
         </a>
       </h1>
@@ -94,6 +94,31 @@
   <div class="content">
     
 
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/next-hexo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%A0%B7%E5%BC%8F%E9%85%8D%E7%BD%AE/'>Next | Hexo主题的多种样式配置</a></h2>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2018.03.17</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://no-sky.github.io/tags/hexo-next/">hexo-next</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="post animated fadeInDown">
   <div class="post_title">
@@ -195,31 +220,6 @@
   </div>
 </div>
 
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/mybatis%E4%B9%8Bcrud%E6%93%8D%E4%BD%9C/'>Mybatis之CRUD操作</a></h2>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.02.03</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://no-sky.github.io/tags/mybatis/">mybatis</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <div class="pagination">
   
@@ -259,6 +259,40 @@
 
 <script>hljs.initHighlightingOnLoad()</script>
 
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
 
 

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>学习笔记</title>
+    <title>Note</title>
     <link>https://no-sky.github.io/</link>
-    <description>Recent content on 学习笔记</description>
+    <description>Recent content on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Apr 2019 15:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 16:26:42 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>空间中两点的距离</title>
+      <link>https://no-sky.github.io/posts/distance-between-two-points/</link>
+      <pubDate>Mon, 22 Apr 2019 16:26:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/distance-between-two-points/</guid>
+      <description>前置：数轴上两点的距离 $$|M_1M_2| = |x_2 - x_1|$$ 前置：平面上两点的距离 $$|M_1M_2| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$ 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为： $$|M_1M_2| = \sqrt{(x_2-x_1)^2</description>
+    </item>
     
     <item>
       <title>空间直角坐标系</title>

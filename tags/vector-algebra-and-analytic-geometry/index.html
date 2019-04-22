@@ -25,7 +25,7 @@
   <link rel="alternate" type="application/rss&#43;xml" href="https://no-sky.github.io/tags/vector-algebra-and-analytic-geometry/index.xml">
   
 
-  <title>Vector Algebra and Analytic Geometry &middot; 学习笔记</title>
+  <title>Vector Algebra and Analytic Geometry &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -71,7 +71,7 @@
     <div class="site_title">
       <h1>
         <a href="https://no-sky.github.io/">
-          <span>学习笔记</span>
+          <span>Note</span>
           <img src="https://no-sky.github.io/images/logo.svg"/>
         </a>
       </h1>
@@ -95,6 +95,13 @@
       
       <div class="listing_title">2019</div>
       <div class="listing">
+        
+        <div class="listing_item">
+          <div class="listing_post">
+            <a href="/posts/distance-between-two-points/">空间中两点的距离</a>
+            <div class="post_time"><span class="date">04-22</span></div>
+          </div>
+        </div>
         
         <div class="listing_item">
           <div class="listing_post">
@@ -131,6 +138,40 @@
 
 <script>hljs.initHighlightingOnLoad()</script>
 
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
 
 

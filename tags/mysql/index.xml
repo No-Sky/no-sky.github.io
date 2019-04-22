@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mysql on 学习笔记</title>
+    <title>mysql on Note</title>
     <link>https://no-sky.github.io/tags/mysql/</link>
-    <description>Recent content in mysql on 学习笔记</description>
+    <description>Recent content in mysql on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 17 Nov 2017 21:28:50 +0000</lastBuildDate>
