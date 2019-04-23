@@ -79,8 +79,6 @@
       <div class="my_socials">
         
         
-        <a href="https://github.com/no-sky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
-        
         
         <a href="https://no-sky.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
       </div>
@@ -174,12 +172,12 @@
 
 <p>例：设$\vec{a} = (2,1),\vec{b} = (-3,1)$，求$\vec{c} = \vec{a}+2\vec{b}$的单位向量</p>
 
-<p>解：$$\vec{c} = \vec{a} + 2\vec{b}                      <br />
-                          = (2, 1) + 2 (-3, 1)  <br />
-                          =(-4, 3)                <br />
-      |\vec{c}| = \sqrt{(-4)^2 + 3^2} = 5     <br />
+<p>解：$$ \vec{c} = \vec{a} + 2\vec{b} <br />
+           = (2, 1) + 2 (-3, 1) <br />
+           =(-4, 3) <br />
+      |\vec{c}| = \sqrt{(-4)^2 + 3^2} = 5 \
       e_\vec{c} = \frac{1}{5}(-4,3) = (-\frac{4}{5},\frac{3}{5})
-        $$</p>
+    $$</p>
 
 <h1 id="向量的基表示">向量的基表示</h1>
 
@@ -197,17 +195,27 @@
 
 <p>例：设$A(x_1, y_1，z_1 )和B(x_2,y_2,z_2)$为已知两点，而在AB直线上的点M分为有向线段$\overrightarrow{AB}$为两个有向线段$\overrightarrow{AM}和\overrightarrow{MB}$，并使$\overrightarrow{AM} = \lambda \overrightarrow{MB} (\lambda \neq -1 为常数)$，求分点M的坐标。</p>
 
-<p>解：$$ 设M(x, y, z)，由于                                 <br />
-      \overrightarrow{AM} = (x-x_1,y-y_1,z-z_1)  <br />
-      \overrightarrow{MB} = (x_2- x, y_2-x, z_2-z)  <br />
-      由\overrightarrow{AM} = \lambda \overrightarrow{MB}得   <br />
-      (x-x_1,y-y_1,z-z_1) = \lambda (x_2- x, y_2-x, z_2-z)   <br />
-      \Rightarrow x-x_1 = \lambda (x_2-x),y-y_1 = \lambda (y_2-y),z-z_1 = \lambda (z_2-z)  <br />
-      \Rightarrow x = \frac{x_1+\lambda x_2}{1+\lambda},y = \frac{y_1+\lambda y_2}{1+\lambda},z = \frac{z_1+\lambda z_2}{1+\lambda} <br />
-      则得点M的坐标为（\frac{x_1+\lambda x_2}{1+\lambda}，\frac{y_1+\lambda y_2}{1+\lambda},\frac{z_1+\lambda z_2}{1+\lambda}）
-   $$</p>
+<p>解：$$
+设M(x, y, z)，由于\<br />
+\overrightarrow{AM} = (x-x_1,y-y_1,z-z_1) \\
+\overrightarrow{MB} = (x_2- x, y_2-x, z_2-z) \<br />
+由\overrightarrow{AM} = \lambda \overrightarrow{MB}得 \<br />
+(x-x_1,y-y_1,z-z_1) = \lambda (x_2- x, y_2-x, z_2-z) \<br />
+\Rightarrow x-x_1 = \lambda (x_2-x),y-y_1 = \lambda (y_2-y),z-z_1 = \lambda (z_2-z) \<br />
+\Rightarrow x = \frac{x_1+\lambda x_2}{1+\lambda},y = \frac{y_1+\lambda y_2}{1+\lambda},z = \frac{z_1+\lambda z_2}{1+\lambda} \<br />
+则得点M的坐标为（\frac{x_1+\lambda x_2}{1+\lambda}，\frac{y_1+\lambda y_2}{1+\lambda},\frac{z_1+\lambda z_2}{1+\lambda}）
+$$</p>
 
 <p>$A(x_1, y_1，z_1 )和B(x_2,y_2,z_2)$的<strong>中点坐标</strong>为$(\frac{x_1+x_2+x_3}{2},\frac{y_1+y_2+y_3}{2},\frac{z_1+z_2+z_3}{2})$</p>
+
+<p>测试公示：</p>
+
+<p>$$\sin{a}\cos{b} \\  = \frac{1}{2}{\cdot}[2{\cdot}\sin{a}\cos{b}  + \cos{a}\sin{b} - \cos{a}\sin{b}] \\  = \frac{1}{2}{\cdot}[\sin(a+b)+\sin(a-b)]$$</p>
+
+<p>$$\begin{align}
+ f(x) &amp;= (x+a)(x+b) \<br />
+ &amp;= x^2 + (a+b)x + ab
+\end{align}$$</p>
 </div>
         <div class="post_footer">
           
@@ -258,7 +266,7 @@
 MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    displayMath: [['$$','$$'], ['\[','\]']],
     processEscapes: true,
     processEnvironments: true,
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
@@ -266,6 +274,7 @@ MathJax.Hub.Config({
          extensions: ["AMSmath.js", "AMSsymbols.js"] }
   }
 });
+
 
 MathJax.Hub.Queue(function() {
     
