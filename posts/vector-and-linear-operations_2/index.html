@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content="加法 定义1：设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为 $$\vec{a} &#43; \vec{b} = (a_1 &#43; b_1, a_2 &#43; b_2)$$ 定义1：设$\vec{a} = (a_1, a_2, a_3)$，$\v"/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://no-sky.github.io/posts/vector-and-linear-operations_2/"/>
+
+  
+
+  <title>向量的线性运算 &middot; Note</title>
+
+  <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://no-sky.github.io/">
+          <span>Note</span>
+          <img src="https://no-sky.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">温故而知新</p>
+      <div class="my_socials">
+        
+        
+        <a href="https://github.com/no-sky" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        <a href="https://no-sky.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vector-and-linear-operations_2/'>向量的线性运算</a></h2>
+          
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.23</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="加法">加法</h1>
+
+<p><strong>定义1：</strong>设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为</p>
+
+<p>$$\vec{a} + \vec{b} = (a_1 + b_1, a_2 + b_2)$$</p>
+
+<p><img src="https://i.loli.net/2019/04/23/5cbeb3210799b.png" alt="二维向量的加法.png" /></p>
+
+<p><strong>定义1</strong>：设$\vec{a} = (a_1, a_2, a_3)$，$\vec{b} = (b_1, b_2, b_3)$是三维向量空间$R^3$中的两个向量，定义它们的加法为：</p>
+
+<p>$$\vec{a} + \vec{b} = (a_1 + b_1, a_2 + b_2, a_3 + b_3)$$</p>
+
+<p>​   一般的，设$\vec{a} = (a_1,a_2,···,a_n),\vec{b} = (b_1,b_2,···,b_n)$是<code>n</code>维向量空间$R^n$中的两个向量，定义它们的加法为：</p>
+
+<p>$$\vec{a} + \vec{b} = (a_1+b_1,a_2+b_2,···,a_n+b_n)$$</p>
+
+<p><strong>运算规律：</strong></p>
+
+<p>​   <img src="https://i.loli.net/2019/04/23/5cbeb4b583e84.png" alt="向量加法运算规律.png" /></p>
+
+<h1 id="数乘">数乘</h1>
+
+<p><strong>定义3：</strong>设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，$\lambda$是实数，定义$\lambda$与$\vec{a}$的<strong>数乘</strong>为：</p>
+
+<p>$$\lambda\vec{a} = (\lambda a_1, \lambda a_2)$$</p>
+
+<p>设$\vec{a}$是非零向量，$\lambda$是非零实数，记$\vec{b} = \lambda \vec{a}$，则有</p>
+
+<p>$$|\vec{b}| = \sqrt{(\lambda a_1)^2 + (\lambda a_2)^2 } = |\lambda| \sqrt{(a_1)^2 + ( a_2)^2} = |\lambda||\vec{a}|$$</p>
+
+<p><img src="https://i.loli.net/2019/04/23/5cbeb70e0c3a9.png" alt="向量数乘的性质.png" /></p>
+
+<p><strong>定义4：</strong>设$\vec{a} = (a_1, a_2, a_3)$，$\vec{b} = (b_1, b_2, b_3)$是三维空间向量$R^3$中的两个向量，$\lambda$是实数，定义$\lambda$与$\vec{a}$的<strong>数乘</strong>为：</p>
+
+<p>$$\lambda\vec{a} = (\lambda a_1, \lambda a_2, \lambda a_3)$$</p>
+
+<p>一般的，对于<code>n</code>维向量与实数的数乘以此类推。</p>
+
+<h1 id="减法">减法</h1>
+
+<p><strong>利用向量的加法与数乘运算，得出向量的减法</strong></p>
+
+<p>$$\vec{a} - \vec{b} = \vec{a} + (-1) \vec{b}$$</p>
+
+<h1 id="单位向量">单位向量</h1>
+
+<h2 id="表示">表示</h2>
+
+<p>设$e_a$表示非零向量$\vec{a}$同向的单位向量，则有</p>
+
+<p>$$\vec{a} = |\vec{a}|e_a 或 e_a = \frac{\vec{a}}{|\vec{a}|}$$</p>
+
+<p>称$e_a$为$\vec{a}$的单位方向向量</p>
+
+<p>对于三维向量$\vec{a}$，有</p>
+
+<p>$$e_a = (\cos \alpha, \cos \beta, \cos \gamma)     \vec{a} = |\vec{a}(\cos \alpha, \cos \beta, \cos \gamma)| $$</p>
+
+<h2 id="向量平行等价说法">向量平行等价说法：</h2>
+
+<p>（1）$\vec{a} // \vec{b}$</p>
+
+<p>（2）存在实数$\lambda$，使得$\vec{b} = \lambda \vec{a}$</p>
+
+<p>（3）$\vec{a}与\vec{b}$对应分量成比例</p>
+
+<p>$$\vec{a} = (a_1,a_2,a_3)，\vec{b} = (b_1, b_2, b_3) \Rightarrow \frac{a_1}{b_1}=\frac{a_2}{b_2}=\frac{a_3}{b_3}$$</p>
+
+<p>（4）存在不全为零的常数$k_1,k_2$，使得$k_1\vec{a} + k_2\vec{b} = 0$</p>
+
+<p>例：设$\vec{a} = (2,1),\vec{b} = (-3,1)$，求$\vec{c} = \vec{a}+2\vec{b}$的单位向量</p>
+
+<p>解：$$\vec{c} = \vec{a} + 2\vec{b}                      <br />
+                          = (2, 1) + 2 (-3, 1)  <br />
+                          =(-4, 3)                <br />
+      |\vec{c}| = \sqrt{(-4)^2 + 3^2} = 5     <br />
+      e_\vec{c} = \frac{1}{5}(-4,3) = (-\frac{4}{5},\frac{3}{5})
+        $$</p>
+
+<h1 id="向量的基表示">向量的基表示</h1>
+
+<p><strong>在二维空间中</strong>，记$\vec{i} = (1, 0)，\vec{j} = (0, 1)$，则$\vec{i}, \vec{j}$分别是与<code>x</code>轴、<code>y</code>轴同向的单位向量方向向量，称之为二维空间中的基向量。</p>
+
+<p><img src="https://i.loli.net/2019/04/23/5cbec38b2d703.png" alt="二维向量的基表示.png" /></p>
+
+<p><strong>在三维空间中，</strong>记$\vec{i}=(1,0,0),\vec{j}=(0,1,0),\vec{k}=(0,0,1)$，则$\vec{i},\vec{j},\vec{k}$是与<code>x</code>轴、<code>y</code>轴、<code>z</code>轴同向的单位方向向量，称之为三维向量空间的基向量。</p>
+
+<p>向量$\vec{a} = (a_1,a_2,a_3)$可表示为</p>
+
+<p>$$\vec{a} = a_1\vec{i} + a_2\vec{j} + a_3\vec{k}$$</p>
+
+<p>上式称为三维向量$\vec{a}$的<strong>基表示</strong>或<strong>基向量分解式</strong>。</p>
+
+<p>例：设$A(x_1, y_1，z_1 )和B(x_2,y_2,z_2)$为已知两点，而在AB直线上的点M分为有向线段$\overrightarrow{AB}$为两个有向线段$\overrightarrow{AM}和\overrightarrow{MB}$，并使$\overrightarrow{AM} = \lambda \overrightarrow{MB} (\lambda \neq -1 为常数)$，求分点M的坐标。</p>
+
+<p>解：$$ 设M(x, y, z)，由于                                 <br />
+      \overrightarrow{AM} = (x-x_1,y-y_1,z-z_1)  <br />
+      \overrightarrow{MB} = (x_2- x, y_2-x, z_2-z)  <br />
+      由\overrightarrow{AM} = \lambda \overrightarrow{MB}得   <br />
+      (x-x_1,y-y_1,z-z_1) = \lambda (x_2- x, y_2-x, z_2-z)   <br />
+      \Rightarrow x-x_1 = \lambda (x_2-x),y-y_1 = \lambda (y_2-y),z-z_1 = \lambda (z_2-z)  <br />
+      \Rightarrow x = \frac{x_1+\lambda x_2}{1+\lambda},y = \frac{y_1+\lambda y_2}{1+\lambda},z = \frac{z_1+\lambda z_2}{1+\lambda} <br />
+      则得点M的坐标为（\frac{x_1+\lambda x_2}{1+\lambda}，\frac{y_1+\lambda y_2}{1+\lambda},\frac{z_1+\lambda z_2}{1+\lambda}）
+   $$</p>
+
+<p>$A(x_1, y_1，z_1 )和B(x_2,y_2,z_2)$的<strong>中点坐标</strong>为$(\frac{x_1+x_2+x_3}{2},\frac{y_1+y_2+y_3}{2},\frac{z_1+z_2+z_3}{2})$</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/vector-algebra-and-analytic-geometry/">Vector Algebra and Analytic Geometry</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>路漫漫其修远兮，吾将上下而求索</span>
+  </div>
+</footer>
+
+
+
+<script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
