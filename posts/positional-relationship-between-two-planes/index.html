@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="前置：数轴上两点的距离 $$|M_1M_2| = |x_2 - x_1|$$ 前置：平面上两点的距离 $$|M_1M_2| = \sqrt{(x_2 - x_1)^2 &#43; (y_2 - y_1)^2}$$ 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为： $$|M_1M_2| = \sqrt{(x_2-x_1)^2"/>
+  <meta name="description" content="两平面的位置关系 平面$\pi_{1}$： $A_{1}x &#43; B_{1}y &#43; C_{1}z &#43; D_{1} = 0 \\\\ \vec{n_{1}} = (A_{1}, B_{1}, C_{1}) $ 平面$\pi_{2}$: $A_{2}x &#43; B_{2}y &#43; C_{2}z &#43; D_{2} = 0 \\\\ \vec{n_{2}} = (A_{2}, B_{2}, C_{2})$ ① $\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} \Leftrightarrow \vec{n_{1}} // \vec{n_{2}} \Leftrightarrow \pi_{1} // \pi_{2} $ ​ 若$\frac{A_{1}}{A_{2}}"/>
   
 
   
@@ -19,11 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/posts/distance-between-two-points/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/positional-relationship-between-two-planes/"/>
 
   
 
-  <title>空间中两点的距离 &middot; Note</title>
+  <title>空间中两平面的位置关系 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -90,9 +90,9 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/distance-between-two-points/'>空间中两点的距离</a></h2>
+          <h2><a href='/posts/positional-relationship-between-two-planes/'>空间中两平面的位置关系</a></h2>
           
-          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.22</span>
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.25</span>
           
           
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
@@ -100,31 +100,33 @@
         </div>
         <div class="post_content markdown">
 
-<h1 id="前置-数轴上两点的距离">前置：数轴上两点的距离</h1>
+<h1 id="两平面的位置关系">两平面的位置关系</h1>
 
-<div>$$|M_1M_2| = |x_2 - x_1|$$</div>
+<p><strong>平面</strong><code>$\pi_{1}$</code>： <code>$A_{1}x + B_{1}y + C_{1}z + D_{1} = 0  \\\\ \vec{n_{1}} = (A_{1}, B_{1}, C_{1}) $</code></p>
 
-<h1 id="前置-平面上两点的距离">前置：平面上两点的距离</h1>
+<p><strong>平面</strong><code>$\pi_{2}$</code>: <code>$A_{2}x + B_{2}y + C_{2}z + D_{2} = 0  \\\\ \vec{n_{2}} = (A_{2}, B_{2}, C_{2})$</code></p>
 
-<p></div>$$|M_1M_2| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</div></p>
+<p>① <code>$\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} \Leftrightarrow \vec{n_{1}} // \vec{n_{2}} \Leftrightarrow \pi_{1} // \pi_{2} $</code></p>
 
-<h1 id="空间中两点的距离">空间中两点的距离</h1>
+<p>​    若<code>$\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} = \frac{D_{1}}{D_{2}} ,\pi_{1}与\pi_{2}$</code>重合</p>
 
-<p><strong>假设空间中两点，<code>$M_1$</code>为<code>$(x_1, y_1, z_1)$</code>,<code>$M_2$</code>为<code>$(x_2, y_2, z_2)$</code>，则距离公示为：</strong></p>
+<p>​    若<code>$\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}}  \neq \frac{D_{1}}{D_{2}} ,\pi_{1}与\pi_{2}$</code>平行不重合</p>
 
-<div>$$|M_1M_2| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2 - z_1)^2}$$</div>
+<p>②<code>$A_{1}A_{2} + B_{1}B_{2} + C_{1}C_{2} = 0 \Leftrightarrow \vec{n_{1}} \perp \vec{n_{2}} \Leftrightarrow \pi_{1} \perp \pi_{2}$</code></p>
 
-<p><strong>特别的，点M(x, y, z)到原点O(0, 0, 0)的距离为：</strong></p>
+<p>③<code>$\cos\theta = \cos(\vec{n_{1}}, \vec{n_{2}}) = \frac{|\vec{n_{1}}·\vec{n_{2}}|}{|\vec{n_{1}}||\vec{n_{2}}|},\theta \in [0, \frac{\pi}{2}]$</code></p>
 
-<div>$$|OM| = \sqrt{x^2 + y^2 + z^2}$$</div>
+<h1 id="点到平面的位置">点到平面的位置</h1>
 
-<p>例题1 <strong>在<code>z</code>轴上求两点A(3，1，-4)和B(5，3，2)等距离的点。</strong></p>
+<p>点<code>$M_{0}(x_{0},y_{0},z_{0})$</code>到平面<code>$\pi：Ax + By + Cz + D = 0$</code>的距离<code>d</code>为:</p>
 
-<p>解：设<code>z</code>轴上点为M(0, 0, z)，由题意|MA| = |MB|，即</p>
+<div>$$d = \frac{Ax_{0}+By_{0}+Cz_{0}+D}{\sqrt{A^2+B^2+C^2}}$$</div>
 
-<p>​         <div>$$\sqrt{(3-0)^2 + (1-0)^2 + (-4 - z)^2} = \sqrt{(5-0)^2 + (3-0)^2 + (2-z)^2}$$</div></p>
+<h1 id="两平行平面的距离">两平行平面的距离</h1>
 
-<p>解得，z = 1，所求点位为M(0,0,1)。</p>
+<p><code>$\pi_{1}: Ax + By + Cz + D_{1} = 0 \\\\  \pi_{2}: Ax + By + Cz + D_{2} = 0$</code></p>
+
+<div>$$d = \frac{|D_{1}-D_{2}|}{\sqrt{A^2+B^2+C^2}}$$</div>
 </div>
         <div class="post_footer">
           

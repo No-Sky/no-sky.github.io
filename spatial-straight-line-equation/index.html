@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="前置：数轴上两点的距离 $$|M_1M_2| = |x_2 - x_1|$$ 前置：平面上两点的距离 $$|M_1M_2| = \sqrt{(x_2 - x_1)^2 &#43; (y_2 - y_1)^2}$$ 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为： $$|M_1M_2| = \sqrt{(x_2-x_1)^2"/>
+  <meta name="description" content="空间直线的方程 直线的一般方程 $$L = \left\{\begin{matrix} A_1x&#43;B_1y&#43;C_1z&#43;D_1=0 \\ A_2x&#43;B_2y&#43;C_2z&#43;D_2=0 \end{matrix}\right.$$ 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有： $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$$ 直线的参数方程 $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}=t \Rightarrow \left\{\begin{matrix} x= x_0&#43;mt \\ y=y_0&#43;nt \\ z=z_0&#43;pt \end{matrix}\right.$$## 直线的两"/>
   
 
   
@@ -19,11 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/posts/distance-between-two-points/"/>
+  <link rel="canonical" href="https://no-sky.github.io/spatial-straight-line-equation/"/>
 
   
 
-  <title>空间中两点的距离 &middot; Note</title>
+  <title>空间直线方程 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -90,9 +90,9 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/distance-between-two-points/'>空间中两点的距离</a></h2>
+          <h2><a href='/spatial-straight-line-equation/'>空间直线方程</a></h2>
           
-          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.22</span>
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.25</span>
           
           
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
@@ -100,31 +100,51 @@
         </div>
         <div class="post_content markdown">
 
-<h1 id="前置-数轴上两点的距离">前置：数轴上两点的距离</h1>
+<h1 id="空间直线的方程">空间直线的方程</h1>
 
-<div>$$|M_1M_2| = |x_2 - x_1|$$</div>
+<h2 id="直线的一般方程">直线的一般方程</h2>
 
-<h1 id="前置-平面上两点的距离">前置：平面上两点的距离</h1>
+<div>$$L = \left\{\begin{matrix} A_1x+B_1y+C_1z+D_1=0 \\ A_2x+B_2y+C_2z+D_2=0 \end{matrix}\right.$$</div>
 
-<p></div>$$|M_1M_2| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</div></p>
+<h2 id="直线的点向式方程">直线的点向式方程</h2>
 
-<h1 id="空间中两点的距离">空间中两点的距离</h1>
+<p>已知有一点<code>$M_0(x_0,y_0,z_0)$</code>，方向向量<code>$\vec{s}=(m,n,p)$</code>，则有：</p>
 
-<p><strong>假设空间中两点，<code>$M_1$</code>为<code>$(x_1, y_1, z_1)$</code>,<code>$M_2$</code>为<code>$(x_2, y_2, z_2)$</code>，则距离公示为：</strong></p>
+<div>$$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$$</div>
 
-<div>$$|M_1M_2| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2 - z_1)^2}$$</div>
+<h2 id="直线的参数方程">直线的参数方程</h2>
 
-<p><strong>特别的，点M(x, y, z)到原点O(0, 0, 0)的距离为：</strong></p>
+<div>$$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}=t \Rightarrow \left\{\begin{matrix} x= x_0+mt \\ y=y_0+nt \\ z=z_0+pt \end{matrix}\right.$$</dici >
 
-<div>$$|OM| = \sqrt{x^2 + y^2 + z^2}$$</div>
+## 直线的两点式方程
 
-<p>例题1 <strong>在<code>z</code>轴上求两点A(3，1，-4)和B(5，3，2)等距离的点。</strong></p>
+<div>$$\frac{x-x-1}{x_2-x_1}=\frac{y-y_1}{y_2-y_1}=\frac{z-z_1}{z_2-z_1}$$</div>
 
-<p>解：设<code>z</code>轴上点为M(0, 0, z)，由题意|MA| = |MB|，即</p>
+<h1 id="空间中两直线的位置关系">空间中两直线的位置关系</h1>
 
-<p>​         <div>$$\sqrt{(3-0)^2 + (1-0)^2 + (-4 - z)^2} = \sqrt{(5-0)^2 + (3-0)^2 + (2-z)^2}$$</div></p>
+<p><code>$L_1: \frac{x-x_1}{m_1}=\frac{y-y_1}{n_1}=\frac{z-z_1}{p_1}$</code>  <code>$\vec{s_1}=(m_1,n_1,p_1)$</code></p>
 
-<p>解得，z = 1，所求点位为M(0,0,1)。</p>
+<p><code>$L_2: \frac{x-x_2}{m_2}=\frac{y-y_2}{n_2}=\frac{z-z_2}{p_2}$</code>  <code>$\vec{s_2}=(m_2,n_2,p_2)$</code></p>
+
+<p>①<code>$\frac{m_1}{m_2}=\frac{n_1}{n_2}=\frac{p_1}{p_2} \Leftrightarrow \vec{s_1} // \vec{s_2} L_1 // L_2 $</code></p>
+
+<p>②<code>$m_1m_2 + n_1n_2 + p_1p_2 = 0 \Leftrightarrow \vec{s_1} \perp \vec{s_2} \Leftrightarrow L_1 \perp L_2$</code></p>
+
+<p>③<code>$\cos\theta = \cos(\vec{s_1},\vec{s_2}) = \frac{|\vec{s_1}·\vec{s_2}|}{|\vec{s_1}||\vec{s_2}|},\theta \in [0,\frac{\pi}{2}]$</code></p>
+
+<h1 id="直线与平面的位置关系">直线与平面的位置关系</h1>
+
+<p><code>$L: \frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$</code>   <code>$\vec{s}=(m,n,p)$</code></p>
+
+<p><code>$\pi: Ax+Bx+Cz+D=0$</code>    <code>$\vec{n}={A,B,C}$</code></p>
+
+<p>①<code>$\frac{A}{m}=\frac{B}{n}=\frac{C}{p} \Leftrightarrow \vec{n} // \vec{s} \Leftrightarrow L \perp \pi$</code></p>
+
+<p>②<code>$Am+Bn+Cp=0 \Leftrightarrow \vec{n} \perp \vec{s} \Leftrightarrow \pi$</code></p>
+
+<p>​     将直线上已知点的坐标<code>$(x_0,y_0,z_0)$代入平面的方程中，若恒成立，则直线在平面上，否则，平行。</code></p>
+
+<p>③<code>$\sin\phi = \cos(\vec{s},\vec{n}) = \frac{|\vec{s}·\vec{n}|}{|\vec{s}|·|\vec{n}|},\phi \in [0,\frac{\pi}{2}]$</code></p>
 </div>
         <div class="post_footer">
           
