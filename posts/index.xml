@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Apr 2019 15:57:33 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 17:32:01 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>空间曲面及其方程</title>
+      <link>https://no-sky.github.io/posts/space-surface-equation/</link>
+      <pubDate>Thu, 25 Apr 2019 17:32:01 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/space-surface-equation/</guid>
+      <description>球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为： $$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=R^2$$ 球面的一般方程：$Ax^2+Ay^2+Az^2+Dx+Ey+Fz+G=0$ 平面方程的特点：①*三元二次方程*；②*缺交叉项*③</description>
+    </item>
+    
+    <item>
+      <title>空间直线方程</title>
+      <link>https://no-sky.github.io/posts/spatial-straight-line-equation/</link>
+      <pubDate>Thu, 25 Apr 2019 16:51:06 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/spatial-straight-line-equation/</guid>
+      <description>空间直线的方程 直线的一般方程 $$L = \left\{\begin{matrix} A_1x+B_1y+C_1z+D_1=0 \\ A_2x+B_2y+C_2z+D_2=0 \end{matrix}\right.$$ 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有： $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$$ 直线的参数方程 $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}=t \Rightarrow \left\{\begin{matrix} x= x_0+mt \\ y=y_0+nt \\ z=z_0+pt \end{matrix}\right.$$## 直线的两</description>
+    </item>
     
     <item>
       <title>空间中两平面的位置关系</title>

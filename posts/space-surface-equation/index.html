@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="nosky 的个人学习笔记"/>
+  <meta name="description" content="球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为： $$(x-x_0)^2&#43;(y-y_0)^2&#43;(z-z_0)^2=R^2$$ 球面的一般方程：$Ax^2&#43;Ay^2&#43;Az^2&#43;Dx&#43;Ey&#43;Fz&#43;G=0$ 平面方程的特点：①*三元二次方程*；②*缺交叉项*③"/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/tags/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/space-surface-equation/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://no-sky.github.io/tags/index.xml">
-  
 
-  <title>Tags &middot; Note</title>
+  <title>空间曲面及其方程 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -89,117 +87,73 @@
 </div>
 
   <div class="content">
-    <div class="page_tags">
-      <ul>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/oracel">
-            oracel <span class="terms_count">14</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/math">
-            math <span class="terms_count">7</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/vector-algebra-and-analytic-geometry">
-            vector-algebra-and-analytic-geometry <span class="terms_count">7</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/mybatis">
-            mybatis <span class="terms_count">5</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/for%E5%BE%AA%E7%8E%AF">
-            for循环 <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/git">
-            git <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/hexo-next">
-            hexo-next <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/javascript">
-            javascript <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/maven">
-            maven <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/mysql">
-            mysql <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/qr-code">
-            qr-code <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/springboot-data-jpa">
-            springboot-data-jpa <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a href="https://no-sky.github.io/tags/sublime-text3">
-            sublime-text3 <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-      </ul>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/space-surface-equation/'>空间曲面及其方程</a></h2>
+          
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.25</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="球面">球面</h1>
+
+<p><strong>球心在点</strong><code>$M_0(x_0,y_0,z_0)$</code>，<strong>半径为R的球面方程为：</strong></p>
+
+<div>$$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=R^2$$</div>
+
+<p><strong>球面的一般方程：</strong><code>$Ax^2+Ay^2+Az^2+Dx+Ey+Fz+G=0$</code></p>
+
+<p><strong>平面方程的特点：</strong>①*三元二次方程*；②*缺交叉项*③<em>平方项系数相同</em></p>
+
+<h1 id="柱面">柱面</h1>
+
+<p>*定义*：<strong>直线（母线）沿着定曲线（准线）平行移动所产生的曲面</strong></p>
+
+<p><em>柱面方程的特点：</em> <strong>二元方程</strong></p>
+
+<h1 id="旋转曲面">旋转曲面</h1>
+
+<p><em>特点：</em> 至少有2个变量的二次项系数相等</p>
+
+<h1 id="常见的二次曲面">常见的二次曲面</h1>
+
+<p><strong>椭球面：</strong><code>$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$</code></p>
+
+<p><strong>单叶双曲面：</strong><code>$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$</code></p>
+
+<p><strong>双叶双曲面：</strong><code>$\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$</code></p>
+
+<p><strong>锥面：</strong><code>$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$</code></p>
+
+<p><strong>椭圆抛物面：</strong><code>$\frac{x^2}{2p}+\frac{y^2}{2q}=z(p,q同号)$</code></p>
+
+<p><strong>双曲抛物线：</strong><code>$\frac{x^2}{2p}-\frac{y^2}{2q}=z(p,q同号)$</code></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/vector-algebra-and-analytic-geometry/">Vector Algebra and Analytic Geometry</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
