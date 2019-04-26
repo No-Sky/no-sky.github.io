@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="nosky 的个人学习笔记"/>
+  <meta name="description" content="标准形式 $${y}&#39;&#39;&#43;p{y}&#39;&#43;qy=0$$ 通解： ①写出相应的特征方程 $r^2&#43;pr&#43;q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}&#43;C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1e^{rx}&#43;C_2xe^{rx}$ 2)共轭复根："/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/tags/math/"/>
+  <link rel="canonical" href="https://no-sky.github.io/second-order-constant-coefficient-homogeneous-linear-differential-equation/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://no-sky.github.io/tags/math/index.xml">
-  
 
-  <title>Math &middot; Note</title>
+  <title>二阶常系数齐次线性微分方程 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -100,99 +98,89 @@
 </div>
 
   <div class="content">
-    <div class="list_with_title">
-      
-      <div class="listing_title">2019</div>
-      <div class="listing">
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/second-order-constant-coefficient-homogeneous-linear-differential-equation/">二阶常系数齐次线性微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/second-order-constant-coefficient-homogeneous-linear-differential-equation/'>二阶常系数齐次线性微分方程</a></h2>
+          
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.26</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/reduced-order-higher-order-differential-equation/">可降阶的高阶微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
+        <div class="post_content markdown">
+
+<h1 id="标准形式">标准形式</h1>
+
+<div>$${y}''+p{y}'+qy=0$$</div>
+
+<h1 id="通解">通解：</h1>
+
+<p><strong>①写出相应的特征方程 <code>$r^2+pr+q=0$</code></strong></p>
+
+<p><strong>②求出特征根<code>$r_1,r_2$</code></strong></p>
+
+<p><strong>③写出通解：</strong></p>
+
+<p><strong>1)不同实根：<code>$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$</code></strong></p>
+
+<p><strong>2)重根：<code>$r_1=r_2=r,y=C_1e^{rx}+C_2xe^{rx}$</code></strong></p>
+
+<p><strong>2)共轭复根：<code>$r_{1,2}=\alpha \pm \beta i, y=e^{\alpha x}(C_1\cos \beta x + C_2 \sin \beta x)$</code></strong></p>
+
+<p>例1：<strong>求微分方程<code>${y}''+2{y}'+y=0$的</code>通解</strong></p>
+
+<p>解：由题意得：<code>$特征方程：r^2+2r+1=0 \\\\
+            \Rightarrow r_1=r_2=-1 \\\\
+            \therefore y=C_1e^{-x}+C_2xe^{-x}$</code></p>
+
+<p>例2：<strong>求微分方程<code>${y}''-4y=0$</code>得通解</strong></p>
+
+<p>解：由题意得：<code>$特征方程：r^2-4=0 \\\\
+            \Rightarrow r-1=2，r_2=-2 \\\\
+            \therefore y=C_1e^{2x}+C-2e^{-2x}$</code></p>
+
+<p>例2： <strong>求微分方程<code>$2\frac{\mathrm{d}^2 y}{\mathrm{d} x^2}+4\frac{\mathrm{d} y}{\mathrm{d} x}+3y=0$</code>的通解</strong></p>
+
+<p>解：由题意得：<code>$特征方程：2r^2+4r+3=0 \\\\
+            \Rightarrow r=-1 \pm \frac{\sqrt{2}}{2}i \\
+            \therefore y=e^{-x}(C_1\cos \frac{\sqrt{2}}{2}x+C_2\sin \frac{\sqrt{2}}{2}x)$</code></p>
+
+<h1 id="已知通解-反求微分方程">已知通解，反求微分方程</h1>
+
+<p><strong>①找出特征根</strong></p>
+
+<p><strong>②写出特征方程</strong></p>
+
+<p><strong>③写出微分方程</strong></p>
+
+<p>例：<strong>写出通解为<code>$y=C_1e^{-x}+C_2e^{3x}(C_1,C_2为任意常数)$</code>的二阶线性常系数齐次微分方程</strong></p>
+
+<p>解：由题得：<code>$特征根：r_1=-1,r_2=3 \\\\
+           特征方程：(r+1)(r-3)=0 \Rightarrow r^2-2r-3=0 \\\\
+           微分方程：{y}''-2{y}'-3y=0$</code></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/differential-equation/">Differential Equation</a>
+                
+              </span>
+            </div>
           </div>
+          
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/first-order-linear-differential-equation/">一阶线性微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/homogeneous-equation/">齐次方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/ordinary-differential-equation/">常微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/space-surface-equation/">空间曲面及其方程</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/spatial-straight-line-equation/">空间直线方程</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/positional-relationship-between-two-planes/">空间中两平面的位置关系</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/vector-and-linear-operations_2/">向量的线性运算</a>
-            <div class="post_time"><span class="date">04-23</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/vector-and-linear-operations_1/">向量的基本概念</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/distance-between-two-points/">空间中两点的距离</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/spatial-rectangular-coordinate-system/">空间直角坐标系</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
       </div>
       
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>

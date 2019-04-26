@@ -6,10 +6,46 @@
     <description>Recent content in Posts on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Apr 2019 17:32:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 16:33:33 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>可降阶的高阶微分方程</title>
+      <link>https://no-sky.github.io/posts/reduced-order-higher-order-differential-equation/</link>
+      <pubDate>Fri, 26 Apr 2019 16:33:33 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/reduced-order-higher-order-differential-equation/</guid>
+      <description>$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得：${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令$</description>
+    </item>
+    
+    <item>
+      <title>一阶线性微分方程</title>
+      <link>https://no-sky.github.io/posts/first-order-linear-differential-equation/</link>
+      <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/first-order-linear-differential-equation/</guid>
+      <description>标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为：${y}&#39;-\frac{1}{x}y=</description>
+    </item>
+    
+    <item>
+      <title>齐次方程</title>
+      <link>https://no-sky.github.io/posts/homogeneous-equation/</link>
+      <pubDate>Fri, 26 Apr 2019 15:56:15 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/homogeneous-equation/</guid>
+      <description>解法 ①化为标准形式：${y}&#39;=f(\frac{y}{x})$ ②代入$u=\frac{y}{x}$，代入方程小区y ③化为x与u的可分离变量的微分方程，求解 例1：求$x{y}&#39;-x\sin\frac{y</description>
+    </item>
+    
+    <item>
+      <title>常微分方程</title>
+      <link>https://no-sky.github.io/posts/ordinary-differential-equation/</link>
+      <pubDate>Fri, 26 Apr 2019 15:10:23 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/ordinary-differential-equation/</guid>
+      <description>常微分方程的解 若$y=\varphi (x)$代入方程成为恒等式，则称$y=\varphi (x)$为方程的一个解。 通解 含有相互独立（不能合并，$y=C_1x+$C_2x^2与y=C_1x+C_2x）的任</description>
+    </item>
     
     <item>
       <title>空间曲面及其方程</title>

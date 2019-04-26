@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Apr 2019 17:32:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 17:08:07 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Differential Equation</title>
+      <link>https://no-sky.github.io/tags/differential-equation/</link>
+      <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/tags/differential-equation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Math</title>
       <link>https://no-sky.github.io/tags/math/</link>
-      <pubDate>Thu, 25 Apr 2019 17:32:01 +0800</pubDate>
+      <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
       
       <guid>https://no-sky.github.io/tags/math/</guid>
       <description></description>

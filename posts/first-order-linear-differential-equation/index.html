@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="nosky 的个人学习笔记"/>
+  <meta name="description" content="标准形式 $${y}&#39;&#43;P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x&#43;C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为：${y}&#39;-\frac{1}{x}y="/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/tags/math/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/first-order-linear-differential-equation/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://no-sky.github.io/tags/math/index.xml">
-  
 
-  <title>Math &middot; Note</title>
+  <title>一阶线性微分方程 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -100,99 +98,63 @@
 </div>
 
   <div class="content">
-    <div class="list_with_title">
-      
-      <div class="listing_title">2019</div>
-      <div class="listing">
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/second-order-constant-coefficient-homogeneous-linear-differential-equation/">二阶常系数齐次线性微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/first-order-linear-differential-equation/'>一阶线性微分方程</a></h2>
+          
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.26</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/reduced-order-higher-order-differential-equation/">可降阶的高阶微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
+        <div class="post_content markdown">
+
+<h1 id="标准形式">标准形式</h1>
+
+<div>$${y}'+P(x)y=Q(x)$$</div>
+
+<h1 id="解法">解法</h1>
+
+<p><strong>①化为标准形式</strong></p>
+
+<p><strong>②套公式：</strong></p>
+
+<div>$$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$</div>
+
+<p><em>注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C</em></p>
+
+<p>例：解方程<code>$x{y}'-y=x^3$</code></p>
+
+<p>解：原方程可化为：<code>${y}'-\frac{1}{x}y=x^2 \\\\
+                由公式得：y=e^{-\int \frac{1}{x}\mathrm{d}x}(\int x^2e^{-\int \frac{1}{x}\mathrm{d}x}\mathrm{d}x+C) \\\\
+                =e^{lnx}(\int x^2e^{-lnx}\mathrm{d}x+C) \\\\
+                =x(\int x^2·\frac{1}{x}\mathrm{d}x+C) \\\\
+                =x(\frac{x^2}{2}+C) \\\\
+                =\frac{x^3}{2}+Cx \\\\
+                即 y=\frac{x^3}{2}+Cx$</code></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/differential-equation/">Differential Equation</a>
+                
+              </span>
+            </div>
           </div>
+          
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/first-order-linear-differential-equation/">一阶线性微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/homogeneous-equation/">齐次方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/ordinary-differential-equation/">常微分方程</a>
-            <div class="post_time"><span class="date">04-26</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/space-surface-equation/">空间曲面及其方程</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/spatial-straight-line-equation/">空间直线方程</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/positional-relationship-between-two-planes/">空间中两平面的位置关系</a>
-            <div class="post_time"><span class="date">04-25</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/vector-and-linear-operations_2/">向量的线性运算</a>
-            <div class="post_time"><span class="date">04-23</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/vector-and-linear-operations_1/">向量的基本概念</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/distance-between-two-points/">空间中两点的距离</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/spatial-rectangular-coordinate-system/">空间直角坐标系</a>
-            <div class="post_time"><span class="date">04-22</span></div>
-          </div>
-        </div>
-        
       </div>
       
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
