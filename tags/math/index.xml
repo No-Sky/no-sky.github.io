@@ -13,10 +13,10 @@
     
     <item>
       <title>二阶常系数齐次线性微分方程</title>
-      <link>https://no-sky.github.io/second-order-constant-coefficient-homogeneous-linear-differential-equation/</link>
+      <link>https://no-sky.github.io/posts/second-order-constant-coefficient-homogeneous-linear-differential-equation/</link>
       <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
+      <guid>https://no-sky.github.io/posts/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
       <description>标准形式 $${y}&#39;&#39;+p{y}&#39;+qy=0$$ 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1e^{rx}+C_2xe^{rx}$ 2)共轭复根：</description>
     </item>
     
