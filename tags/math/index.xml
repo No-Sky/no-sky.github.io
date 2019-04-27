@@ -26,7 +26,7 @@
       <pubDate>Fri, 26 Apr 2019 16:33:33 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/reduced-order-higher-order-differential-equation/</guid>
-      <description>$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得：${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令$</description>
+      <description>$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得： ${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令${y}&#39;=P$，两边</description>
     </item>
     
     <item>

@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得：${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2&#43;C_1 \\\\ {y}&#39;=\int (12x^2&#43;C_1)\mathrm{d}x=4x^3&#43;C_1x&#43;C_2 \\\\ y=\int (4x^3&#43;C_1x&#43;C_2)\mathrm{d}x=x^4&#43;C_1\frac{x^2}{2}&#43;C_2x&#43;C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令$"/>
+  <meta name="description" content="$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得： ${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2&#43;C_1 \\\\ {y}&#39;=\int (12x^2&#43;C_1)\mathrm{d}x=4x^3&#43;C_1x&#43;C_2 \\\\ y=\int (4x^3&#43;C_1x&#43;C_2)\mathrm{d}x=x^4&#43;C_1\frac{x^2}{2}&#43;C_2x&#43;C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令${y}&#39;=P$，两边"/>
   
 
   
@@ -117,7 +117,9 @@
 
 <p>例：<strong>求微分方程<code>${y}'''=24x$</code>通解</strong></p>
 
-<p>解：对原方程连续积分可得：<code>${y}''=\int 24x\mathrm{d}x=12x^2+C_1 \\\\
+<p>解：对原方程连续积分可得：</p>
+
+<p><code>${y}''=\int 24x\mathrm{d}x=12x^2+C_1 \\\\
                     {y}'=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\
                     y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$</code></p>
 
@@ -127,8 +129,10 @@
 
 <p>例：<strong>求微分方程<code>$x{y}''+{y}'=4x$</code>的通解</strong></p>
 
-<p>解：<code>$令{y}'=P,{y}''={P}' \\\\
-     代入原方程得：x{P}'+P=4x \Rightarrow {P}'+\frac{1}{x}P=4 \\\\
+<p>解：
+<code>$令{y}'=P,{y}''={P}' \\\\
+     代入原方程得：x{P}'+P=4x \\\\ 
+     \Rightarrow {P}'+\frac{1}{x}P=4 \\\\
      可得：P=e^{-\int \frac{1}{x}\mathrm{d}x}(\int 4e^{\int \frac{1}{x}}\mathrm{d}x+C-1) \\\\
      =e^{-lnx}(\int 4e^{lnx}\mathrm{d}x+C_1) \\\\
      =\frac{1}{x}(\int 4x\mathrm{d}x+C_1) \\\\
