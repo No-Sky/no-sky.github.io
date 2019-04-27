@@ -17,7 +17,7 @@
       <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
-      <description>标准形式 $${y}&#39;&#39;+p{y}&#39;+qy=0$$ 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1e^{rx}+C_2xe^{rx}$ 2)共轭复根：</description>
+      <description>因为文章中包含大量公式，不建议使用手机阅读本文章 标准形式 $${y}&#39;&#39;+p{y}&#39;+qy=0$$ 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1e</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Fri, 26 Apr 2019 16:33:33 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/reduced-order-higher-order-differential-equation/</guid>
-      <description>$y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得： ${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x \\\\ =4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x \\\\ =x^4+C_1\frac{x^2}{2}+C_2x+C3$ ${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令${y}&#39;=P</description>
+      <description>因为文章中包含大量公式，不建议使用手机阅读本文章 $y^{(n)}=f(x)$型 解法：作n次不定积分 例：求微分方程${y}&#39;&#39;&#39;=24x$通解 解：对原方程连续积分可得：${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x \\\\ =4x^3+C_1x+C_2</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/first-order-linear-differential-equation/</guid>
-      <description>标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为： ${y}&#39;-\frac{1}{x}y=x^2 \\\\ 由公式得：y=e^{-\int \frac{1}{x}\mathrm{d}x}(\int x^2e^{-\int</description>
+      <description>因为文章中包含大量公式，不建议使用手机阅读本文章 标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Fri, 26 Apr 2019 15:56:15 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/homogeneous-equation/</guid>
-      <description>解法 ①化为标准形式：${y}&#39;=f(\frac{y}{x})$ ②代入$u=\frac{y}{x}$，代入方程小区y ③化为x与u的可分离变量的微分方程，求解 例1：求$x{y}&#39;-x\sin\frac{y</description>
+      <description>因为文章中包含大量公式，不建议使用手机阅读本文章 解法 ①化为标准形式：${y}&#39;=f(\frac{y}{x})$ ②代入$u=\frac{y}{x}$，代入方程小区y ③化为x与u的可分离变量的微分方程，求</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Fri, 26 Apr 2019 15:10:23 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/ordinary-differential-equation/</guid>
-      <description>常微分方程的解 若$y=\varphi (x)$代入方程成为恒等式，则称$y=\varphi (x)$为方程的一个解。 通解 含有相互独立（不能合并，$y=C_1x+C_2x^2与y=C_1x+C_2x$）的任</description>
+      <description>因为文章中包含大量公式，不建议使用手机阅读本文章 常微分方程的解 若$y=\varphi (x)$代入方程成为恒等式，则称$y=\varphi (x)$为方程的一个解。 通解 含有相互独立（不能合并，$y=C_1</description>
     </item>
     
   </channel>
