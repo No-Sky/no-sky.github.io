@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>single variable integral calculus on Note</title>
+    <link>https://no-sky.github.io/tags/single-variable-integral-calculus/</link>
+    <description>Recent content in single variable integral calculus on Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Apr 2019 17:48:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://no-sky.github.io/tags/single-variable-integral-calculus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>定积分</title>
+      <link>https://no-sky.github.io/definite-integral/</link>
+      <pubDate>Sat, 27 Apr 2019 17:48:21 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/definite-integral/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>不定积分</title>
+      <link>https://no-sky.github.io/posts/indefinite-integral/</link>
+      <pubDate>Sat, 27 Apr 2019 15:57:22 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/indefinite-integral/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{</description>
+    </item>
+    
+  </channel>
+</rss>

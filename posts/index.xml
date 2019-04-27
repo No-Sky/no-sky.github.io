@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 26 Apr 2019 17:08:07 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 15:57:22 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>不定积分</title>
+      <link>https://no-sky.github.io/posts/indefinite-integral/</link>
+      <pubDate>Sat, 27 Apr 2019 15:57:22 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/indefinite-integral/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{</description>
+    </item>
     
     <item>
       <title>二阶常系数齐次线性微分方程</title>

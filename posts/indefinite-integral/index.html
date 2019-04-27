@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content="因为文章中包含大量数学公式，推荐使用电脑阅读本文章 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{"/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://no-sky.github.io/posts/indefinite-integral/"/>
+
+  
+
+  <title>不定积分 &middot; Note</title>
+
+  <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/highlight.css"/>
+
+  
+  
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962328-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962328-2');
+</script>
+
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://no-sky.github.io/">
+          <span>Note</span>
+          <img src="https://no-sky.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">温故而知新</p>
+      <div class="my_socials">
+        
+        
+        
+        <a href="https://no-sky.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/indefinite-integral/'>不定积分</a></h2>
+          
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.27</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
+        </div>
+        <div class="post_content markdown">
+
+<blockquote>
+<p>因为文章中包含大量数学公式，推荐使用电脑阅读本文章</p>
+</blockquote>
+
+<h1 id="原函数与不定积分的概念">原函数与不定积分的概念</h1>
+
+<h2 id="原函数">原函数</h2>
+
+<p>若对于某区间<code>$I$</code>上任意一点<code>$x$</code>，均有<code>${F}'(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{d}x$</code>，则称<code>$F(x)$</code>是<code>$f(x)$</code>在<code>$I$</code>上的一个原函数。</p>
+
+<h2 id="原函数存在定理">原函数存在定理</h2>
+
+<p>如果函数<code>$f(x)$</code>在区间<code>$I$</code>上连续，那么在区间<code>$I$</code>上存在可导函数<code>$F(x)$</code>，使对任意<code>$x \in I$</code>都有<code>${F}'(x)=f(x)$</code>。</p>
+
+<h2 id="不定积分">不定积分</h2>
+
+<p><code>$f(x)$</code>在区间<code>$I$</code>上的原函数全体称为<code>f(x)</code>在<code>$I$</code>上的不定积分，即若<code>$F(x)$</code>是<code>$f(x)$</code>在<code>$I$</code>上的任一原函数，则<code>$\int f(x)\mathrm{d}x=F(x)+C(C为任意常数)$</code>.</p>
+
+<p>由此定义可得下列关系：</p>
+
+<p>（1）<code>${\int f(x)\mathrm{d}x}'=f(x)$</code>    或   <code>$\mathrm{\int f(x)\mathrm{d}x}=f(x)\mathrm{d}x$</code></p>
+
+<p>（2）<code>$\int {F}'(x)=F(x)+C$</code>   或   <code>$\int \mathrm{d}F(x)=F(x)+C$</code></p>
+
+<h1 id="不定积分的性质">不定积分的性质</h1>
+
+<p>设<code>$F(x)$</code>是<code>$f(x)$</code>的一个原函数，<code>$k$</code>为非零常数，则有</p>
+
+<p>（1）<code>$\int kf(x)\mathrm{d}x=k\int f(x)\mathrm{d}x$;</code></p>
+
+<p>（2）<code>$\int [f(x) \pm g(x)]\mathrm{d}{x}=\int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x$</code></p>
+
+<h1 id="基本积分公式">基本积分公式</h1>
+
+<p>基本积分公式</p>
+
+<p><code>$\tag{1} \int x^n dx = \frac{1}{n+1}x^{n+1},\hspace{1ex}n\neq -1$</code>   <code>$\tag{2} \int \frac{1}{x}dx = \ln |x| $</code></p>
+
+<p><code>$\tag{3} \int u dv = uv - \int v du $</code>  <code>$\tag{4} \int \frac{1}{ax+b}dx = \frac{1}{a} \ln |ax + b|$</code></p>
+
+<p>有理函数积分公式</p>
+
+<p><code>$\tag{5} \int \frac{1}{(x+a)^2}dx = -\frac{1}{x+a} $</code>  <code>$\tag{6} \int (x+a)^n dx = \frac{(x+a)^{n+1}}{n+1}, n\ne -1 $</code></p>
+
+<p><code>$\tag{7} \int x(x+a)^n dx = \frac{(x+a)^{n+1} ( (n+1)x-a)}{(n+1)(n+2)}$</code> <code>$\tag{8} \int \frac{1}{1+x^2}dx = \tan^{-1}x $</code></p>
+
+<p><code>$\tag{9} \int \frac{1}{a^2+x^2}dx = \frac{1}{a}\tan^{-1}\frac{x}{a}$</code>  <code>$\tag{10} \int \frac{x}{a^2+x^2}dx = \frac{1}{2}\ln|a^2+x^2|$</code></p>
+
+<p><code>$\tag{11} \int \frac{x^2}{a^2+x^2}dx = x-a\tan^{-1}\frac{x}{a} $</code>  <code>$\tag{12} \int \frac{x^3}{a^2+x^2}dx = \frac{1}{2}x^2-\frac{1}{2}a^2\ln|a^2+x^2|$</code></p>
+
+<p><code>$\tag{13} \int \frac{1}{ax^2+bx+c}dx = \frac{2}{\sqrt{4ac-b^2}}\tan^{-1}\frac{2ax+b}{\sqrt{4ac-b^2}} $</code>  <code>$\tag{14} \int \frac{1}{(x+a)(x+b)}dx = \frac{1}{b-a}\ln\frac{a+x}{b+x}, \text{ } a\ne b $</code></p>
+
+<p><code>$\tag{15} \int \frac{x}{(x+a)^2}dx = \frac{a}{a+x}+\ln |a+x|$</code>  <code>$\tag{16} \int \frac{x}{ax^2+bx+c}dx = \frac{1}{2a}\ln|ax^2+bx+c| 
+-\frac{b}{a\sqrt{4ac-b^2}}\tan^{-1}\frac{2ax+b}{\sqrt{4ac-b^2}}$</code></p>
+
+<p><code>$\tag{17} \int \sqrt{x-a}\ dx = \frac{2}{3}(x-a)^{3/2} $</code>  <code>$\tag{18} \int \frac{1}{\sqrt{x\pm a}}\ dx = 2\sqrt{x\pm a} $</code></p>
+
+<p><code>$\tag{19} \int \frac{1}{\sqrt{a-x}}\ dx = -2\sqrt{a-x}$</code></p>
+
+<p>后面不想写了，手累。</p>
+
+<h1 id="求不定积分的基本方法">求不定积分的基本方法</h1>
+
+<h2 id="第一类换元积分法-凑微分法">第一类换元积分法（凑微分法）</h2>
+
+<p>设<code>$F(x)$</code>是<code>$f(x)$</code>的一个原函数，则</p>
+
+<div>$$\int f[\varphi(x)][\varphi]'(x)\mathrm{d}x = \int f[\varphi(x)]\mathrm{d}\varphi(x) \xrightarrow[]{令u=\varphi(x)}\int f(u)\mathrm{d}u \\\\ =F(u)+C = F[\varphi(x)]+C$$</div>
+
+<h2 id="第二类换元积分法">第二类换元积分法</h2>
+
+<p>设<code>$x=\varphi(t)$</code>可导，且有反函数<code>$t=\varphi^{-1}(x)$</code>，则有</p>
+
+<div>$$\int f(x)\mathrm{d}x=\int f[\varphi(t)]{\varphi}'(t)\mathrm{d}t|_{t=\varphi^{-1}(x)}$$</div>
+
+<p>常用的换元法有：</p>
+
+<p>①<code>$\int R(x,\sqrt{a^2+x^2})\mathrm{d}x,令x=a\tan u 或 x=a\cot u(R是有理数)$</code></p>
+
+<p>②<code>$\int R(x,\sqrt{a^2-x^2})\mathrm{d}x,令x=a\sin u 或 x=a\cos u$</code></p>
+
+<p>③<code>$\int R(x,\sqrt{x^2-a^2})\mathrm{d}x,令x=a\sec u 或 x=a\csc u$</code></p>
+
+<p>④<code>$\int R(x,\sqrt[n]{ax+b})\mathrm{d}x，令u^n=ax+b$</code></p>
+
+<p>⑤<code>$\int R(\sqrt[m]{x},\sqrt[n]{x})\mathrm{d}x,令x=u^k,k是正整数m与n的最小公倍数$</code></p>
+
+<p>⑥<code>$\int R(x,\frac{1}{ax^n+b})\mathrm{d}x,令x=\frac{1}{t}$</code></p>
+
+<p>⑦<code>$\int R(x,e^x)\mathrm{d}x,令e^x=t$</code></p>
+
+<h2 id="分部积分法">分部积分法</h2>
+
+<p>设<code>$u=u(x),v=v(x)$</code>均可微，则有分部积分公式</p>
+
+<div>$$\int u\mathrm{d}v=uv-\int v\mathrm{d}u$$</div>
+
+<p>常见的类型：</p>
+
+<p>①<code>$\int P(x)e^{bx}\mathrm{d}x,令u=P(x),其中P(x)是多项式$</code></p>
+
+<p>②<code>$\int P(x)\sin (ax+b)\mathrm{d}x,令u=P(x)，也适用于\cos (ax+b)$</code></p>
+
+<p>③<code>$\int P(x)ln(ax+b)\mathrm{d}x,令u=ln(ax+b)$</code></p>
+
+<p>④<code>$\int P(x)\arcsin (ax+b)\mathrm{d}x,令u=\arcsin (ax+b)，也适用于\arccos (ax+b)或\arctan (ax+b)等$</code></p>
+
+<p>⑤<code>$\int e^ax\sin (ax+b)\mathrm{d}x,令u=\sin (ax+b)或u=e^{ax},也适用于\cos (ax+b)$</code></p>
+
+<h2 id="几种特殊类型函数的不定积分">几种特殊类型函数的不定积分</h2>
+
+<p>①有理函数的不定积分。</p>
+
+<p>a.<code>$\int \frac{A}{x-a}\mathrm{d}x=Aln|x-a|+C$</code></p>
+
+<p>b.<code>$\int \frac{A}{(x-a)^n}\mathrm{d}x=\frac{A}{(1-n)(x-a)^{n-1}}+C(n&gt;1)$</code></p>
+
+<p>②三角函数有理式的不定积分</p>
+
+<p>a.万能代换</p>
+
+<p><code>$令t=\tan \frac{x}{2},\sin x = \frac{2t}{1+t^2},\cos x = \frac{1-t^2}{1+t^2},\mathrm{d}x=\frac{2}{1+t^2}\mathrm{d}t,则$</code></p>
+
+<div>$$\int R(\sin x,\cos x)\mathrm{d}x=\int R(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2})·\frac{2}{1+t^2}\mathrm{d}t$$</div>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/single-variable-integral-calculus/">single variable integral calculus</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>路漫漫其修远兮，吾将上下而求索</span>
+  </div>
+</footer>
+
+
+
+<script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+});
+
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
