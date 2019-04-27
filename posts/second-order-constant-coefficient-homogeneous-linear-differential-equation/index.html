@@ -142,15 +142,15 @@
 <p>解：由题意得：</p>
 
 <pre><code>`$特征方程：r^2-4=0 \\\\
- \Rightarrow r-1=2，r_2=-2 \\\\
+ \Rightarrow r_1=2，r_2=-2 \\\\
  \therefore y=C_1e^{2x}+C-2e^{-2x}$`
 </code></pre>
 
-<p>例2： <strong>求微分方程</strong><code>$2\frac{\mathrm{d}^2 y}{\mathrm{d} x^2}+4\frac{\mathrm{d} y}{\mathrm{d} x}+3y=0$</code><strong>的通解</strong></p>
+<p>例3： <strong>求微分方程</strong><code>$2\frac{\mathrm{d}^2 y}{\mathrm{d} x^2}+4\frac{\mathrm{d} y}{\mathrm{d} x}+3y=0$</code><strong>的通解</strong></p>
 
 <p>解：由题意得：
     <code>$特征方程：2r^2+4r+3=0 \\\\
-     \Rightarrow r=-1 \pm \frac{\sqrt{2}}{2}i \\
+     \Rightarrow r=-1 \pm \frac{\sqrt{2}}{2}i \\\\
      \therefore y=e^{-x}(C_1\cos \frac{\sqrt{2}}{2}x+C_2\sin \frac{\sqrt{2}}{2}x)$</code></p>
 
 <h1 id="已知通解-反求微分方程">已知通解，反求微分方程</h1>
@@ -225,7 +225,9 @@ MathJax.Hub.Config({
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
     TeX: { equationNumbers: { autoNumber: "AMS" },
          extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
 });
 
 

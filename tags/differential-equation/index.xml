@@ -35,7 +35,7 @@
       <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/first-order-linear-differential-equation/</guid>
-      <description>标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为：${y}&#39;-\frac{1}{x}y=</description>
+      <description>标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为： ${y}&#39;-\frac{1}{x}y=x^2 \\\\ 由公式得：y=e^{-\int \frac{1}{x}\mathrm{d}x}(\int x^2e^{-\int</description>
     </item>
     
     <item>
