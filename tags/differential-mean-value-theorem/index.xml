@@ -6,10 +6,19 @@
     <description>Recent content in Differential mean value theorem on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Apr 2019 14:53:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 15:51:26 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/differential-mean-value-theorem/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>微分中值定理和导数的应用</title>
+      <link>https://no-sky.github.io/posts/application-of-differential-mean-value-theorem/</link>
+      <pubDate>Sun, 28 Apr 2019 15:51:26 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/application-of-differential-mean-value-theorem/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 利用罗尔中值定理证明根的存在性 例：设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$内可导，且$f(0)=0,f(1)=2$，证明</description>
+    </item>
     
     <item>
       <title>微分中值定理与洛必达法则</title>
@@ -17,7 +26,7 @@
       <pubDate>Sun, 28 Apr 2019 14:53:56 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/mean-value-theorem/</guid>
-      <description>罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在</description>
     </item>
     
   </channel>
