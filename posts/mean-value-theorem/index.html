@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content=""/>
+  <meta name="description" content="罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)"/>
   
 
   
@@ -19,11 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/definite-integral/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/mean-value-theorem/"/>
 
   
 
-  <title>定积分 &middot; Note</title>
+  <title>微分中值定理与洛必达法则 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -101,15 +101,60 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/definite-integral/'>定积分</a></h2>
+          <h2><a href='/posts/mean-value-theorem/'>微分中值定理与洛必达法则</a></h2>
           
-          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.27</span>
+          <i class="remixicon-map-pin-time-line"></i> <span class="date">2019.04.28</span>
           
           
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
           
         </div>
-        <div class="post_content markdown"></div>
+        <div class="post_content markdown">
+
+<h1 id="罗尔定理">罗尔定理</h1>
+
+<p>如果函数<code>$f(x)$</code>满足</p>
+
+<p>①在闭区间<code>$[a,b]$</code>上连</p>
+
+<p>②在开区间<code>$(a,b)$</code>内可导</p>
+
+<p>③在区间端点处的函数值相等，即<code>$f(a)=f(b)$</code>，那么在<code>$(a,b)$</code>内至少有一点<code>$\xi (a&lt; \xi &lt;b),使得{f}'(\xi )=0$</code></p>
+
+<h1 id="拉格朗日中值定理">拉格朗日中值定理</h1>
+
+<p>如果函数<code>$f(x)$</code>满足</p>
+
+<p>①在闭区间<code>$[a,b]$</code>上连</p>
+
+<p>②在开区间<code>$(a,b)$</code>内可导</p>
+
+<p>那么在<code>$(a,b)$</code>内至少有一点<code>$\xi (a&lt; \xi &lt;b)，使等式f(b)-f(a)={f}'(\xi )(b-a)成立$</code></p>
+
+<h1 id="柯西中值定理">柯西中值定理</h1>
+
+<p>如果函数<code>$f(x)及F(x)$</code>满足</p>
+
+<p>①在闭区间<code>$[a,b]$</code>上连</p>
+
+<p>②在开区间<code>$(a,b)$</code>内可导</p>
+
+<p>③对任一<code>$x\in (a,b),{F}'(x)\neq 0$</code>，那么在<code>$(a,b)$</code>内至少有一点<code>$\xi (a&lt; \xi &lt;b)$</code>，使等式<code>$\frac{f(b)-f(a)}{F(b)-F(a)}=\frac{{f}'(\xi )}{{F}'(\xi )}$</code></p>
+
+<h1 id="洛必达法则">洛必达法则</h1>
+
+<p>设①当<code>$x \Rightarrow a$</code>时，函数<code>$f(x)$</code>及<code>$F(x)$</code>都趋于零；</p>
+
+<p>②在点a的某去心邻域内，<code>${f}'(x)$</code>及<code>${F}'(x)$</code>都存在且<code>${F}'(x)\neq 0$</code></p>
+
+<p>③<code>$\lim_{x \to a} \frac{{f}'(x)}{{F}'(x)}$</code>存在（或为无穷大），那么</p>
+
+<div>$$\lim_{x \to a} \frac{f(x)}{F(x)}=\lim_{x \to a} \frac{{f}'(x)}{{F}'(x)}$$</div>
+
+<p>其中<code>$\frac{f(x)}{F(x)}$</code>也可以是<code>$\frac{\infty}{\infty}$</code>型未定式，<code>${f}'(x),{F}'(x)$</code>要存在且<code>${F}'(x)\neq 0$</code>；相同的极限过程可以是<code>$x\Rightarrow a,x \Rightarrow a^{\pm },x \Rightarrow \infty,x\Rightarrow \pm \infty $</code>的任何一种，对于<code>$n \Rightarrow \infty$</code>，可用于子列极限定理，先化为<code>$x \Rightarrow +\infty$</code>的极限</p>
+
+<p>对于其余五种非基本型未定式，应先变形或者取对数化为基本型，再用洛必达法则。</p>
+</div>
         <div class="post_footer">
           
           <div class="meta">
@@ -119,7 +164,7 @@
                 
                 <a href="https://no-sky.github.io/tags/math/">Math</a>
                 
-                <a href="https://no-sky.github.io/tags/single-variable-integral-calculus/">single variable integral calculus</a>
+                <a href="https://no-sky.github.io/tags/differential-mean-value-theorem/">Differential mean value theorem</a>
                 
               </span>
             </div>
