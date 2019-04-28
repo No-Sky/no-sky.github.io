@@ -26,7 +26,7 @@
       <pubDate>Sun, 28 Apr 2019 14:53:56 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/mean-value-theorem/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连续 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么</description>
     </item>
     
   </channel>
