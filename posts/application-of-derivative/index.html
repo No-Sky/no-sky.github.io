@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="mybatis-generator插件自动生成单表的类和映射文件 1、 下载mybatis-generrator插件包 mybatis-generator-core-1.3.2 目录结构： docs //说明文档文件夹 lib //jar包文件夹 LICENSE NOTICE README.txt 2、 配置mybatis-ge"/>
+  <meta name="description" content="切线和法线方程 ${f}&#39;(x_0)$在几何上表示曲线$y=f(x)$在$(x_0,f(x_0))$处的切线斜率 切线方程：$y-y_0={f}&#39;(x_0)(x-X_0)$ 法线方程：$y-y_0=\fra"/>
   
 
   
@@ -19,11 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://no-sky.github.io/posts/mybatis-generator%E4%B9%8Bmybatis%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8/"/>
+  <link rel="canonical" href="https://no-sky.github.io/posts/application-of-derivative/"/>
 
   
 
-  <title>Mybatis-generator之mybatis的快速使用 &middot; Note</title>
+  <title> 导数的应用 &middot; Note</title>
 
   <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
@@ -101,78 +101,71 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/mybatis-generator%E4%B9%8Bmybatis%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8/'>Mybatis-generator之mybatis的快速使用</a></h2>
+          <h2><a href='/posts/application-of-derivative/'> 导数的应用</a></h2>
           
-          <i class="remixicon-calendar-line"></i> <span class="date">2018.02.04</span>
+          <i class="remixicon-calendar-line"></i> <span class="date">2019.04.29</span>
           
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
           
         </div>
         <div class="post_content markdown">
 
-<h2 id="mybatis-generator插件自动生成单表的类和映射文件">mybatis-generator插件自动生成单表的类和映射文件</h2>
+<h1 id="切线和法线方程">切线和法线方程</h1>
 
-<p>1、 下载mybatis-generrator插件包</p>
+<p><code>${f}'(x_0)$</code>在几何上表示曲线<code>$y=f(x)$</code>在<code>$(x_0,f(x_0))$</code>处的切线斜率</p>
 
-<p><strong>mybatis-generator-core-1.3.2</strong></p>
+<p>切线方程：<code>$y-y_0={f}'(x_0)(x-X_0)$</code></p>
 
-<p>目录结构：</p>
+<p>法线方程：<code>$y-y_0=\frac{1}{{f}'(x_0)}(x-x_0)$</code></p>
 
-<pre><code>    docs    //说明文档文件夹
-    lib        //jar包文件夹
-    LICENSE    
-    NOTICE
-    README.txt
-</code></pre>
+<h1 id="求隐函数的导数">求隐函数的导数</h1>
 
-<p>2、 配置mybatis-generator插件</p>
+<p>（1）定义：显函数<code>$y=f(x)$</code>，隐函数<code>$F(x,y)$</code></p>
 
-<p>在lib文件夹下有一个generatorConfig.xml文件用NotePad++打开：</p>
+<p>（2）方法：方程两边同时对<code>$x$</code>求导，接触<code>${y}'$</code></p>
 
-<pre><code class="language-XML">	&lt;generatorConfiguration&gt;  
-	&lt;!-- 数据库驱动--&gt;  
-	&lt;classPathEntry  location=&quot;mysql-connector-java-5.1.25-bin.jar&quot;/&gt;  
-	&lt;context id=&quot;DB2Tables&quot;  targetRuntime=&quot;MyBatis3&quot;&gt;  
-	    &lt;commentGenerator&gt;  
-	        &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot;/&gt;  
-	        &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;  
-	        &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/commentGenerator&gt;  
-	    &lt;!--数据库链接URL，用户名、密码 --&gt;  
-	    &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot; connectionURL=&quot;jdbc:mysql://127.0.0.1:3306/db_novel&quot; userId=&quot;root&quot; password=&quot;123456&quot;&gt;  
-	    &lt;/jdbcConnection&gt;  
-	    &lt;javaTypeResolver&gt;  
-	        &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;  
-	    &lt;/javaTypeResolver&gt;  
-	    &lt;!-- 生成模型的包名和位置--&gt;  
-	    &lt;javaModelGenerator targetPackage=&quot;novel.spider.entitys&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	        &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/javaModelGenerator&gt;  
-	    &lt;!-- 生成映射文件的包名和位置--&gt;  
-	    &lt;sqlMapGenerator targetPackage=&quot;mapper&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/sqlMapGenerator&gt;  
-	    &lt;!-- 生成DAO的包名和位置--&gt;  
-	    &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;novel.spider.mapper&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/javaClientGenerator&gt;  
-	    &lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;  
-	    &lt;table tableName=&quot;t_novel&quot; domainObjectName=&quot;Novel&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot;&gt;&lt;/table&gt;
-	&lt;/context&gt;  
-	&lt;/generatorConfiguration&gt; 
-</code></pre>
+<p>例：设<code>$x^2y-e^{2x}=\sin y$</code>，求<code>$\frac{mathrm{d}y}{\mathrm{d}x}$</code>.</p>
 
-<p>按照注释修改自己的信息即可</p>
+<p>解：<code>$方程两边同时对x求导得： \\\\
+     2xy+x^2·{y}'-2·e^{2x}={y}'·\cos y \\\\
+     (x^2-\cos y)·{y}'=2e^{2x}-2xy \\\\
+     {y}'=\frac{2e^{2x}-2xy}{x^2-\cos y}$</code></p>
 
-<p>3、 使用mybatis-generator</p>
+<h1 id="求幂指函数的导数">求幂指函数的导数</h1>
 
-<p>在lib文件夹下面按住shift键点击鼠标右键，点击在此处打开命令窗口
-输入一下命令：</p>
+<p>方法一：先取对数再求导（对数求导法）</p>
 
-<pre><code class="language-Bash">java -jar mybatis-generator-core-1.3.2.jar -configFile generatorConfig.xml  -overwrite
-</code></pre>
+<p>方法二：化为以<code>$e$</code>为底的指数函数后再求导（<code>$y=u^x=e^{xlnu}$</code>）</p>
 
-<p>生成的文件在lib文件下面的src文件夹中</p>
+<p>例：求<code>$y=x^{\sin x}$</code> 函数的导数<code>$\frac{\mathrm{d}y}{\mathrm{d}x}$</code></p>
+
+<p>解：法一：<code>$方程两边同时取对数：lny=lnx^{\sin x}=\sin xlnx \\\\
+          方程两边同时对x求导：\frac{1}{y}·{y}'=\cos x · lnx+\sin x·\frac{1}{x} \\\\
+          \Rightarrow {y}'=y(\cos x lnx+\frac{\sin x}{x}) \\\\
+          \Rightarrow {y}'=x^{\sin x}(\cos x lnx+\frac{\sin x}{x})$</code></p>
+
+<p>​       法二：<code>$y=x^{\sin x}=e^{\sin xlnx} \\\\
+​              {y}'=e^{\sin xlnx}{(\sin xlnx)}'=x^{\sin x}(\cos xlnx+\frac{\sin x}{x})$</code></p>
+
+<h1 id="求由参数方程确定的函数的导数">求由参数方程确定的函数的导数</h1>
+
+<p>（1）参数方程：<code>$\left\{\begin{matrix} x=\varphi(t) \\\\ y=\psi(t) \end{matrix}\right.$</code></p>
+
+<p>（2）求导方法：<code>$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}=\frac{{\varphi}'(t)}{{\psi}'(t)} \\\\
+             \frac{\mathrm{d^2}y}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}$</code></p>
+
+<h1 id="求微分">求微分</h1>
+
+<p>1、对于一元函数，可微<code>$\Leftrightarrow$</code>可导</p>
+
+<p>2、函数<code>$y=f(x)$</code>的微分<code>$\mathrm{d}y={f}'(x)\mathrm{d}x$</code></p>
+
+<p>3、求微分方法：先求导，再乘以<code>$\mathrm{d}x$</code></p>
+
+<h1 id="微分在近似计算中的应用">微分在近似计算中的应用</h1>
+
+<p>若<code>$f(x_0)$</code>与<code>${f}'(x_0)$</code>容易计算，用<code>$f(x)\approx f(x_0)+{f}'(x_0)(x-x_0)$</code>近似计算<code>$f(x)$</code></p>
 </div>
         <div class="post_footer">
           
@@ -181,7 +174,9 @@
               <span class="field tags">
                 <i class="remixicon-stack-line"></i>
                 
-                <a href="https://no-sky.github.io/tags/mybatis/">mybatis</a>
+                <a href="https://no-sky.github.io/tags/math/">Math</a>
+                
+                <a href="https://no-sky.github.io/tags/single-variable-differential-calculus/">single variable differential calculus</a>
                 
               </span>
             </div>

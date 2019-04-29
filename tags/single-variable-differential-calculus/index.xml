@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>single variable differential calculus on Note</title>
+    <link>https://no-sky.github.io/tags/single-variable-differential-calculus/</link>
+    <description>Recent content in single variable differential calculus on Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Apr 2019 16:22:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://no-sky.github.io/tags/single-variable-differential-calculus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title> 导数的应用</title>
+      <link>https://no-sky.github.io/posts/application-of-derivative/</link>
+      <pubDate>Mon, 29 Apr 2019 16:22:53 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/application-of-derivative/</guid>
+      <description>切线和法线方程 ${f}&#39;(x_0)$在几何上表示曲线$y=f(x)$在$(x_0,f(x_0))$处的切线斜率 切线方程：$y-y_0={f}&#39;(x_0)(x-X_0)$ 法线方程：$y-y_0=\fra</description>
+    </item>
+    
+  </channel>
+</rss>
