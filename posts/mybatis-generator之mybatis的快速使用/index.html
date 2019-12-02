@@ -164,72 +164,55 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h2 id="mybatis-generator插件自动生成单表的类和映射文件">mybatis-generator插件自动生成单表的类和映射文件</h2>
-
+        <div class="post_content markdown"><h2 id="mybatisgenerator">mybatis-generator插件自动生成单表的类和映射文件</h2>
 <p>1、 下载mybatis-generrator插件包</p>
-
 <p><strong>mybatis-generator-core-1.3.2</strong></p>
-
 <p>目录结构：</p>
-
 <pre><code>    docs    //说明文档文件夹
     lib        //jar包文件夹
     LICENSE    
     NOTICE
     README.txt
-</code></pre>
-
-<p>2、 配置mybatis-generator插件</p>
-
+</code></pre><p>2、 配置mybatis-generator插件</p>
 <p>在lib文件夹下有一个generatorConfig.xml文件用NotePad++打开：</p>
-
-<pre><code class="language-XML">	&lt;generatorConfiguration&gt;  
-	&lt;!-- 数据库驱动--&gt;  
-	&lt;classPathEntry  location=&quot;mysql-connector-java-5.1.25-bin.jar&quot;/&gt;  
-	&lt;context id=&quot;DB2Tables&quot;  targetRuntime=&quot;MyBatis3&quot;&gt;  
-	    &lt;commentGenerator&gt;  
-	        &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot;/&gt;  
-	        &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;  
-	        &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/commentGenerator&gt;  
-	    &lt;!--数据库链接URL，用户名、密码 --&gt;  
-	    &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot; connectionURL=&quot;jdbc:mysql://127.0.0.1:3306/db_novel&quot; userId=&quot;root&quot; password=&quot;123456&quot;&gt;  
-	    &lt;/jdbcConnection&gt;  
-	    &lt;javaTypeResolver&gt;  
-	        &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;  
-	    &lt;/javaTypeResolver&gt;  
-	    &lt;!-- 生成模型的包名和位置--&gt;  
-	    &lt;javaModelGenerator targetPackage=&quot;novel.spider.entitys&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	        &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/javaModelGenerator&gt;  
-	    &lt;!-- 生成映射文件的包名和位置--&gt;  
-	    &lt;sqlMapGenerator targetPackage=&quot;mapper&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/sqlMapGenerator&gt;  
-	    &lt;!-- 生成DAO的包名和位置--&gt;  
-	    &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;novel.spider.mapper&quot; targetProject=&quot;src&quot;&gt;  
-	        &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
-	    &lt;/javaClientGenerator&gt;  
-	    &lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;  
-	    &lt;table tableName=&quot;t_novel&quot; domainObjectName=&quot;Novel&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot;&gt;&lt;/table&gt;
-	&lt;/context&gt;  
-	&lt;/generatorConfiguration&gt; 
-</code></pre>
-
-<p>按照注释修改自己的信息即可</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">	<span style="color:#f92672">&lt;generatorConfiguration</span><span style="color:#f92672">&gt;</span>  
+	<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 数据库驱动</span><span style="color:#75715e">--&gt;</span>  
+	<span style="color:#f92672">&lt;classPathEntry</span>  <span style="color:#a6e22e">location=</span><span style="color:#e6db74">&#34;mysql-connector-java-5.1.25-bin.jar&#34;</span><span style="color:#f92672">/&gt;</span>  
+	<span style="color:#f92672">&lt;context</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;DB2Tables&#34;</span>  <span style="color:#a6e22e">targetRuntime=</span><span style="color:#e6db74">&#34;MyBatis3&#34;</span><span style="color:#f92672">&gt;</span>  
+	    <span style="color:#f92672">&lt;commentGenerator</span><span style="color:#f92672">&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;suppressDate&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	        <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 是否去除自动生成的注释 true：是 ： false:否 </span><span style="color:#75715e">--&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;suppressAllComments&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	    <span style="color:#f92672">&lt;/commentGenerator&gt;</span>  
+	    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e">数据库链接URL，用户名、密码 </span><span style="color:#75715e">--&gt;</span>  
+	    <span style="color:#f92672">&lt;jdbcConnection</span> <span style="color:#a6e22e">driverClass=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span> <span style="color:#a6e22e">connectionURL=</span><span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/db_novel&#34;</span> <span style="color:#a6e22e">userId=</span><span style="color:#e6db74">&#34;root&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">&gt;</span>  
+	    <span style="color:#f92672">&lt;/jdbcConnection&gt;</span>  
+	    <span style="color:#f92672">&lt;javaTypeResolver</span><span style="color:#f92672">&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;forceBigDecimals&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>  
+	    <span style="color:#f92672">&lt;/javaTypeResolver&gt;</span>  
+	    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 生成模型的包名和位置</span><span style="color:#75715e">--&gt;</span>  
+	    <span style="color:#f92672">&lt;javaModelGenerator</span> <span style="color:#a6e22e">targetPackage=</span><span style="color:#e6db74">&#34;novel.spider.entitys&#34;</span> <span style="color:#a6e22e">targetProject=</span><span style="color:#e6db74">&#34;src&#34;</span><span style="color:#f92672">&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;enableSubPackages&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;trimStrings&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	    <span style="color:#f92672">&lt;/javaModelGenerator&gt;</span>  
+	    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 生成映射文件的包名和位置</span><span style="color:#75715e">--&gt;</span>  
+	    <span style="color:#f92672">&lt;sqlMapGenerator</span> <span style="color:#a6e22e">targetPackage=</span><span style="color:#e6db74">&#34;mapper&#34;</span> <span style="color:#a6e22e">targetProject=</span><span style="color:#e6db74">&#34;src&#34;</span><span style="color:#f92672">&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;enableSubPackages&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	    <span style="color:#f92672">&lt;/sqlMapGenerator&gt;</span>  
+	    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 生成DAO的包名和位置</span><span style="color:#75715e">--&gt;</span>  
+	    <span style="color:#f92672">&lt;javaClientGenerator</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;XMLMAPPER&#34;</span> <span style="color:#a6e22e">targetPackage=</span><span style="color:#e6db74">&#34;novel.spider.mapper&#34;</span> <span style="color:#a6e22e">targetProject=</span><span style="color:#e6db74">&#34;src&#34;</span><span style="color:#f92672">&gt;</span>  
+	        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;enableSubPackages&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>  
+	    <span style="color:#f92672">&lt;/javaClientGenerator&gt;</span>  
+	    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名</span><span style="color:#75715e">--&gt;</span>  
+	    <span style="color:#f92672">&lt;table</span> <span style="color:#a6e22e">tableName=</span><span style="color:#e6db74">&#34;t_novel&#34;</span> <span style="color:#a6e22e">domainObjectName=</span><span style="color:#e6db74">&#34;Novel&#34;</span> <span style="color:#a6e22e">enableCountByExample=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enableUpdateByExample=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enableDeleteByExample=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enableSelectByExample=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">selectByExampleQueryId=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;/table&gt;</span>
+	<span style="color:#f92672">&lt;/context&gt;</span>  
+	<span style="color:#f92672">&lt;/generatorConfiguration&gt;</span> 
+</code></pre></div><p>按照注释修改自己的信息即可</p>
 <p>3、 使用mybatis-generator</p>
-
 <p>在lib文件夹下面按住shift键点击鼠标右键，点击在此处打开命令窗口
 输入一下命令：</p>
-
-<pre><code class="language-Bash">java -jar mybatis-generator-core-1.3.2.jar -configFile generatorConfig.xml  -overwrite
-</code></pre>
-
-<p>生成的文件在lib文件下面的src文件夹中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">java -jar mybatis-generator-core-1.3.2.jar -configFile generatorConfig.xml  -overwrite
+</code></pre></div><p>生成的文件在lib文件下面的src文件夹中</p>
 </div>
         <div class="post_footer">
           

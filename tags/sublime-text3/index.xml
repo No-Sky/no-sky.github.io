@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sublime Text3 on Note</title>
@@ -18,10 +18,8 @@
       
       <guid>https://no-sky.github.io/posts/sublime-text3%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</guid>
       <description>&lt;h1 id=&#34;chineselocalizations&#34;&gt;ChineseLocalizations&lt;/h1&gt;
-
 &lt;p&gt;&lt;strong&gt;一种让Sublime汉化的插件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://github.com/No-Sky/storage/raw/master/images/SublimeText/ChineseLocalizations.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://github.com/No-Sky/storage/raw/master/images/SublimeText/ChineseLocalizations.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="建表 一、建表 格式： create table 表名 ( 列名1 类型 约束, 列名2 类型 约束, ...... ); 如： --创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; --创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版"/>
+  <meta name="description" content="建表 一、建表 格式： 如： &amp;ndash;创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; &amp;ndash;创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版日期 DATE, 数量 NUMBER(3), 单价 NUMBER(7,2) ); 二、通"/>
   
 
   
@@ -164,204 +164,89 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="建表">建表</h1>
-
-<h2 id="一-建表">一、建表</h2>
-
+        <div class="post_content markdown"><h1 id="heading">建表</h1>
+<h2 id="heading1">一、建表</h2>
 <p>格式：</p>
-
-<pre>
-create table 表名
-      (
-      列名1   类型   约束,
-      列名2   类型   约束,
-      ......            
-      );
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>如：</p>
-
-<p>--创建出版社表</p>
-
-<pre><code class="language-SQL">    create table 出版社（
-        编号 varchar2(2),
-        出版社名称 varchar2(30),
-        地址 varchar2(30),
-        联系电话 varchar2(20)
-    ）;
-</code></pre>
-
-<p>--创建图书表</p>
-
-<pre><code class="language-SQL">    create table 图书 (
-        图书编号 VARCHAR2(5),
-        图书名称 VARCHAR2(30),
-        出版社编号 VARCHAR2(2),
-        作者 VARCHAR2(10),
-        出版日期 DATE,
-        数量 NUMBER(3),
-        单价 NUMBER(7,2)  
-    );
-</code></pre>
-
-<h2 id="二-通过子查询建表">二、通过子查询建表</h2>
-
+<p>&ndash;创建出版社表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">	<span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span><span style="color:#960050;background-color:#1e0010">（</span>
+		<span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span> varchar2(<span style="color:#ae81ff">2</span>),
+		<span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span> varchar2(<span style="color:#ae81ff">30</span>),
+		<span style="color:#960050;background-color:#1e0010">地</span><span style="color:#960050;background-color:#1e0010">址</span> varchar2(<span style="color:#ae81ff">30</span>),
+		<span style="color:#960050;background-color:#1e0010">联</span><span style="color:#960050;background-color:#1e0010">系</span><span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">话</span> varchar2(<span style="color:#ae81ff">20</span>)
+	<span style="color:#960050;background-color:#1e0010">）</span>;
+</code></pre></div><p>&ndash;创建图书表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">	<span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> (
+		<span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span> VARCHAR2(<span style="color:#ae81ff">5</span>),
+		<span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span> VARCHAR2(<span style="color:#ae81ff">30</span>),
+		<span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span><span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span> VARCHAR2(<span style="color:#ae81ff">2</span>),
+		<span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span> VARCHAR2(<span style="color:#ae81ff">10</span>),
+		<span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">日</span><span style="color:#960050;background-color:#1e0010">期</span> DATE,
+		<span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">量</span> NUMBER(<span style="color:#ae81ff">3</span>),
+		<span style="color:#960050;background-color:#1e0010">单</span><span style="color:#960050;background-color:#1e0010">价</span> NUMBER(<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">2</span>)	
+	);
+</code></pre></div><h2 id="heading2">二、通过子查询建表</h2>
 <p>步骤1：完全复制图书表到“图书1”</p>
-
-<pre><code class="language-SQL">create table 图书1 as select * from 图书;
-</code></pre>
-
-<p>步骤2：创建新的图书表“图书2”，只包含书名和单价</p>
-
-<pre><code class="language-SQL">create table 图书2（书名，单价） as seelct 图书名称，单价 from 图书；
-</code></pre>
-
-<p>步骤3：创建新的图书表“图书3”，只包含书名和单价，不复制内容</p>
-
-<pre><code class="language-SQL">create table 图书3（书名，单价） as select 图书名称，单价 from 图书 where 1=2；
-</code></pre>
-
-<h2 id="三-添加表的约束">三、添加表的约束</h2>
-
-<pre>
-主键     primary key      PK
-唯一     unique           UQ
-默认值   default          DF
-检查约束 check            CK
-外键约束 foreign key      FK
-</pre>
-
-<h3 id="方法一-建表的同时添加约束">方法一：建表的同时添加约束</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span>;
+</code></pre></div><p>步骤2：创建新的图书表“图书2”，只包含书名和单价</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">单</span><span style="color:#960050;background-color:#1e0010">价</span><span style="color:#960050;background-color:#1e0010">）</span> <span style="color:#66d9ef">as</span> seelct <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">单</span><span style="color:#960050;background-color:#1e0010">价</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>步骤3：创建新的图书表“图书3”，只包含书名和单价，不复制内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">单</span><span style="color:#960050;background-color:#1e0010">价</span><span style="color:#960050;background-color:#1e0010">）</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">单</span><span style="color:#960050;background-color:#1e0010">价</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> <span style="color:#66d9ef">where</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><h2 id="heading3">三、添加表的约束</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="heading4">方法一：建表的同时添加约束</h3>
 <p>如：</p>
-
-<pre>
-create table stuinfo(
- sno int primary key not null,       --主键
- sname varchar2(10) unique not null,       --唯一
- sex char(2) default '男' check(sex='男' or sex = '女') not null,   --默认及检查
- saddress varchar2(50) not null,
- phone char(11),
- email varchar2(50)
-);
-create table stumarks(
- marksId int,
- sno int references stuinfo(sno) not null,     --外键
- score number(5,1),
- examDate date default sysdate
-);
-</pre>
-
-<h3 id="方法二-建表完成后-再添加约束">方法二:建表完成后，再添加约束</h3>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="heading5">方法二:建表完成后，再添加约束</h3>
 <p>如：（之前已建好了出版社表及图书表）</p>
-
-<p>--主键约束</p>
-
-<pre><code class="language-SQL">alter table 出版社 add constraint PK_编号 primary key (编号);
-</code></pre>
-
-<p>--唯一约束</p>
-
-<pre><code class="language-SQL">alter table 出版社 add constraint UQ_地址 unique (地址);
-</code></pre>
-
-<p>--检查约束</p>
-
-<pre><code class="language-SQL">alter table 出版社 add constraint CK_联系电话 check (联系电话 like '1%');
-</code></pre>
-
-<p>--默认值</p>
-
-<pre><code class="language-SQL">alter table 出版社 modify 地址 default '湘潭';
-</code></pre>
-
-<p>--外键约束</p>
-
-<pre><code class="language-SQL">alter table 图书 add constraint FK_图书编号 foreign key (图书编号) references 出版社(编号);
-</code></pre>
-
-<p>--外键约束</p>
-
-<pre><code class="language-SQL">alter table 图书 add constraint FK_图书编号 foreign key (图书编号) references 出版社(编号);
-</code></pre>
-
-<h2 id="四-查看约束条件">四、查看约束条件</h2>
-
+<p>&ndash;主键约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">constraint</span> PK_编号 <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (<span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span>);
+</code></pre></div><p>&ndash;唯一约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">constraint</span> UQ_地址 <span style="color:#66d9ef">unique</span> (<span style="color:#960050;background-color:#1e0010">地</span><span style="color:#960050;background-color:#1e0010">址</span>);
+</code></pre></div><p>&ndash;检查约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">constraint</span> CK_联系电话 <span style="color:#66d9ef">check</span> (<span style="color:#960050;background-color:#1e0010">联</span><span style="color:#960050;background-color:#1e0010">系</span><span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">话</span> <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1%</span><span style="color:#e6db74">&#39;</span>);
+</code></pre></div><p>&ndash;默认值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">modify</span> <span style="color:#960050;background-color:#1e0010">地</span><span style="color:#960050;background-color:#1e0010">址</span> <span style="color:#66d9ef">default</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">湘潭</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>&ndash;外键约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">constraint</span> FK_图书编号 <span style="color:#66d9ef">foreign</span> <span style="color:#66d9ef">key</span> (<span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span>) <span style="color:#66d9ef">references</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span>(<span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span>);
+</code></pre></div><p>&ndash;外键约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">constraint</span> FK_图书编号 <span style="color:#66d9ef">foreign</span> <span style="color:#66d9ef">key</span> (<span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span>) <span style="color:#66d9ef">references</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span>(<span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span>);
+</code></pre></div><h2 id="heading6">四、查看约束条件</h2>
 <p><strong>数据字典<code>USER_CONSTRAINTS</code>中包含了当前模式用户的约束条件信息。其中，CONSTRAINTS_TYPE 显示的约束类型为：</strong></p>
-
-<pre>       
-C：CHECK约束。
-
-P：PRIMARY KEY约束。
-​       
-U：UNIQUE约束。
-​       
-R：FOREIGN KEY约束。
-</pre>  
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><em>其他信息可根据需要进行查询显示，可用DESCRIBE命令查看<code>USER_CONSTRAINTS的</code>结构。</em></p>
-
 <p>如:检查表的约束信息：</p>
-
-<pre><code class="language-SQL">SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCHCONDITON
-FROM USER_CONSTRAINTS
-WHERE TABLE_NAME='图书';
-</code></pre>
-
-<h2 id="五-删除约束条件">五、删除约束条件</h2>
-
-<pre><code class="language-SQL">ALTER TABLE 表名 DROP CONSTRAINT 约束名;
-</code></pre>
-
-<h2 id="六-表的操作">六、表的操作</h2>
-
-<pre>
-1、删除表    drop table 表名
-2、重命名表  RENAME 表名 TO 新表名;
-3、查看表
-</pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CONSTRAINT_NAME</span>,CONSTRAINT_TYPE,SEARCHCONDITON
+<span style="color:#66d9ef">FROM</span> USER_CONSTRAINTS
+<span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">TABLE_NAME</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">图书</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><h2 id="heading7">五、删除约束条件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#960050;background-color:#1e0010">约</span><span style="color:#960050;background-color:#1e0010">束</span><span style="color:#960050;background-color:#1e0010">名</span>;
+</code></pre></div><h2 id="heading8">六、表的操作</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><em>可以通过对数据字典<code>USER_OBJECTS</code>的查询，显示当前模式用户的所有表。</em>
-​<br />
+​	
 如： 显示当前用户的所有表。</p>
-
-<pre><code class="language-SQL">SELECT object_name FROM user_objects WHERE object_type='TABLE';
-</code></pre>
-
-<h2 id="七-修改表">七、修改表</h2>
-
-<h3 id="1-增加新列">1、增加新列:</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> object_name <span style="color:#66d9ef">FROM</span> user_objects <span style="color:#66d9ef">WHERE</span> object_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TABLE</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><h2 id="heading9">七、修改表</h2>
+<h3 id="1">1、增加新列:</h3>
 <p>如： 为“出版社”增加一列“电子邮件”：</p>
-
-<pre><code class="language-SQL">ALTER TABLE 出版社     
-ADD 电子邮件 VARCHAR2(30) CHECK(电子邮件 LIKE '%@%');
-</code></pre>
-
-<h3 id="2-修改列">2、修改列</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span>		
+<span style="color:#66d9ef">ADD</span> <span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">子</span><span style="color:#960050;background-color:#1e0010">邮</span><span style="color:#960050;background-color:#1e0010">件</span> VARCHAR2(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">CHECK</span>(<span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">子</span><span style="color:#960050;background-color:#1e0010">邮</span><span style="color:#960050;background-color:#1e0010">件</span> <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%@%</span><span style="color:#e6db74">&#39;</span>);
+</code></pre></div><h3 id="2">2、修改列</h3>
 <p>修改列定义有以下一些特点：</p>
-
-<pre>
-(1) 列的宽度可以增加或减小，在表的列没有数据或数据为NULL时才能减小宽度。
-(2) 在表的列没有数据或数据为NULL时才能改变数据类型，CHAR和VARCHAR2之间可以随意转换。
-(3) 只有当列的值非空时，才能增加约束条件NOT NULL。
-(4) 修改列的默认值，只影响以后插入的数据。如：修改“出版社”表“电子邮件”列的宽度为40。
-</pre>  
-
-<pre><code class="language-SQL">ALTER TABLE 出版社 MODIFY 电子邮件 VARCHAR2(40);
-</code></pre>
-
-<h3 id="3-删除列">3、删除列</h3>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">MODIFY</span> <span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">子</span><span style="color:#960050;background-color:#1e0010">邮</span><span style="color:#960050;background-color:#1e0010">件</span> VARCHAR2(<span style="color:#ae81ff">40</span>);
+</code></pre></div><h3 id="3">3、删除列</h3>
 <p>如：删除“出版社”表的“电子邮件”列。</p>
-
-<pre><code class="language-SQL">ALTER TABLE 出版社 DROP COLUMN 电子邮件;
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span> <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#960050;background-color:#1e0010">电</span><span style="color:#960050;background-color:#1e0010">子</span><span style="color:#960050;background-color:#1e0010">邮</span><span style="color:#960050;background-color:#1e0010">件</span>;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器） &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;开始菜单中"/>
+  <meta name="description" content="配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器）开始菜单中找到net configration assistant添加一个监听器 3 用system用户登录sq"/>
   
 
   
@@ -164,47 +164,32 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="配置oracle">配置Oracle</h1>
-
+        <div class="post_content markdown"><h1 id="oracle">配置Oracle</h1>
 <p>1 首先打开Oracle服务</p>
-
-<p>2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器）<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开始菜单中找到*net configration assistant*添加一个监听器</p>
-
+<p>2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器）<!-- raw HTML omitted -->
+      开始菜单中找到<em>net configration assistant</em>添加一个监听器</p>
 <p>3 用system用户登录sqlplus</p>
-
 <p>4 解锁scott用户 :（也是因为教室的Oracle安装问题导致scott账户未解锁）</p>
-
 <pre><code>alter user scott account unlock;
-</code></pre>
-
-<p>5 修改scott密码:</p>
-
+</code></pre><p>5 修改scott密码:</p>
 <pre><code>alter user scott identified by tiger;
-</code></pre>
-
-<p>6 使用scott登录sqlplus<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scott是oracle自带的一个实例账户，它带有四个实例表,其中重要的就是<code>emp</code>员工表与<code>dept</code>部门表<br>
- 7 安装PL/SQL第三方工具<br>
-   因为Oracle没有自带的图形化界面管理器，所以我们需要安装PLSQL，它是oracle的一个第三方GUI工具</p>
-
-<hr />
-
-<p><strong><em>介绍一下Oracle的命令</em></strong></p>
-
+</code></pre><p>6 使用scott登录sqlplus<!-- raw HTML omitted -->
+      scott是oracle自带的一个实例账户，它带有四个实例表,其中重要的就是<code>emp</code>员工表与<code>dept</code>部门表<!-- raw HTML omitted -->
+7 安装PL/SQL第三方工具<!-- raw HTML omitted -->
+因为Oracle没有自带的图形化界面管理器，所以我们需要安装PLSQL，它是oracle的一个第三方GUI工具</p>
+<hr>
+<p><em><strong>介绍一下Oracle的命令</strong></em></p>
 <ul>
-<li>连接数据库：<br>
-    connect scoott/tiger@orcl;         --用户名为scott，密码为tiger,数据库名为orcl</li>
-<li>显示当前用户：<br>
-    show user;<br>
-也可使用查询语句：<br>
-​   select USER from dual;              --dual是oracle的一个虚拟表</li>
-<li>显示表结构(以emp表为例)：<br>
-    describe emp;<br>
-可简写为：<br>
-​   desc emp;</li>
+<li>连接数据库：<!-- raw HTML omitted -->
+connect scoott/tiger@orcl;         &ndash;用户名为scott，密码为tiger,数据库名为orcl</li>
+<li>显示当前用户：<!-- raw HTML omitted -->
+show user;<!-- raw HTML omitted -->
+也可使用查询语句：<!-- raw HTML omitted -->
+​	select USER from dual;              &ndash;dual是oracle的一个虚拟表</li>
+<li>显示表结构(以emp表为例)：<!-- raw HTML omitted -->
+describe emp;<!-- raw HTML omitted -->
+可简写为：<!-- raw HTML omitted -->
+​	desc emp;</li>
 </ul>
 </div>
         <div class="post_footer">

@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="Oracle的基本查询 一、基本查询 select格式： &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;select 列名 from 表名 ； &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;where 查询条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;group by 分组列 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;having 分组后条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚列ROWNUM"/>
+  <meta name="description" content="Oracle的基本查询 一、基本查询 *select格式：*select 列名 from 表名 ； where 查询条件 group by 分组列 having 分组后条件 order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚"/>
   
 
   
@@ -164,105 +164,56 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="oracle的基本查询">Oracle的基本查询</h1>
-
-<h2 id="一-基本查询">一、基本查询</h2>
-
-<p><em>select格式：</em><br>
-&nbsp;&nbsp;&nbsp;&nbsp;select 列名 from 表名 ；
-&nbsp;&nbsp;&nbsp;&nbsp;where 查询条件
-&nbsp;&nbsp;&nbsp;&nbsp;group by 分组列
-&nbsp;&nbsp;&nbsp;&nbsp;having 分组后条件
-&nbsp;&nbsp;&nbsp;&nbsp;order by 排序列 asc[desc]</p>
-
+        <div class="post_content markdown"><h1 id="oracle">Oracle的基本查询</h1>
+<h2 id="heading">一、基本查询</h2>
+<p>*select格式：*<!-- raw HTML omitted -->
+    select 列名 from 表名 ；
+    where 查询条件
+    group by 分组列
+    having 分组后条件
+    order by 排序列 asc[desc]</p>
 <p>如：查询部门10的雇员
 ​</p>
-
-<pre><code class="language-SQL">select * from emp where deptno=10;
-</code></pre>
-
-<h2 id="二-行号-rownum">二、行号（rownum）</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> deptno<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+</code></pre></div><h2 id="rownum">二、行号（rownum）</h2>
 <p><strong>每个表都有一个虚列ROWNUM，它用来显示结果中记录的行号。我们在查询中也可以显示这个列。</strong></p>
-
 <p>如：显示emp表的行号</p>
-
-<pre><code class="language-SQL">select rownum,ename from emp;
-</code></pre>
-
-<p>如：显示前三行</p>
-
-<pre><code class="language-SQL">select * from emp where rownum&lt;=3;
-</code></pre>
-
-<h2 id="三-查询进行计算">三、查询进行计算</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> rownum,ename <span style="color:#66d9ef">from</span> emp;
+</code></pre></div><p>如：显示前三行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> rownum<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;
+</code></pre></div><h2 id="heading1">三、查询进行计算</h2>
 <p>如：显示雇员工资上浮20%的结果
-​   select ename,sal,sal*(1+20%) from emp;
+​	select ename,sal,sal*(1+20%) from emp;
 如：显示每个员工的总工资（工资+奖金）
-​   update emp set comm = o where comm is null;    //因为null的特殊性，它与任何值运算都等于null，所以先要把它更新为0，后面我们会学到一个函数来处理null值
-​   select ename,sal+comm from emp;</p>
-
-<h2 id="四-使用别名">四、使用别名</h2>
-
+​	update emp set comm = o where comm is null;    //因为null的特殊性，它与任何值运算都等于null，所以先要把它更新为0，后面我们会学到一个函数来处理null值
+​	select ename,sal+comm from emp;</p>
+<h2 id="heading2">四、使用别名</h2>
 <p>如：在查询中使用列别名</p>
-
-<pre><code class="language-SQL">select ename as 名称，sal as 工资 from emp; //建议省略as
-</code></pre>
-
-<p><em>另，在别名为关键字或有特殊符号时需要加双引号</em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename <span style="color:#66d9ef">as</span> <span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span><span style="color:#960050;background-color:#1e0010">，</span>sal <span style="color:#66d9ef">as</span> <span style="color:#960050;background-color:#1e0010">工</span><span style="color:#960050;background-color:#1e0010">资</span> <span style="color:#66d9ef">from</span> emp; <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">建</span><span style="color:#960050;background-color:#1e0010">议</span><span style="color:#960050;background-color:#1e0010">省</span><span style="color:#960050;background-color:#1e0010">略</span><span style="color:#66d9ef">as</span>
+</code></pre></div><p><em>另，在别名为关键字或有特殊符号时需要加双引号</em></p>
 <p>如：</p>
-
-<pre><code class="language-SQL">select ename as &quot;select&quot;,sal*12+5000 as &quot;年度工资（加年终奖）&quot; from emp;
-</code></pre>
-
-<h2 id="五-连接运算符">五、连接运算符</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">select</span><span style="color:#e6db74">&#34;</span>,sal<span style="color:#f92672">*</span><span style="color:#ae81ff">12</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5000</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">年度工资（加年终奖）</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">from</span> emp;
+</code></pre></div><h2 id="heading3">五、连接运算符</h2>
 <p><strong>连接运算符是双竖线“||”。通过连接运算可以将两个字符串连接在一起。</strong></p>
-
 <p>如：在查询中使用连接运算</p>
-
-<pre><code class="language-SQL">select ename||job as &quot;雇员和职务表&quot; from emp;
-</code></pre>
-
-<p>*注意：'5'||5结果为'55'&nbsp;&nbsp;&nbsp;&nbsp;'5'+5结果为 10 *</p>
-
-<h2 id="六-消除重复行-distinct">六、消除重复行（distinct）</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename<span style="color:#f92672">|</span><span style="color:#f92672">|</span>job <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">雇员和职务表</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">from</span> emp;
+</code></pre></div><p>*注意：&lsquo;5'||5结果为'55&rsquo;    &lsquo;5'+5结果为 10 *</p>
+<h2 id="distinct">六、消除重复行（distinct）</h2>
 <p><strong>如果在显示结果中存在重复行，可以使用关键字<code>distinct</code>消除重复显示</strong>
 如：统计职务的数量</p>
-
-<pre><code class="language-SQL">select count(distinct job) from emp;
-</code></pre>
-
-<h2 id="七-排序">七、排序</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> job) <span style="color:#66d9ef">from</span> emp;
+</code></pre></div><h2 id="heading4">七、排序</h2>
 <p><strong>1、升序（默认为升序<code>asc</code>,所以可以忽略）</strong></p>
-
 <p>如：查询雇员姓名和工资，并按工资从小到大排序</p>
-
-<pre><code class="language-SQL">select ename,sal from emp order by sal asc;
-</code></pre>
-
-<p><strong>2、降序（<code>desc</code>不可忽略）</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename,sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> sal <span style="color:#66d9ef">asc</span>;
+</code></pre></div><p><strong>2、降序（<code>desc</code>不可忽略）</strong></p>
 <p>如：查询雇员姓名和雇佣日期，并按雇佣日期排序，后雇佣的先显示</p>
-
-<pre><code class="language-SQL">select ename,hiredate from emp order by hiredate desc;
-</code></pre>
-
-<p><strong>3、多列排序</strong></p>
-
-<p><em>可以按多列进行排序，先按第一列，然后按第二列、第三列......。</em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename,hiredate <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> hiredate <span style="color:#66d9ef">desc</span>;
+</code></pre></div><p><strong>3、多列排序</strong></p>
+<p><em>可以按多列进行排序，先按第一列，然后按第二列、第三列&hellip;&hellip;。</em></p>
 <p>如：查询雇员信息，先按部门从小到大排序，再按雇佣时间的先后排序</p>
-
-<pre><code class="language-SQL">select ename,deptno,hiredate from emp order by deptno hiredate;
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename,deptno,hiredate <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> deptno hiredate;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

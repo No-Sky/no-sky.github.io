@@ -164,130 +164,59 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="分区-视图">分区、视图</h1>
-
-<h2 id="一-分区表">一、分区表</h2>
-
+        <div class="post_content markdown"><h1 id="heading">分区、视图</h1>
+<h2 id="heading1">一、分区表</h2>
 <p><strong>在某些场合会使用非常大的表，比如人口信息统计表。如果一个表很大，就会降低查询的速度，并增加管理的难度。一旦发生磁盘损坏，可能整个表的数据就会丢失，恢复比较困难。根据这一情况，可以创建分区表，把一个大表分成几个区(小段)，对数据的操作和管理都可以针对分区进行，这样就可以提高数据库的运行效率。分区可以存在于不同的表空间上，提高了数据的可用性。例：创建和使用分区表。</strong>
-​<br />
-如：创建按成绩分区的考生表，共分为3个区：
-<pre><br />
-CREATE TABLE 考生 (</p>
-
-<pre><code>考号 VARCHAR2(5),
-
-姓名 VARCHAR2(30),
-
-成绩 NUMBER(3)
-
-)
-</code></pre>
-
-<p>PARTITION BY RANGE(成绩)
-​<br />
-(PARTITION A VALUES LESS THAN (300)
-​<br />
-TABLESPACE USERS,
-​<br />
-PARTITION B VALUES LESS THAN (500)
-​<br />
-TABLESPACE USERS,
-​<br />
-PARTITION C VALUES LESS THAN (MAXVALUE)
-​<br />
-TABLESPACE USERS
-​<br />
-);
-</pre></p>
-
+​		
+如：创建按成绩分区的考生表，共分为3个区：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>步骤3：检查A区中的考生：</p>
-
-<pre><code class="language-SQL">SELECT *  FROM  考生 PARTITION(A);
-</code></pre>
-
-<p>步骤4：检查全部的考生：</p>
-
-<pre><code class="language-SQL">SELECT *  FROM  考生;
-</code></pre>
-
-<h2 id="二-视图">二、视图</h2>
-
-<h3 id="1-视图的概念">1、视图的概念</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>  <span style="color:#66d9ef">FROM</span>  <span style="color:#960050;background-color:#1e0010">考</span><span style="color:#960050;background-color:#1e0010">生</span> PARTITION(A);
+</code></pre></div><p>步骤4：检查全部的考生：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>  <span style="color:#66d9ef">FROM</span>  <span style="color:#960050;background-color:#1e0010">考</span><span style="color:#960050;background-color:#1e0010">生</span>;
+</code></pre></div><h2 id="heading2">二、视图</h2>
+<h3 id="1">1、视图的概念</h3>
 <p>视图不同于表，视图本身不包含任何数据。而视图只是一种定义，对应一个查询语句。视图的数据都来自于某些表，这些表被称为基表。    视图可以在表能够使用的任何地方使用，但在对视图的操作上同表相比有些限制，特别是插入和修改操作。对视图的操作将传递到基表，所以在表上定义的约束条件和触发器在视图上将同样起作用。2、视图的创建</p>
-
-<h3 id="2-格式">2、格式：</h3>
-
-<pre><code class="language-SQL">create [or replace] view 视图名 
-as
-select 语句;
-</code></pre>
-
-<p>例：创建图书作者视图：</p>
-
-<pre><code class="language-SQL">CREATE VIEW 图书作者(书名,作者)         
-AS SELECT 图书名称,作者 FROM 图书;
-</code></pre>
-
-<p>查询视图全部内容</p>
-
-<pre><code class="language-SQL">SELECT * FROM 图书作者;    
-</code></pre>
-
-<p>查询部分视图：</p>
-
-<pre><code class="language-SQL">SELECT 作者 FROM 图书作者;
-</code></pre>
-
-<p>删除视图：</p>
-
-<pre><code class="language-SQL">DROP VIEW 清华图书;
-</code></pre>
-
-<h3 id="3-创建只读视图">3．创建只读视图</h3>
-
+<h3 id="2">2、格式：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">create</span> [<span style="color:#66d9ef">or</span> <span style="color:#66d9ef">replace</span>] <span style="color:#66d9ef">view</span> <span style="color:#960050;background-color:#1e0010">视</span><span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">名</span> 
+<span style="color:#66d9ef">as</span>
+<span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">语</span><span style="color:#960050;background-color:#1e0010">句</span>;
+</code></pre></div><p>例：创建图书作者视图：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">VIEW</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span>(<span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span>,<span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span>) 		
+<span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">称</span>,<span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span> <span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span>;
+</code></pre></div><p>查询视图全部内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span>;    
+</code></pre></div><p>查询部分视图：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span> <span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">作</span><span style="color:#960050;background-color:#1e0010">者</span>;
+</code></pre></div><p>删除视图：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">VIEW</span> <span style="color:#960050;background-color:#1e0010">清</span><span style="color:#960050;background-color:#1e0010">华</span><span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span>;
+</code></pre></div><h3 id="3">3．创建只读视图</h3>
 <p>创建只读视图要用<code>WITH READ ONLY</code>选项。
-​<br />
+​		
 例：创建emp表的经理视图：</p>
-
-<pre><code class="language-SQL">CREATE OR REPLACE VIEW manager 
-    AS SELECT * FROM emp WHERE job= 'MANAGER'
-    WITH READ ONLY;
-</code></pre>
-
-<h3 id="4-使用with-check-option选项">4．使用WITH CHECK OPTION选项</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">VIEW</span> manager 
+	<span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> emp <span style="color:#66d9ef">WHERE</span> job<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">MANAGER</span><span style="color:#e6db74">&#39;</span>
+	<span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">READ</span> <span style="color:#66d9ef">ONLY</span>;
+</code></pre></div><h3 id="4with-check-option">4．使用WITH CHECK OPTION选项</h3>
 <p>使用<code>WITH CHECK OPTION</code>选项。使用该选项，可以对视图的插入或更新进行限制，即该数据必须满足视图定义中的子查询中的WHERE条件，否则不允许插入或更新。</p>
-
 <p>例：</p>
-
-<pre><code class="language-SQL">CREATE OR REPLACE VIEW 清华图书         
-    AS SELECT * FROM 图书 WHERE 出版社编号= '01'
-</code></pre>
-
-<p><em>WITH CHECK OPTION;注：插入数据时，由于带了with check option的选项，则只能插入出版社编为'01'的数据</em></p>
-
-<h3 id="5-来自基表的限制">5．来自基表的限制</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">VIEW</span> <span style="color:#960050;background-color:#1e0010">清</span><span style="color:#960050;background-color:#1e0010">华</span><span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> 		
+	<span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span> <span style="color:#66d9ef">WHERE</span> <span style="color:#960050;background-color:#1e0010">出</span><span style="color:#960050;background-color:#1e0010">版</span><span style="color:#960050;background-color:#1e0010">社</span><span style="color:#960050;background-color:#1e0010">编</span><span style="color:#960050;background-color:#1e0010">号</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">01</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p><em>WITH CHECK OPTION;注：插入数据时，由于带了with check option的选项，则只能插入出版社编为'01'的数据</em></p>
+<h3 id="5">5．来自基表的限制</h3>
 <p>除了以上的限制，基表本身的限制和约束也必须要考虑。如果生成子查询的语句是一个分组查询，或查询中出现计算列，这时显然不能对表进行插入。另外，主键和NOT NULL列如果没有出现在视图的子查询中，也不能对视图进行插入。在视图中插入的数据，也必须满足基表的约束条件。</p>
-
-<h3 id="6-视图的查看">6.视图的查看</h3>
-
+<h3 id="6">6.视图的查看</h3>
 <p><code>USER_VIEWS</code>字典中包含了视图的定义。
-​<br />
+​		
 <code>USER_UPDATABLE_COLUMNS</code>字典包含了哪些列可以更新、插入、删除。
-​<br />
+​		
 <code>USER_OBJECTS</code>字典中包含了用户的对象。
-​<br />
+​		
 可以通过<code>DESCRIB</code>E命令查看字典的其他列信息。</p>
-
 <p>例：查看用户拥有的视图：</p>
-
-<pre><code class="language-SQL">SELECT object_name FROM user_objects WHERE object_type='VIEW';
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> object_name <span style="color:#66d9ef">FROM</span> user_objects <span style="color:#66d9ef">WHERE</span> object_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">VIEW</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

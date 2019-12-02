@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Note</title>
@@ -13,235 +13,235 @@
     
     <item>
       <title>CDN</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/cdn/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/cdn/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/cdn/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/cdn/</guid>
       <description>网站的一般访问模式。 当一个用户想访问一个网站的时候，指定这个网站的域名，DNS 就会将这个域名解析为地址，然后用户 请求这个地址，返回一个网页。 那这里面还有没有可以优化的地方呢？ 我们先说，我们的网站访问可</description>
     </item>
     
     <item>
       <title>DNS协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/dns/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/dns/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/dns/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/dns/</guid>
       <description>DNS 服务器 在网络世界，你需要记得住网站的名称，但是很难记住网站的 IP 地址，因而需要一个地 址簿，就是DNS 服务器。 由此可见，DNS 在日常生活中多么重要。每个人上网，都需要访问它，但是同时，这对它来讲也是非常</description>
     </item>
     
     <item>
       <title>HTTPDNS协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/httpdns/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/httpdns/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/httpdns/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/httpdns/</guid>
       <description>传统 DNS 存在哪些问题？ 域名缓存问题 它可以在本地做一个缓存，也就是说，不是每一个请求，它都会去访问权威 DNS 服务器，而是访问过一 次就把结果缓存到自己本地，当其他人来问的时候，直接就返回这个缓存数据。 域名转发问</description>
     </item>
     
     <item>
       <title>HTTPS协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/https/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/https/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/https/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/https/</guid>
       <description>HTTP协议与HTTPS协议的不同在于HTTPS协议对数据进行了加密处理。常用的加密方法有对称加密，非对称加密。 在对称加密算法中，加密和解密使用的密钥是相同的。也就是说，加密和解密使用的是同一个密钥。</description>
     </item>
     
     <item>
       <title>HTTP协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/http/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/http/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/http/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/http/</guid>
       <description>HTTP请求的准备 HTTP 协议，几乎是每个人上网用的第一个协议，同时也是很容易被人忽略的协议。 既然说看新闻，咱们就先登录 http://www.163.com 。 http://www.163.com 是个 URL，叫作统一资源定位符。之所以叫统一，是因为它是有格式的。HTTP 称为协</description>
     </item>
     
     <item>
       <title>P2P协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/p2p/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/p2p/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/p2p/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/p2p/</guid>
       <description>P2P 是什么？ 无论是 HTTP 的方式，还是 FTP 的方式，都有一个比较大的缺点，就是难以解决单一服务器的带宽 压力， 因为它们使用的都是传统的客户端服务器的方式。 后来，一种创新的、称为 P2P 的方式流行起来。P2P就是peer-</description>
     </item>
     
     <item>
       <title>Socket编程</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/socket/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/socket/</link>
       <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/socket/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/socket/</guid>
       <description>基于 TCP 和 UDP 协议的 Socket 编程 客户端与服务端在通信之前，双方都要建立一个Socket。 在建立 Socket 的时候，应该设置Socket 函数需要指定到底是 IPv4 还是 IPv6，分别对应设置为 AF_INET 和 AF_INET6。Socket 编程</description>
     </item>
     
     <item>
       <title>ICMP与Ping</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/icmp-protocol/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/icmp-protocol/</link>
       <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/icmp-protocol/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/icmp-protocol/</guid>
       <description>ICMP协议的格式 ping 是基于 ICMP 协议工作的。ICMP全称Internet Control Message Protocol，就是互联网控制报文 协议。 ICMP 报文是封装在 IP 包里面的。因为传输指令的时候，肯定需要源地址和目标地址。它本身非常简 单</description>
     </item>
     
     <item>
       <title>ICMP与Ping</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/macip/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/macip/</link>
       <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/macip/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/macip/</guid>
       <description>Mac头和IP头 在 MAC 头里面，先是目标 MAC 地址，然后是源 MAC 地址，然后有一个协议类型，用来说明里面是 IP 协议。在任何一台机器上，当要访问另一个 IP 地址的时候，都会先判断，这个目标 IP 地址，和当前机器的 IP 地址，是否</description>
     </item>
     
     <item>
       <title>TCP协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/tcp-layer/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/tcp-layer/</link>
       <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/tcp-layer/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/tcp-layer/</guid>
       <description>TCP协议 TCP协议作为传输层主要协议之一，具有面向连接，端到端，可靠的全双工通信，面向字节流的数据传输协议。 1、TCP报文段 虽然TCP面向字节流，但TCP传输的数据单元却是报文段。TCP报文段分为T</description>
     </item>
     
     <item>
       <title>UDP协议</title>
-      <link>https://no-sky.github.io/networkprotocol-geektime/udp-layer/</link>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/udp-layer/</link>
       <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/networkprotocol-geektime/udp-layer/</guid>
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/udp-layer/</guid>
       <description>TCP 和 UDP 有哪些区别？ TCP 是面向连接的，UDP 是面向无连接的。 什么叫面向连接，什么叫无连接呢？在互通之前，面向连接的协议会先建立连接。 所谓的建立连接，是为了在客户端和服务端维护连接，而建立一定的数据结构来维</description>
     </item>
     
     <item>
       <title>图的表示：如何存储微博、微信等社交网络中的好友关系</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/graph/</link>
       <pubDate>Thu, 21 Nov 2019 21:00:42 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/graph/</guid>
       <description>图的表示：如何存储微博、微信等社交网络中的好友关系 如何理解“图”？ 图中的元素我们就叫作顶点（vertex） 。 图中的一个顶点可以与任意其他顶点建立连接关系。我们把这种建立的关系叫作边（edge）。 就拿微</description>
     </item>
     
     <item>
       <title>二叉树基础：什么样的二叉树适合用数组来存储</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/binary-tree/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-tree/</link>
       <pubDate>Thu, 21 Nov 2019 10:47:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/binary-tree/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-tree/</guid>
       <description>树（Tree） 比如下面这幅图，A节点就是B节点的父节点，B节点是A节点的子节点。B、C、D这三个节点的父节点是同一个节点，所以它们之间互称为兄弟节点。我们把没有父节点的节点叫作根节点，也就是图中的节点</description>
     </item>
     
     <item>
       <title>红黑树：为什么工程中都用红黑树这种二叉树</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/red-blac-tree/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/red-blac-tree/</link>
       <pubDate>Thu, 21 Nov 2019 10:47:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/red-blac-tree/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/red-blac-tree/</guid>
       <description>什么是“平衡二叉查找树”？ 平衡二叉树的严格定义是这样的：二叉树中任意一个节点的左右子树的高度相差不能大于1。从这个定义来看，上一节我们讲的完全二叉树、满二叉树其实都是平衡二叉树，但是非完全二叉树也有可</description>
     </item>
     
     <item>
       <title>二分查找（上）：如何用最省内存的方式实现快速查找功能</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/binary-search/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-search/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/binary-search/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-search/</guid>
       <description>二分查找（上）：如何用最省内存的方式实现快速查找功能 二分查找（Binary Search）算法，也叫折半查找算法。 无处不在的二分思想 二分查找是一种非常简单易懂的快速查找算法，生活中到处可见。比如说，我们</description>
     </item>
     
     <item>
       <title>哈希算法：如何防止数据库中的用户信息被脱库</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/hash-algrothm/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hash-algrothm/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/hash-algrothm/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hash-algrothm/</guid>
       <description>哈希算法：如何防止数据库中的用户信息被脱库 什么是哈希算法？ 哈希算法的定义和原理非常简单，基本上一句话就可以概括了。将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原</description>
     </item>
     
     <item>
       <title>排序</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/sort/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/sort/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort/</guid>
       <description>如何分析一个“排序算法”？ 学习排序算法，我们除了学习它的算法原理、代码实现之外，更重要的是要学会如何评价、分析一个排序算法。那分析一个排序算法，要从哪几个方面入手呢？ 排序算法的执行效率 对于排序算法执行</description>
     </item>
     
     <item>
       <title>排序优化：如何实现一个通用的、高性能的排序函数</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/sort-optimization/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort-optimization/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/sort-optimization/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort-optimization/</guid>
       <description>排序优化：如何实现一个通用的、高性能的排序函数 如何选择合适的排序算法？ 如果要实现一个通用的、高效率的排序函数，我们应该选择哪种排序算法？ 线性排序算法的时间复杂度比较低，适用场景比较特殊。所以如果要写一</description>
     </item>
     
     <item>
       <title>散列表：Word文档中的单词拼写检查功能是如何实现的</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/hashtable/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hashtable/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/hashtable/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hashtable/</guid>
       <description>散列表：Word文档中的单词拼写检查功能是如何实现的 散列思想 散列表用的是数组支持按照下标随机访问数据的特性，所以散列表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。 散列表</description>
     </item>
     
     <item>
       <title>跳表</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/skip-list/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/skip-list/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/skip-list/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/skip-list/</guid>
       <description>如何理解“跳表”？ 对于一个单链表来讲，即便链表中存储的数据是有序的，如果我们要想在其中查找某个数据，也只能从头到尾遍历链表。这样查找效率就会很低，时间复杂度会很高，是O(n)。 那怎么来提高查找效率呢？</description>
     </item>
     
     <item>
       <title>递归</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/recursion/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/recursion/</link>
       <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/recursion/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/recursion/</guid>
       <description>递归 如何理解“递归”？ 递归是一种应用非常广泛的算法（或者编程技巧）。之后我们要讲的很多数据结构和算法的编码实现都要用到递归，比如DFS深度优先搜索、前中后序二叉树遍历等等。 周末你带着女朋友去电影院看电</description>
     </item>
     
     <item>
       <title>队列：队列在线程池等有限资源池中的应用</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/queue/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/queue/</link>
       <pubDate>Tue, 19 Nov 2019 22:44:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/queue/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/queue/</guid>
       <description>队列：队列在线程池等有限资源池中的应用 如何理解“队列”？ 队列这个概念非常好理解。你可以把它想象成排队买票，先来的先买，后来的人只能站末尾，不允许插队。先进者先出，这就是典型的队列。 我们知道，栈只支持两</description>
     </item>
     
     <item>
       <title>链表</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/linkedlist/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/linkedlist/</link>
       <pubDate>Mon, 18 Nov 2019 22:35:42 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/linkedlist/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/linkedlist/</guid>
       <description>链表 数组需要一块连续的内存空间来存储，对内存的要求比较高。如果我们申请一个100MB大小的数组，当内存中没有连续的、足够大的存储空间时，即便内存的剩余总可用空间大于100MB，仍然会申请失败。 而链表恰</description>
     </item>
     
     <item>
       <title>栈：如何实现浏览器的前进和后退功能</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/stack/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/stack/</link>
       <pubDate>Mon, 18 Nov 2019 22:16:52 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/stack/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/stack/</guid>
       <description>栈：如何实现浏览器的前进和后退功能 如何理解“栈”？ 关于“栈”，我有一个非常贴切的例子，就是一摞叠在一起的盘子。我们平时放盘子的时候，都是从下往上一个一个放；取的时候，我们也是从上往下一个一个地依次取，</description>
     </item>
     
     <item>
       <title>数组：为什么很多编程语言中数组都从0开始编号</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/array/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/array/</link>
       <pubDate>Thu, 14 Nov 2019 17:16:42 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/array/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/array/</guid>
       <description>数组：为什么很多编程语言中数组都从0开始编号 数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。 如何实现随机访问？ 第一要是线性表（Linear List）。顾名</description>
     </item>
     
     <item>
       <title>复杂度分析：如何分析算法的执行效率和资源消耗</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/complexity-analysis/</link>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/complexity-analysis/</link>
       <pubDate>Wed, 13 Nov 2019 21:00:42 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/complexity-analysis/</guid>
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/complexity-analysis/</guid>
       <description>复杂度分析：如何分析算法的执行效率和资源消耗 大O复杂度表示法 ​ $T(n) = O(f(n))$ 其中，T(n)表示代码执行的时间；n表示数据规模的大小；f(n)表示每行代码执行的次数总和。因为这是一个公式，所以用f(n)来表示。</description>
     </item>
     
@@ -287,7 +287,7 @@
       <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 $${y}&#39;&#39;+p{y}&#39;+qy=0$$ 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： **1)不同实根：**$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ **2)重根：**$r_1=r_2=</description>
     </item>
     
     <item>
@@ -305,7 +305,7 @@
       <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/first-order-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 解法 ①化为标准形式 ②套公式： 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为：$</description>
     </item>
     
     <item>
@@ -332,7 +332,7 @@
       <pubDate>Thu, 25 Apr 2019 17:32:01 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/space-surface-equation/</guid>
-      <description>球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为： $$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=R^2$$ 球面的一般方程：$Ax^2+Ay^2+Az^2+Dx+Ey+Fz+G=0$ 平面方程的特点：①*三元二次方程*；②*缺交叉项*③</description>
+      <description>球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为： **球面的一般方程：**$Ax^2+Ay^2+Az^2+Dx+Ey+Fz+G=0$ **平面方程的特点：**①三元二次方程；②缺交</description>
     </item>
     
     <item>
@@ -341,7 +341,7 @@
       <pubDate>Thu, 25 Apr 2019 16:51:06 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/spatial-straight-line-equation/</guid>
-      <description>空间直线的方程 直线的一般方程 $$L = \left\{\begin{matrix} A_1x+B_1y+C_1z+D_1=0 \\ A_2x+B_2y+C_2z+D_2=0 \end{matrix}\right.$$ 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有： $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$$ 直线的参数方程 $$\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}=t \Rightarrow \left\{\begin{matrix} x= x_0+mt \\ y=y_0+nt \\ z=z_0+pt \end{matrix}\right.$$## 直线的两</description>
+      <description>空间直线的方程 直线的一般方程 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有： 直线的参数方程 直线的两点式方程 空间中两直线的位置关系 $L_1: \frac{x-x_1}{m_1}=\frac{y-y_1}{n_1}=\frac{z-z_1}{p_1}$ $\vec{s_1}=(m_1,n_1,p_1)$</description>
     </item>
     
     <item>
@@ -359,7 +359,7 @@
       <pubDate>Tue, 23 Apr 2019 14:20:06 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/vector-and-linear-operations_2/</guid>
-      <description>加法 定义1：设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为 $$\vec{a} + \vec{b} = (a_1 + b_1, a_2 + b_2)$$ 定义1：设$\vec{a} = (a_1, a_2, a_3)$，$\v</description>
+      <description>加法 **定义1：**设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为 定义1：设$\vec{a} = (a_1, a_2, a_3)$，$\vec{b} =</description>
     </item>
     
     <item>
@@ -377,7 +377,7 @@
       <pubDate>Mon, 22 Apr 2019 16:26:42 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/distance-between-two-points/</guid>
-      <description>前置：数轴上两点的距离 $$|M_1M_2| = |x_2 - x_1|$$ 前置：平面上两点的距离 $$|M_1M_2| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$ 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$,$M_2$为$(x_2, y_2, z_2)$，则距离公示为： $$|M_1M_2| = \sqrt{(x_2-x_1)^2</description>
+      <description>前置：数轴上两点的距离 前置：平面上两点的距离 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$`,$M_2$为$(x_2, y_2, z_2)$`，则距离公示为： 特别的，点M(x, y, z)到原点</description>
     </item>
     
     <item>
@@ -395,7 +395,7 @@
       <pubDate>Sun, 14 Oct 2018 22:59:46 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/springboot-jpa-onebyone%E5%8F%8C%E5%90%91%E6%9F%A5%E8%AF%A2%E6%8A%A5%E6%A0%88%E6%BA%A2%E5%87%BA%E5%8E%9F%E5%9B%A0/</guid>
-      <description>示例： @Data @Entity public class User { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer uid; /**用户名*/ private String username; /**用户密码*/ private String password; /**注册时间*/ private Timestamp regTime; /**性别*/ private Boolean sex; @OneToOne(cascade = CascadeType.ALL) @JoinColumn(name = &amp;quot;weixin&amp;quot;) private WXToken wxToken; } @Data @Entity public class WXToken { /**微信号*/ @Id private String weixin; /**微信token授</description>
+      <description>示例： @Data @Entity public class User { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer uid; /**用户名*/ private String username; /**用户密码*/ private String password; /**注册时间*/ private Timestamp regTime; /**性别*/ private Boolean sex; @OneToOne(cascade = CascadeType.ALL) @JoinColumn(name = &amp;#34;weixin&amp;#34;) private WXToken wxToken; } @Data @Entity public class WXToken { /**微信号*/ @Id private String weixin; /**微信token授</description>
     </item>
     
     <item>
@@ -404,7 +404,7 @@
       <pubDate>Wed, 04 Apr 2018 22:23:49 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/maven%E4%B8%8Eeclipse/</guid>
-      <description>Maven配置与eclipse配置Maven仓库 下载与安装 1、前往 https://maven.apache.org/download.cgi 下载最新版的Maven程序： 2、将文件解压到F:\Program Files\Apache\apache-maven-3.5.3（此处</description>
+      <description>下载与安装 1、前往 https://maven.apache.org/download.cgi 下载最新版的Maven程序： 2、将文件解压到F:\Program Files\Apache\apache-maven-3.5.3（此处是我的安装路径）目录下: ​ 3、新建环境变量MAV</description>
     </item>
     
     <item>
@@ -414,10 +414,8 @@
       
       <guid>https://no-sky.github.io/posts/sublime-text3%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</guid>
       <description>&lt;h1 id=&#34;chineselocalizations&#34;&gt;ChineseLocalizations&lt;/h1&gt;
-
 &lt;p&gt;&lt;strong&gt;一种让Sublime汉化的插件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://github.com/No-Sky/storage/raw/master/images/SublimeText/ChineseLocalizations.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://github.com/No-Sky/storage/raw/master/images/SublimeText/ChineseLocalizations.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -426,7 +424,7 @@
       <pubDate>Sat, 17 Mar 2018 11:58:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/next-hexo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%A0%B7%E5%BC%8F%E9%85%8D%E7%BD%AE/</guid>
-      <description>添加404界面 在source文件夹新建404.html，内容如下： --- layout: false title: &amp;quot;404&amp;quot; --- &amp;lt;!DOCTYPE HTML&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;404 - No-Sky&#39;blog&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;404错误，页面不存在！&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;content-type&amp;quot; content=&amp;quot;text/html;charset=utf-8;&amp;quot;/&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;robots&amp;quot; content=&amp;quot;all&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;robots&amp;quot; content=&amp;quot;index,follow&amp;quot;/&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;</description>
+      <description>添加404界面 在source文件夹新建404.html，内容如下： --- layout: false title: &amp;#34;404&amp;#34; --- &amp;lt;!DOCTYPE HTML&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;404 - No-Sky&amp;#39;blog&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;#34;description&amp;#34; content=&amp;#34;404错误，页面不存在！&amp;#34;&amp;gt; &amp;lt;meta http-equiv=&amp;#34;content-type&amp;#34; content=&amp;#34;text/html;charset=utf-8;&amp;#34;/&amp;gt; &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge,chrome=1&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;robots&amp;#34; content=&amp;#34;all&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;robots&amp;#34; content=&amp;#34;index,follow&amp;#34;/&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;</description>
     </item>
     
     <item>
@@ -455,30 +453,27 @@
       <pubDate>Sat, 03 Feb 2018 21:11:27 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/mybatis%E4%B9%8B%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/</guid>
-      <description>&lt;h1&gt;Mybatis详解第三弹——联表查询&lt;/h1&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;** 一对一 **&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;创建表和数据：&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;	CREATE TABLE teacher(
-		t_id INT PRIMARY KEY AUTO_INCREMENT, 
-		t_name VARCHAR(20)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; teacher(
+		t_id INT &lt;span style=&#34;color:#66d9ef&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;KEY&lt;/span&gt; AUTO_INCREMENT, 
+		t_name VARCHAR(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;)
 	);
-	CREATE TABLE class(
-		c_id INT PRIMARY KEY AUTO_INCREMENT, 
-		c_name VARCHAR(20), 
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;(
+		c_id INT &lt;span style=&#34;color:#66d9ef&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;KEY&lt;/span&gt; AUTO_INCREMENT, 
+		c_name VARCHAR(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), 
 		teacher_id INT
 	);
 
-	ALTER TABLE class ADD CONSTRAINT fk_teacher_id FOREIGN KEY (teacher_id) REFERENCES teacher(t_id);    
-	INSERT INTO teacher(t_name) VALUES(&#39;LS1&#39;);
-	INSERT INTO teacher(t_name) VALUES(&#39;LS2&#39;);
-	INSERT INTO class(c_name, teacher_id) VALUES(&#39;bj_a&#39;, 1);
-	INSERT INTO class(c_name, teacher_id) VALUES(&#39;bj_b&#39;, 2);
-&lt;/code&gt;&lt;/pre&gt;</description>
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;ALTER&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ADD&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;CONSTRAINT&lt;/span&gt; fk_teacher_id &lt;span style=&#34;color:#66d9ef&#34;&gt;FOREIGN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;KEY&lt;/span&gt; (teacher_id) &lt;span style=&#34;color:#66d9ef&#34;&gt;REFERENCES&lt;/span&gt; teacher(t_id);    
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; teacher(t_name) &lt;span style=&#34;color:#66d9ef&#34;&gt;VALUES&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;LS1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;);
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; teacher(t_name) &lt;span style=&#34;color:#66d9ef&#34;&gt;VALUES&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;LS2&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;);
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;(c_name, teacher_id) &lt;span style=&#34;color:#66d9ef&#34;&gt;VALUES&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;bj_a&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;(c_name, teacher_id) &lt;span style=&#34;color:#66d9ef&#34;&gt;VALUES&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;bj_b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -487,24 +482,21 @@
       <pubDate>Sat, 03 Feb 2018 21:04:38 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/mybatis%E4%B9%8B%E4%BC%98%E5%8C%96xml%E9%85%8D%E7%BD%AE/</guid>
-      <description>&lt;h1&gt;Mybatis详解第三弹——优化xml配置使用&lt;/h1&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;** 数据库配置优化 **&lt;/p&gt;
-
 &lt;p&gt;原：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;    &amp;lt;environments default=&amp;quot;development&amp;quot;&amp;gt;
-	    &amp;lt;environment id=&amp;quot;development&amp;quot;&amp;gt;
-	            &amp;lt;transactionManager type=&amp;quot;JDBC&amp;quot; /&amp;gt;
-	            &amp;lt;dataSource type=&amp;quot;POOLED&amp;quot;&amp;gt;
-	                &amp;lt;property name=&amp;quot;driver&amp;quot; value=&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot; /&amp;gt;
-	                &amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;jdbc:oracle:thin:@127.0.0.1:1521:ORCL&amp;quot; /&amp;gt;
-	                &amp;lt;property name=&amp;quot;username&amp;quot; value=&amp;quot;scott&amp;quot; /&amp;gt;
-	                &amp;lt;property name=&amp;quot;password&amp;quot; value=&amp;quot;tiger&amp;quot; /&amp;gt;
-	        &amp;lt;/dataSource&amp;gt;
-	    &amp;lt;/environment&amp;gt;
-    &amp;lt;/environments&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;environments&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;default=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;development&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;environment&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;development&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	            &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;transactionManager&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;JDBC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	            &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;dataSource&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;POOLED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;driver&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;oracle.jdbc.driver.OracleDriver&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;jdbc:oracle:thin:@127.0.0.1:1521:ORCL&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;username&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scott&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tiger&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+	    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/environment&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/environments&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -513,7 +505,7 @@
       <pubDate>Sat, 03 Feb 2018 21:00:13 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/mybatis%E4%B9%8Bcrud%E6%93%8D%E4%BD%9C/</guid>
-      <description>Mybatis详解第二弹——编写基于mybatis的操作Emp表的CRUD操作的dao类 用xml配置的方式 1、定义sql映射的xml文件 如： id: 是sql语句在xml文件的位置 parameterType: 需要传递参数的类型 resultType: sql</description>
+      <description>用xml配置的方式 1、定义sql映射的xml文件 如： id: 是sql语句在xml文件的位置 parameterType: 需要传递参数的类型 resultType: sql语句执行后返回的类型 &amp;lt;select id=&amp;#34;getEmpByName&amp;#34; parameterType=&amp;#34;string&amp;#34; reaultType=&amp;#34;com.model.Emp&amp;#34; &amp;gt; select * from emp where ename = #{ename}; &amp;lt;/select&amp;gt; &amp;lt;insert id=&amp;#34;insertEmp&amp;#34; parameterType=&amp;#34;com.model.Emp&amp;#34; resultType=&amp;#34;int&amp;#34;&amp;gt; insert into emp values (#{empno,#{ename},#{job},#{mgr},#{hiredate},#{sql},#{comm},#{deptno}) &amp;lt;/insert&amp;gt; &amp;lt;delete id=&amp;#34;deleteByNo&amp;#34; parameterType=&amp;#34;int&amp;#34;&amp;gt; delete from emp where empno = #{empno}</description>
     </item>
     
     <item>
@@ -522,7 +514,7 @@
       <pubDate>Sat, 03 Feb 2018 20:55:54 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/mybatis%E5%88%9D%E8%AF%86/</guid>
-      <description>Mybatis详解第一弹——初识 Mybatis初识 * ​ MyBatis是支持普通SQL查询，存储过程和高级映射的优秀持久层框架。MyBatis消除 ​ 了几乎所有的JDBC代码和参数的手工设置以及对结果集的</description>
+      <description>Mybatis初识 * ​ MyBatis是支持普通SQL查询，存储过程和高级映射的优秀持久层框架。MyBatis消除 ​ 了几乎所有的JDBC代码和参数的手工设置以及对结果集的检索。MyBatis可以使用简单</description>
     </item>
     
     <item>
@@ -531,7 +523,7 @@
       <pubDate>Sat, 20 Jan 2018 20:50:43 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</guid>
-      <description>java实现二维码开发 java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; /</description>
+      <description>java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; //图片高度和宽度 int height2 =</description>
     </item>
     
     <item>
@@ -540,7 +532,7 @@
       <pubDate>Tue, 12 Dec 2017 19:38:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E5%9B%9B/</guid>
-      <description>游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &#39;CLERK&#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&#39;,&#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3</description>
+      <description>游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &amp;#39;CLERK&amp;#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&amp;#39;,&amp;#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3</description>
     </item>
     
     <item>
@@ -549,7 +541,7 @@
       <pubDate>Tue, 05 Dec 2017 19:11:04 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E4%B8%89/</guid>
-      <description>PL/SQL空值语句、游标 一、IF语句 1、IF-THEN-END IF形式 IF 条件 then 语句集; END IF; 2、IF-THEN-ELSE-END IF形式 IF 条件 then 语句集1; ElSE 语句集2 END IF; 3．IF-THEN-ELSIF-</description>
+      <description>PL/SQL空值语句、游标 一、IF语句 1、IF-THEN-END IF形式 2、IF-THEN-ELSE-END IF形式 3．IF-THEN-ELSIF-ELSE-END IF形式 ##二、CASE语句 1．基本</description>
     </item>
     
     <item>
@@ -585,7 +577,7 @@
       <pubDate>Thu, 30 Nov 2017 21:10:31 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81/</guid>
-      <description>建表 一、建表 格式： create table 表名 ( 列名1 类型 约束, 列名2 类型 约束, ...... ); 如： --创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; --创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版</description>
+      <description>建表 一、建表 格式： 如： &amp;ndash;创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; &amp;ndash;创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版日期 DATE, 数量 NUMBER(3), 单价 NUMBER(7,2) ); 二、通</description>
     </item>
     
     <item>
@@ -639,7 +631,7 @@
       <pubDate>Fri, 24 Nov 2017 18:02:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%9B%9B/</guid>
-      <description>条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) * A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，</description>
+      <description>条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，显</description>
     </item>
     
     <item>
@@ -648,7 +640,7 @@
       <pubDate>Thu, 23 Nov 2017 18:48:46 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/</guid>
-      <description>Oracle的基本查询 一、基本查询 select格式： &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;select 列名 from 表名 ； &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;where 查询条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;group by 分组列 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;having 分组后条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚列ROWNUM</description>
+      <description>Oracle的基本查询 一、基本查询 *select格式：*select 列名 from 表名 ； where 查询条件 group by 分组列 having 分组后条件 order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚</description>
     </item>
     
     <item>
@@ -666,7 +658,7 @@
       <pubDate>Wed, 22 Nov 2017 13:23:45 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/</guid>
-      <description>一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &#39;文件路径&#39; size 文件大小 如： cerate tablespace myspace datafile &#39;D:\myspace.dbf&#39; size10MB; 删除表空间： drop tablespace myspace incluiding contents and datafile; 二、创建用户 格式</description>
+      <description>一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &amp;lsquo;文件路径&amp;rsquo; size 文件大小 如： cerate tablespace myspace datafile &amp;#39;D:\myspace.dbf&amp;#39; size10MB; 删除表空间： drop tablespace myspace</description>
     </item>
     
     <item>
@@ -675,7 +667,7 @@
       <pubDate>Tue, 21 Nov 2017 18:33:44 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%80/</guid>
-      <description>配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器） &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;开始菜单中</description>
+      <description>配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器）开始菜单中找到net configration assistant添加一个监听器 3 用system用户登录sq</description>
     </item>
     
     <item>
@@ -684,7 +676,7 @@
       <pubDate>Fri, 17 Nov 2017 21:28:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid>
-      <description>Java使用mysql-jdbc连接MySQL出现如下警告： Establishing SSL connection without server&#39;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&#39;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &#39;false&#39;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification. 在mysq</description>
+      <description>Java使用mysql-jdbc连接MySQL出现如下警告： Establishing SSL connection without server&#39;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&#39;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &amp;lsquo;false&amp;rsquo;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification. 在mysq</description>
     </item>
     
     <item>
@@ -693,7 +685,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://no-sky.github.io/about/</guid>
-      <description>如有问题请联系nosky@xiaofangwei.cn -- 金樽清酒斗十千，玉盘珍馐直万钱。 停杯投箸不能食，拔剑四顾心茫然。 欲渡黄河冰塞川，将登太行雪满山。 闲来垂钓坐溪上，忽复乘舟梦日边。 行路难，行路难，</description>
+      <description>金樽清酒斗十千，玉盘珍馐直万钱。 停杯投箸不能食，拔剑四顾心茫然。 欲渡黄河冰塞川，将登太行雪满山。 闲来垂钓坐溪上，忽复乘舟梦日边。 行路难，行路难，多歧路，今安在。 长风破浪会有时，直挂云帆济沧海。</description>
     </item>
     
   </channel>

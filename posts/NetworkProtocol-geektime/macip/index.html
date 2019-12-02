@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content="Mac头和IP头 在 MAC 头里面，先是目标 MAC 地址，然后是源 MAC 地址，然后有一个协议类型，用来说明里面是 IP 协议。在任何一台机器上，当要访问另一个 IP 地址的时候，都会先判断，这个目标 IP 地址，和当前机器的 IP 地址，是否"/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://no-sky.github.io/posts/networkprotocol-geektime/macip/"/>
+
+  
+
+  <title>ICMP与Ping &middot; Note</title>
+
+  <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/highlight.css"/>
+
+  
+  
+
+  <script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962328-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962328-2');
+</script>
+
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+});
+
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+  <script>
+  console.log("\n %c 温故而知新 %c https://note.xiaofangwei.cn \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;");
+</script>
+
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://no-sky.github.io/">
+          <span>Note</span>
+          <img src="https://no-sky.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">温故而知新</p>
+      <div class="my_socials">
+        
+        
+        <a href="mailto:nosky@xiaofangwei.cn" title="mail" target="_blank"><i class="remixicon-mail-fill"></i></a>
+        
+        
+        <a href="https://no-sky.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/networkprotocol-geektime/macip/'>ICMP与Ping</a></h2>
+          
+          <i class="remixicon-calendar-line"></i> <span class="date">2019.11.22</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
+        </div>
+        <div class="post_content markdown"><h1 id="macip">Mac头和IP头</h1>
+<p><img src="https://static001.geekbang.org/resource/image/79/fc/798467df661ecf5632d67b9c58bc53fc.jpg" alt="img"></p>
+<p>在 MAC 头里面，先是目标 MAC 地址，然后是源 MAC 地址，然后有一个协议类型，用来说明里面是
+IP 协议。在任何一台机器上，当要访问另一个 IP 地址的时候，都会先判断，这个目标 IP 地址，和当前机器的 IP
+地址，是否在同一个网段。怎么判断同一个网段呢？需要 CIDR 和子网掩码。</p>
+<p>如果是同一个网段，直接将源地址和目标地址放入 IP 头中，然后通过 ARP 获得 MAC 地址，将源 MAC 和目的 MAC 放入 MAC 头中，发出去就可以了。
+如果不是同一网段，这就需要发往默认网关Gateway。Gateway 的地址一定是和源 IP 地址是一个网段的。往往不是第一个，就是第二个。例如192.168.1.0/24 这个网段，Gateway 往往会是 192.168.1.1/24 或192.168.1.2/24。
+如何发往默认网关呢？网关不是和源 IP 地址是一个网段的么？这个过程就和发往同一个网段的其他机器
+是一样的：将源地址和目标 IP 地址放入 IP 头中，通过 ARP 获得网关的 MAC 地址，将源 MAC 和网关
+的 MAC 放入 MAC 头中，发送出去。网关所在的端口，例如 192.168.1.1/24 将网络包收进来，然后接
+下来怎么做，就完全看网关的了。
+网关往往是一个路由器，是一个三层转发的设备。啥叫三层设备？前面也说过了，就是把 MAC 头和 IP
+头都取下来，然后根据里面的内容，看看接下来把包往哪里转发的设备。
+在你的宿舍里面，网关就是你宿舍长的电脑。一个路由器往往有多个网口，如果是一台服务器做这个事
+情，则就有多个网卡，其中一个网卡是和源 IP 同网段的。
+很多情况下，人们把网关就叫作路由器。其实不完全准确，而另一种比喻更加恰当：路由器是一台设
+备，它有五个网口或者网卡，相当于有五只手，分别连着五个局域网。每只手的 IP 地址都和局域网的 IP
+地址相同的网段，每只手都是它握住的那个局域网的网关。</p>
+<h2 id="heading">静态路由是什么？</h2>
+<p>静态路由，其实就是在路由器上，配置一条一条规则。这些规则包括：想访问 BBS 站（它肯定有个网
+段），从 2 号口出去，下一跳是 IP2；想访问教学视频站（它也有个自己的网段），从 3 号口出去，下
+一跳是 IP3，然后保存在路由器里。
+每当要选择从哪只手抛出去的时候，就一条一条的匹配规则，找到符合的规则，就按规则中设置的那
+样，从某个口抛出去，找下一跳 IPX。</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/network-protocol/">Network Protocol</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img width="80px" height="30px" style="background-color: #c1c1c1;" src="https://no-sky.github.io/images/upyun.png" alt=""></a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>路漫漫其修远兮，吾将上下而求索</span>
+  </div>
+</footer>
+
+
+
+<script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962328-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962328-2');
+</script>
+
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+});
+
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+</body>
+</html>

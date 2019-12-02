@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="nosky"/>
+
+  
+  <meta name="description" content="栈：如何实现浏览器的前进和后退功能 如何理解“栈”？ 关于“栈”，我有一个非常贴切的例子，就是一摞叠在一起的盘子。我们平时放盘子的时候，都是从下往上一个一个放；取的时候，我们也是从上往下一个一个地依次取，"/>
+  
+
+  
+  
+  <meta name="keywords" content="note, 笔记, nosky"/>
+  
+
+  
+  <link rel="canonical" href="https://no-sky.github.io/posts/datastructureandalgorithms-geektime/stack/"/>
+
+  
+
+  <title>栈：如何实现浏览器的前进和后退功能 &middot; Note</title>
+
+  <link rel="shortcut icon" href="https://no-sky.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://no-sky.github.io/css/highlight.css"/>
+
+  
+  
+
+  <script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962328-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962328-2');
+</script>
+
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+});
+
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+  <script>
+  console.log("\n %c 温故而知新 %c https://note.xiaofangwei.cn \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;");
+</script>
+
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://no-sky.github.io/">
+          <span>Note</span>
+          <img src="https://no-sky.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">温故而知新</p>
+      <div class="my_socials">
+        
+        
+        <a href="mailto:nosky@xiaofangwei.cn" title="mail" target="_blank"><i class="remixicon-mail-fill"></i></a>
+        
+        
+        <a href="https://no-sky.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/datastructureandalgorithms-geektime/stack/'>栈：如何实现浏览器的前进和后退功能</a></h2>
+          
+          <i class="remixicon-calendar-line"></i> <span class="date">2019.11.18</span>
+          
+          
+          <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
+          
+        </div>
+        <div class="post_content markdown"><h1 id="heading">栈：如何实现浏览器的前进和后退功能</h1>
+<h2 id="heading1">如何理解“栈”？</h2>
+<p>关于“栈”，我有一个非常贴切的例子，就是一摞叠在一起的盘子。我们平时放盘子的时候，都是从下往上一个一个放；取的时候，我们也是从上往下一个一个地依次取，不能从中间任意抽出。<strong>后进者先出，先进者后出，这就是典型的“栈”结构。</strong></p>
+<p>从栈的操作特性上来看，<strong>栈是一种“操作受限”的线性表</strong>，只允许在一端插入和删除数据。</p>
+<p><strong>当某个数据集合只涉及在一端插入和删除数据，并且满足后进先出、先进后出的特性，我们就应该首选“栈”这种数据结构</strong>。</p>
+<h2 id="heading2">如何实现一个“栈”？</h2>
+<p>从刚才栈的定义里，我们可以看出，栈主要包含两个操作，入栈和出栈，也就是在栈顶插入一个数据和从栈顶删除一个数据。理解了栈的定义之后，我们来看一看如何用代码实现一个栈。</p>
+<p>实际上，栈既可以用数组来实现，也可以用链表来实现。用数组实现的栈，我们叫作<strong>顺序栈</strong>，用链表实现的栈，我们叫作<strong>链式栈</strong>。</p>
+<p>空间复杂度分析和时间复杂度，不管是顺序栈还是链式栈，入栈、出栈只涉及栈顶个别数据的操作，所以时间复杂度都是O(1)。</p>
+<h2 id="heading3">栈的应用</h2>
+<p>栈在函数调用中的应用
+栈在表达式求值中的应用
+栈在括号匹配中的应用</p>
+<h2 id="heading4">如何实现浏览器的前进、后退功能？</h2>
+<p>其实，用两个栈就可以非常完美地解决这个问题。</p>
+<p>我们使用两个栈，X和Y，我们把首次浏览的页面依次压入栈X，当点击后退按钮时，再依次从栈X中出栈，并将出栈的数据依次放入栈Y。当我们点击前进按钮时，我们依次从栈Y中取出数据，放入栈X中。当栈X中没有数据时，那就说明没有页面可以继续后退浏览了。当栈Y中没有数据，那就说明没有页面可以点击前进按钮浏览了。</p>
+<p>比如你顺序查看了a，b，c三个页面，我们就依次把a，b，c压入栈，这个时候，两个栈的数据就是这个样子：</p>
+<p><img src="https://static001.geekbang.org/resource/image/4b/3d/4b579a76ea7ebfc5abae2ad6ae6a3c3d.jpg" alt="img"></p>
+<p>当你通过浏览器的后退按钮，从页面c后退到页面a之后，我们就依次把c和b从栈X中弹出，并且依次放入到栈Y。这个时候，两个栈的数据就是这个样子：</p>
+<p><img src="https://static001.geekbang.org/resource/image/b5/1b/b5e496e2e28fe08f0388958a0e12861b.jpg" alt="img"></p>
+<p>这个时候你又想看页面b，于是你又点击前进按钮回到b页面，我们就把b再从栈Y中出栈，放入栈X中。此时两个栈的数据是这个样子：</p>
+<p><img src="https://static001.geekbang.org/resource/image/ea/bc/ea804125bea25d25ba467a51fb98c4bc.jpg" alt="img"></p>
+<p>这个时候，你通过页面b又跳转到新的页面d了，页面c就无法再通过前进、后退按钮重复查看了，所以需要清空栈Y。此时两个栈的数据这个样子：</p>
+<p><img src="https://static001.geekbang.org/resource/image/a3/2e/a3c926fe3050d9a741f394f20430692e.jpg" alt="img"></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://no-sky.github.io/tags/datastructurealgorithms/">DataStructure&amp;Algorithms</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img width="80px" height="30px" style="background-color: #c1c1c1;" src="https://no-sky.github.io/images/upyun.png" alt=""></a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>路漫漫其修远兮，吾将上下而求索</span>
+  </div>
+</footer>
+
+
+
+<script src="https://no-sky.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://no-sky.github.io/js/zozo.js"></script>
+<script src="https://no-sky.github.io/js/highlight.pack.js"></script>
+<link  href="https://no-sky.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://no-sky.github.io/js/fancybox.min.js"></script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962328-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962328-2');
+</script>
+
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+});
+
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+</body>
+</html>

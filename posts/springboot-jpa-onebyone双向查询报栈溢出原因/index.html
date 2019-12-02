@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="示例： @Data @Entity public class User { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer uid; /**用户名*/ private String username; /**用户密码*/ private String password; /**注册时间*/ private Timestamp regTime; /**性别*/ private Boolean sex; @OneToOne(cascade = CascadeType.ALL) @JoinColumn(name = &amp;quot;weixin&amp;quot;) private WXToken wxToken; } @Data @Entity public class WXToken { /**微信号*/ @Id private String weixin; /**微信token授"/>
+  <meta name="description" content="示例： @Data @Entity public class User { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer uid; /**用户名*/ private String username; /**用户密码*/ private String password; /**注册时间*/ private Timestamp regTime; /**性别*/ private Boolean sex; @OneToOne(cascade = CascadeType.ALL) @JoinColumn(name = &amp;#34;weixin&amp;#34;) private WXToken wxToken; } @Data @Entity public class WXToken { /**微信号*/ @Id private String weixin; /**微信token授"/>
   
 
   
@@ -165,81 +165,69 @@ code.has-jax {
           
         </div>
         <div class="post_content markdown"><p>示例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Data</span>
+<span style="color:#a6e22e">@Entity</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Id</span>
+    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">IDENTITY</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Integer uid<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">@Data
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer uid;
+    <span style="color:#75715e">/**用户名*/</span>
+    <span style="color:#66d9ef">private</span> String username<span style="color:#f92672">;</span>
 
-    /**用户名*/
-    private String username;
+    <span style="color:#75715e">/**用户密码*/</span>
+    <span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
 
-    /**用户密码*/
-    private String password;
+    <span style="color:#75715e">/**注册时间*/</span>
+    <span style="color:#66d9ef">private</span> Timestamp regTime<span style="color:#f92672">;</span>
 
-    /**注册时间*/
-    private Timestamp regTime;
+    <span style="color:#75715e">/**性别*/</span>
+    <span style="color:#66d9ef">private</span> Boolean sex<span style="color:#f92672">;</span>
 
-    /**性别*/
-    private Boolean sex;
+    <span style="color:#a6e22e">@OneToOne</span><span style="color:#f92672">(</span>cascade <span style="color:#f92672">=</span> CascadeType<span style="color:#f92672">.</span><span style="color:#a6e22e">ALL</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;weixin&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> WXToken wxToken<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Data</span>
+<span style="color:#a6e22e">@Entity</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WXToken</span> <span style="color:#f92672">{</span>
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = &quot;weixin&quot;)
-    private WXToken wxToken;
-}
-</code></pre>
+    <span style="color:#75715e">/**微信号*/</span>
+    <span style="color:#a6e22e">@Id</span>
+    <span style="color:#66d9ef">private</span> String weixin<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">@Data
-@Entity
-public class WXToken {
+    <span style="color:#75715e">/**微信token授权*/</span>
+    <span style="color:#66d9ef">private</span> String token<span style="color:#f92672">;</span>
 
-    /**微信号*/
-    @Id
-    private String weixin;
+    <span style="color:#75715e">/**授权开始时间*/</span>
+    <span style="color:#66d9ef">private</span> Timestamp startTime<span style="color:#f92672">;</span>
 
-    /**微信token授权*/
-    private String token;
+    <span style="color:#75715e">/**授权过期时间*/</span>
+    <span style="color:#66d9ef">private</span> Timestamp expireTime<span style="color:#f92672">;</span>
 
-    /**授权开始时间*/
-    private Timestamp startTime;
-
-    /**授权过期时间*/
-    private Timestamp expireTime;
-
-    @OneToOne(mappedBy = &quot;wxToken&quot;, cascade = CascadeType.ALL)
-    private User user;
-}
-</code></pre>
-
-<p>报错：</p>
-
-<pre><code class="language-java">java.lang.StackOverflowError
-	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:675)
-	at java.lang.StringBuilder.append(StringBuilder.java:208)
-	at java.sql.Timestamp.toString(Timestamp.java:302)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at com.nosky.hnsoftshow.domain.WXToken.toString(WXToken.java:8)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at com.nosky.hnsoftshow.domain.User.toString(User.java:10)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at com.nosky.hnsoftshow.domain.WXToken.toString(WXToken.java:8)
-	at java.lang.String.valueOf(String.java:2994)
-...
-</code></pre>
-
-<p>原因：</p>
-
+    <span style="color:#a6e22e">@OneToOne</span><span style="color:#f92672">(</span>mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wxToken&#34;</span><span style="color:#f92672">,</span> cascade <span style="color:#f92672">=</span> CascadeType<span style="color:#f92672">.</span><span style="color:#a6e22e">ALL</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> User user<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>报错：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StackOverflowError</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">AbstractStringBuilder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>AbstractStringBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>675<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StringBuilder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>StringBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>208<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">sql</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Timestamp</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>Timestamp<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>302<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">String</span><span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>2994<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StringBuilder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>StringBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>131<span style="color:#f92672">)</span>
+	at com<span style="color:#f92672">.</span><span style="color:#a6e22e">nosky</span><span style="color:#f92672">.</span><span style="color:#a6e22e">hnsoftshow</span><span style="color:#f92672">.</span><span style="color:#a6e22e">domain</span><span style="color:#f92672">.</span><span style="color:#a6e22e">WXToken</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>WXToken<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>8<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">String</span><span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>2994<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StringBuilder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>StringBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>131<span style="color:#f92672">)</span>
+	at com<span style="color:#f92672">.</span><span style="color:#a6e22e">nosky</span><span style="color:#f92672">.</span><span style="color:#a6e22e">hnsoftshow</span><span style="color:#f92672">.</span><span style="color:#a6e22e">domain</span><span style="color:#f92672">.</span><span style="color:#a6e22e">User</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>10<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">String</span><span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>2994<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StringBuilder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>StringBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>131<span style="color:#f92672">)</span>
+	at com<span style="color:#f92672">.</span><span style="color:#a6e22e">nosky</span><span style="color:#f92672">.</span><span style="color:#a6e22e">hnsoftshow</span><span style="color:#f92672">.</span><span style="color:#a6e22e">domain</span><span style="color:#f92672">.</span><span style="color:#a6e22e">WXToken</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>WXToken<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>8<span style="color:#f92672">)</span>
+	at java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">String</span><span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>2994<span style="color:#f92672">)</span>
+<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+</code></pre></div><p>原因：</p>
 <p>​<strong>实体类的toString()方法被无限递归</strong></p>
-
 <p>解决：</p>
-
 <p>​<strong>去掉任意一个实体的toString()，或者两个都可去掉</strong></p>
-
 <p><a href="https://www.v2ex.com/t/541510">V2EX有关这个类似问题的讨论与更加合理的解决方案</a></p>
 </div>
         <div class="post_footer">

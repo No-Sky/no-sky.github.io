@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) * A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，"/>
+  <meta name="description" content="条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，显"/>
   
 
   
@@ -164,98 +164,54 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="条件查询-函数-一">条件查询、函数（一）</h1>
-
-<h2 id="一-条件查询">一、 条件查询</h2>
-
-<p><strong>1、模糊查询(between、in、like)</strong>
-* A、between：在某某之间。如,显示工资在1000~2000之间的雇员</p>
-
-<pre><code class="language-SQL">select * from emp where sal beteween 1000 and 2000;
-</code></pre>
-
+        <div class="post_content markdown"><h1 id="heading">条件查询、函数（一）</h1>
+<h2 id="-">一、 条件查询</h2>
+<p><strong>1、模糊查询(between、in、like)</strong></p>
 <ul>
-<li>B、in：在某某之间。如，显示职务为“SALMAN”，“CLEARK”和“MANAGER”的雇员信息
-<code>SQL
-select * from emp where job in ('SALMAN','CLERK','MANAGER');
-</code></li>
-
-<li><p>C、like：与通配符使用
-<em>通配符：% 代表0个或任意个字符&nbsp;&nbsp;&nbsp;  —_ 代表1个字符</em>
-如：显示姓名以“S”开头的雇员信息。</p>
-
-<pre><code class="language-SQL">select * from emp where ename like 'S%';
-</code></pre>
-
-<p>显示姓名第二个字符为“A”的雇员信息</p>
-
-<pre><code class="language-SQL">select * from emp ename like '_A%';
-</code></pre>
-
-<p><strong>2、空值查询</strong>
-<em>空：is null  &nbsp;&nbsp;&nbsp; 非空： is not null</em>
-如：查询奖金为空的雇员信息</p>
-
-<pre><code class="language-SQL">select * from emp where comm is null;
-</code></pre>
-
-<h2 id="二-函数">二、函数</h2>
-
-<p><strong>1、数学函数</strong>
-<table><tr><td>函数</td><td>功能</td><td>实例</td><td>结果</td></tr><tr><td>abs</td><td>求绝对值函数</td><td>abs(-5)</td><td>5</td></tr><tr><td>sqrt<td><td求平</td><td>sqrt(2</td><td>1.4142...</td></tr><tr><td>power</td><td>求幂函数</td><td>power(2,3)</td><td>8</td></tr></table></p></li>
+<li>A、between：在某某之间。如,显示工资在1000~2000之间的雇员</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> sal beteween <span style="color:#ae81ff">1000</span> <span style="color:#66d9ef">and</span> <span style="color:#ae81ff">2000</span>;
+</code></pre></div><ul>
+<li>B、in：在某某之间。如，显示职务为“SALMAN”，“CLEARK”和“MANAGER”的雇员信息</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> job <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">SALMAN</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLERK</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">MANAGER</span><span style="color:#e6db74">&#39;</span>);
+</code></pre></div><ul>
+<li>C、like：与通配符使用
+*通配符：% 代表0个或任意个字符     —_ 代表1个字符*
+如：显示姓名以“S”开头的雇员信息。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> ename <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">S%</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>显示姓名第二个字符为“A”的雇员信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp ename <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">_A%</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p><strong>2、空值查询</strong>
+<em>空：is null      非空： is not null</em>
+如：查询奖金为空的雇员信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> comm <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>;
+</code></pre></div><h2 id="heading1">二、函数</h2>
+<p><strong>1、数学函数</strong></p>
+<!-- raw HTML omitted -->
 <p>练习：</p>
-
 <p>使用求绝对值函数abs</p>
-
-<pre><code class="language-SQL">select abs(-5) from dual;
-</code></pre>
-
-<p>使用求平方根函数sqrt。</p>
-
-<pre><code class="language-SQL">select sqrt(2) from dual;
-</code></pre>
-
-<p>使用ceil函数。</p>
-
-<pre><code class="language-SQL">select ceil(2.35) from dual;
-</code></pre>
-
-<p>使用floor函数。</p>
-
-<pre><code class="language-SQL">select floor(2.35) from dual;
-</code></pre>
-
-<p><strong>2、使用四舍五入函数round</strong> <small> 格式：round(数字，保留的位数)</samll>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">abs</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">from</span> dual;
+</code></pre></div><p>使用求平方根函数sqrt。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> sqrt(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">from</span> dual;
+</code></pre></div><p>使用ceil函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ceil(<span style="color:#ae81ff">2</span>.<span style="color:#ae81ff">35</span>) <span style="color:#66d9ef">from</span> dual;
+</code></pre></div><p>使用floor函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> floor(<span style="color:#ae81ff">2</span>.<span style="color:#ae81ff">35</span>) <span style="color:#66d9ef">from</span> dual;
+</code></pre></div><p><strong>2、使用四舍五入函数round</strong> <!-- raw HTML omitted --> 格式：round(数字，保留的位数)<!-- raw HTML omitted -->
 例：</p>
-
-<pre><code class="language-SQL">select round(45.923,2), round(45.923,0), round(45.923,-1) from dual;
-</code></pre>
-
-<p><strong>3、字符型函数</strong>
-<table><tr><td>ascii</td><td>返回与ASCII码相应的字符</td><td>Ascii('A')</td><td>65</td></tr><td>char</td><td>返回与ASCII码相应的字符</td><td>char(65)</td><td>A</td></tr><tr><td>lower</td><td>将字符串转换成小写</td><td>lower ('SQL Course')</td><td>sql course</td></tr><tr><td>upper</td><td>将字符串转换成</td><td>upper('SQL Course')</td><td>SQL COURSE</td></tr><tr><td>initcap</td><td>将字符串转换成每个单词以大写开头</td><td>initcap('SQL course')</td><td>SQL Course</td></tr><tr><td>concat</td><td>连接两个字符串</td><td>concat('SQL', ' Course')</td><td>SQL Course</td></tr><tr><td>substr</td><td>给出起始位置和长度，返回子字符串</td><td>substr('String',1,3)</td><td>Str</td></tr><tr><td>length</td><td>求字符串的长度</td><td>length('Wellcom')</td><td>7</td></tr><tr><td>trim</td><td>在一个字符串中去除另一个字符串</td><td>trim('S' FROM 'SSMITH')</td><td>MITH</td></tr><tr><td>replace</td><td>用一个字符串替换另一个字符串中的子字符串</td><td>replace('ABC', 'B', 'D')</td><td>ADC</td></tr></table></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> round(<span style="color:#ae81ff">45</span>.<span style="color:#ae81ff">923</span>,<span style="color:#ae81ff">2</span>), round(<span style="color:#ae81ff">45</span>.<span style="color:#ae81ff">923</span>,<span style="color:#ae81ff">0</span>), round(<span style="color:#ae81ff">45</span>.<span style="color:#ae81ff">923</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">from</span> dual;
+</code></pre></div><p><strong>3、字符型函数</strong></p>
+<!-- raw HTML omitted -->
 <p>练习：
 如果不知道表的字段内容是大写还是小写，可以转换后比较。</p>
-
-<pre><code class="language-SQL">select empno, ename,deptno from emp where lower(ename)='blake';
-</code></pre>
-
-<p>显示名称以“W”开头的雇员，并将名称转换成以大写开头。</p>
-
-<pre><code class="language-SQL">select empno,initcap(ename),job from emp wher substr(ename,1,1)='W';
-</code></pre>
-
-<p>显示雇员名称中包含“S”的雇员名称及名称长度。</p>
-
-<pre><code class="language-SQL">select empno,ename,legth(ename) from emp where instr(ename,'S',1,1)&gt;0;
-</code></pre>
-
-<h2 id="4-日期型函数">4、日期型函数</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno, ename,deptno <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">lower</span>(ename)<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">blake</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>显示名称以“W”开头的雇员，并将名称转换成以大写开头。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno,initcap(ename),job <span style="color:#66d9ef">from</span> emp wher substr(ename,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>)<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">W</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>显示雇员名称中包含“S”的雇员名称及名称长度。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno,ename,legth(ename) <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> instr(ename,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">S</span><span style="color:#e6db74">&#39;</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;
+</code></pre></div><h2 id="4">4、日期型函数</h2>
 <p><strong>Oracle使用内部数字格式来保存时间和日期，包括世纪、年、月、日、小时、分、秒。缺省日期格式为 DD-MON-YY，如“08-05月-03”代表2003年5月8日。SYSDATE是返回系统日期和时间的虚列函数。</strong>
 待续。。。</p>
 </div>

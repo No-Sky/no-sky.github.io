@@ -164,65 +164,31 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="索引-同义词-数据库链接-pl-sql语句">索引、同义词、数据库链接、PL/SQL语句</h1>
-
-<h2 id="一-索引">一、索引</h2>
-
+        <div class="post_content markdown"><h1 id="plsql">索引、同义词、数据库链接、PL/SQL语句</h1>
+<h2 id="heading">一、索引</h2>
 <p><strong>索引(INDEX)是为了加快数据的查找而创建的数据库对象，特别是对大表，索引可以有效地提高查找速度，也可以保证数据的惟一性</strong></p>
-
 <p><strong>创建索引一般要掌握以下原则：只有较大的表才有必要建立索引，表的记录应该大于50条，查询数据小于总行数的2%～4%。虽然可以为表创建多个索引，但是无助于查询的索引不但不会提高效率，还会增加系统开销。因为当执行DML操作时，索引也要跟着更新，这时索引可能会降低系统的性能。</strong></p>
-
 <p>创建索引：</p>
-
-<pre><code class="language-SQL">CREATE INDEX 索引名 ON 表名(列名);
-</code></pre>
-
-<p>删除索引：</p>
-
-<pre><code class="language-SQL">DROP INDEX 索引名；
-</code></pre>
-
-<h2 id="二-同义词">二、同义词</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#960050;background-color:#1e0010">索</span><span style="color:#960050;background-color:#1e0010">引</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">ON</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span>);
+</code></pre></div><p>删除索引：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#960050;background-color:#1e0010">索</span><span style="color:#960050;background-color:#1e0010">引</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><h2 id="heading1">二、同义词</h2>
 <p>**   同义词(SYNONYM)是为模式对象起的别名，可以为表、视图、序列、过程、函数和包等数据库模式对象创建同义词。**</p>
-
 <p>创建私有同义词：</p>
-
-<pre><code class="language-SQL">CREATE SYNONYM BOOK FOR 图书；
-</code></pre>
-
-<p>创建公有同义词(先要获得创建公有同义词的权限)：</p>
-
-<pre><code class="language-SQL">CREATE PUBLIC SYNONYM BOOK FOR SCOTT.图书；
-</code></pre>
-
-<p>删除同义词：</p>
-
-<pre><code class="language-SQL">DROP SYNONYM 同义词名；
-</code></pre>
-
-<h2 id="三-数据库链接">三、数据库链接</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> SYNONYM BOOK <span style="color:#66d9ef">FOR</span> <span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>创建公有同义词(先要获得创建公有同义词的权限)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">PUBLIC</span> SYNONYM BOOK <span style="color:#66d9ef">FOR</span> SCOTT.<span style="color:#960050;background-color:#1e0010">图</span><span style="color:#960050;background-color:#1e0010">书</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>删除同义词：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">DROP</span> SYNONYM <span style="color:#960050;background-color:#1e0010">同</span><span style="color:#960050;background-color:#1e0010">义</span><span style="color:#960050;background-color:#1e0010">词</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><h2 id="heading2">三、数据库链接</h2>
 <p>** 数据库链接(DATABASE LINK)是在分布式环境下，为了访问远程数据库而创建的数据通信链路。**</p>
-
 <p>格式：</p>
-
-<pre><code class="language-SQL">CREATE DATABASE LINK 链接名 CONNECT TO 账户 IDENTIFIED BY 口令 USING 服务名;
-</code></pre>
-
-<p>数据库链接一旦建立并测试成功，就可以使用以下形式来访问远程用户的表。</p>
-
-<pre><code class="language-SQL">表名@数据库链接名
-</code></pre>
-
-<h2 id="四-pl-sql">四、PL/sql</h2>
-
-<h3 id="1-块结构和基本语法要求">1、块结构和基本语法要求</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> LINK <span style="color:#960050;background-color:#1e0010">链</span><span style="color:#960050;background-color:#1e0010">接</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">CONNECT</span> <span style="color:#66d9ef">TO</span> <span style="color:#960050;background-color:#1e0010">账</span><span style="color:#960050;background-color:#1e0010">户</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#960050;background-color:#1e0010">口</span><span style="color:#960050;background-color:#1e0010">令</span> <span style="color:#66d9ef">USING</span> <span style="color:#960050;background-color:#1e0010">服</span><span style="color:#960050;background-color:#1e0010">务</span><span style="color:#960050;background-color:#1e0010">名</span>;
+</code></pre></div><p>数据库链接一旦建立并测试成功，就可以使用以下形式来访问远程用户的表。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span><span style="color:#f92672">@</span><span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">库</span><span style="color:#960050;background-color:#1e0010">链</span><span style="color:#960050;background-color:#1e0010">接</span><span style="color:#960050;background-color:#1e0010">名</span>
+</code></pre></div><h2 id="plsql1">四、PL/sql</h2>
+<h3 id="1">1、块结构和基本语法要求</h3>
 <p>块中各部分的作用解释如下：</p>
-
 <pre><code>(1)  DECLARE：声明部分标志。
 
 (2)  BEGIN：可执行部分标志。
@@ -230,72 +196,43 @@ code.has-jax {
 (3)  EXCEPTION：异常处理部分标志。
 
 (4)  END；：程序结束标志。
-</code></pre>
-
-<h3 id="2-输出">2、输出</h3>
-
+</code></pre><h3 id="2">2、输出</h3>
 <p>第一种形式：</p>
-
-<pre><code class="language-SQL">DBMS_OUTPUT.PUT(字符串表达式)；
-</code></pre>
-
-<p>第二种形式：</p>
-
-<pre><code class="language-SQL">DBMS_OUTPUT.PUT_LINE(字符串表达式)；
-</code></pre>
-
-<p>第三种形式：</p>
-
-<pre><code class="language-SQL">DBMS_OUTPUT.NEW_LINE；
-</code></pre>
-
-<h3 id="3-变量赋值">3、变量赋值：</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">DBMS_OUTPUT.PUT(<span style="color:#960050;background-color:#1e0010">字</span><span style="color:#960050;background-color:#1e0010">符</span><span style="color:#960050;background-color:#1e0010">串</span><span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">达</span><span style="color:#960050;background-color:#1e0010">式</span>)<span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>第二种形式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">DBMS_OUTPUT.PUT_LINE(<span style="color:#960050;background-color:#1e0010">字</span><span style="color:#960050;background-color:#1e0010">符</span><span style="color:#960050;background-color:#1e0010">串</span><span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">达</span><span style="color:#960050;background-color:#1e0010">式</span>)<span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>第三种形式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">DBMS_OUTPUT.NEW_LINE<span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><h3 id="3">3、变量赋值：</h3>
 <p>第一种形式：</p>
-
 <pre><code>SELECT 列名1，列名2... INTO 变量1，变量2... FROM 表名 WHERE 条件；第二种形式：变量名:=值
-</code></pre>
-
-<p>例：查询雇员编号为7788的雇员姓名和工资。</p>
-
-<pre><code class="language-SQL">SET SERVEROUTPUT ON     --在命令行界面必须写
-DECLARE--定义部分标识     
- v_name  VARCHAR2(10);  --定义字符串变量v_name     
- v_sal   NUMBER(5); --定义数值变量v_sal       
-BEGIN           --可执行部分标识SELECT  ename,sal INTO v_name,v_sal 
- FROM emp 
- WHERE empno=7788;--在程序中插入的SQL语句
-        
-DBMS_OUTPUT.PUT_LINE('7788号雇员是：'||v_name||'，工资为：'||to_char(v_sal));
-        --输出雇员名和工资      
-END;    
-</code></pre>
-
-<h3 id="4-结合变量的定义和使用-即全局变量">4、结合变量的定义和使用（即全局变量）</h3>
-
-<p>**  该变量是在整个SQL*Plus环境下有效的变量，在退出SQL*Plus之前始终有效，所以可以使用该变量在不同的程序之间传递信息。结合变量不是由程序定义的，而是使用系统命令VARIABLE定义的。**</p>
-
+</code></pre><p>例：查询雇员编号为7788的雇员姓名和工资。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SET</span> SERVEROUTPUT <span style="color:#66d9ef">ON</span>		<span style="color:#75715e">--在命令行界面必须写
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">DECLARE</span><span style="color:#75715e">--定义部分标识		
+</span><span style="color:#75715e"></span> v_name  VARCHAR2(<span style="color:#ae81ff">10</span>);	<span style="color:#75715e">--定义字符串变量v_name		
+</span><span style="color:#75715e"></span> v_sal   NUMBER(<span style="color:#ae81ff">5</span>);	<span style="color:#75715e">--定义数值变量v_sal		
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">BEGIN</span>			<span style="color:#75715e">--可执行部分标识SELECT	 ename,sal INTO v_name,v_sal 
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">FROM</span> emp 
+ <span style="color:#66d9ef">WHERE</span> empno<span style="color:#f92672">=</span><span style="color:#ae81ff">7788</span>;<span style="color:#75715e">--在程序中插入的SQL语句
+</span><span style="color:#75715e"></span>  		
+DBMS_OUTPUT.PUT_LINE(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">7788号雇员是：</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">|</span><span style="color:#f92672">|</span>v_name<span style="color:#f92672">|</span><span style="color:#f92672">|</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">，工资为：</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">|</span><span style="color:#f92672">|</span>to_char(v_sal));
+		<span style="color:#75715e">--输出雇员名和工资		
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">END</span>;	
+</code></pre></div><h3 id="4">4、结合变量的定义和使用（即全局变量）</h3>
+<p>**  该变量是在整个SQL<em>Plus环境下有效的变量，在退出SQL</em>Plus之前始终有效，所以可以使用该变量在不同的程序之间传递信息。结合变量不是由程序定义的，而是使用系统命令VARIABLE定义的。**</p>
 <p>例：定义并使用结合变量</p>
-
 <p>步骤1：输入和执行下列命令，定义结合变量g_ename：</p>
-
-<pre><code class="language-SQL">--SET SERVEROUTPUT ON 
-    VARIABLE  g_ename VARCHAR2(100)     
-BEGIN
-    :g_ename:=:g_ename|| 'Hello~ ';         --在程序中使用结合变量
-    DBMS_OUTPUT.PUT_LINE(:g_ename);                --输出结合变量的值
-END;
-</code></pre>
-
-<h3 id="5-记录变量的定义">5．记录变量的定义</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">--SET SERVEROUTPUT ON 
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">VARIABLE</span>  g_ename VARCHAR2(<span style="color:#ae81ff">100</span>)		
+<span style="color:#66d9ef">BEGIN</span>
+	:g_ename:<span style="color:#f92672">=</span>:g_ename<span style="color:#f92672">|</span><span style="color:#f92672">|</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Hello~ </span><span style="color:#e6db74">&#39;</span>;			<span style="color:#75715e">--在程序中使用结合变量
+</span><span style="color:#75715e"></span>	DBMS_OUTPUT.PUT_LINE(:g_ename);                <span style="color:#75715e">--输出结合变量的值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">END</span>;
+</code></pre></div><h3 id="5">5．记录变量的定义</h3>
 <p><strong>还可以根据表或视图的一个记录中的所有字段定义变量，称为记录变量。记录变量包含若干个字段，在结构上同表的一个记录相同，定义方法是在表名后跟%ROWTYPE。记录变量的字段名就是表的字段名，数据类型也一致。</strong></p>
-
 <p>如：</p>
-
 <pre><code>v_name emp.ename%TYPE;
-</code></pre>
-</div>
+</code></pre></div>
         <div class="post_footer">
           
           <div class="meta">

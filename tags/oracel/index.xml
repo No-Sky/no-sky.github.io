@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>oracel on Note</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 12 Dec 2017 19:38:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E5%9B%9B/</guid>
-      <description>游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &#39;CLERK&#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&#39;,&#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3</description>
+      <description>游标、存储过程 ##一、游标参数的传递 例： SET SERVEROUTPUT ON DECLARE V_empno NUMBER(5); V_ename VARCHAR2(10); CURSOR emp_cursor(p_deptno NUMBER,p_job VARCHAR2) IS SELECT empno,ename FROM emp WHERE deptno = p_deptno AND job = p_job; BEGIN OPEN emp_cursor(10, &amp;#39;CLERK&amp;#39;); LOOP FETCH emp_cursor INTO v_empno,v_ename; EXIT WHEN emp_cursor%NOTFOUND; DBMS_OUTPUT.PUT_LINE(v_empno||&amp;#39;,&amp;#39;||v_ename); END LOOP; END; 二、异常处理 错误处理的语法如下： EXCEPTION WHEN 错误1[OR 错误2] THEN 语句序列1; WHEN 错误3</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 05 Dec 2017 19:11:04 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81%E4%B8%89/</guid>
-      <description>PL/SQL空值语句、游标 一、IF语句 1、IF-THEN-END IF形式 IF 条件 then 语句集; END IF; 2、IF-THEN-ELSE-END IF形式 IF 条件 then 语句集1; ElSE 语句集2 END IF; 3．IF-THEN-ELSIF-</description>
+      <description>PL/SQL空值语句、游标 一、IF语句 1、IF-THEN-END IF形式 2、IF-THEN-ELSE-END IF形式 3．IF-THEN-ELSIF-ELSE-END IF形式 ##二、CASE语句 1．基本</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Thu, 30 Nov 2017 21:10:31 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%8D%81/</guid>
-      <description>建表 一、建表 格式： create table 表名 ( 列名1 类型 约束, 列名2 类型 约束, ...... ); 如： --创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; --创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版</description>
+      <description>建表 一、建表 格式： 如： &amp;ndash;创建出版社表 create table 出版社（ 编号 varchar2(2), 出版社名称 varchar2(30), 地址 varchar2(30), 联系电话 varchar2(20) ）; &amp;ndash;创建图书表 create table 图书 ( 图书编号 VARCHAR2(5), 图书名称 VARCHAR2(30), 出版社编号 VARCHAR2(2), 作者 VARCHAR2(10), 出版日期 DATE, 数量 NUMBER(3), 单价 NUMBER(7,2) ); 二、通</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Fri, 24 Nov 2017 18:02:50 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E5%9B%9B/</guid>
-      <description>条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) * A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，</description>
+      <description>条件查询、函数（一） 一、 条件查询 1、模糊查询(between、in、like) A、between：在某某之间。如,显示工资在1000~2000之间的雇员 select * from emp where sal beteween 1000 and 2000; B、in：在某某之间。如，显</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Thu, 23 Nov 2017 18:48:46 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/</guid>
-      <description>Oracle的基本查询 一、基本查询 select格式： &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;select 列名 from 表名 ； &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;where 查询条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;group by 分组列 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;having 分组后条件 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚列ROWNUM</description>
+      <description>Oracle的基本查询 一、基本查询 *select格式：*select 列名 from 表名 ； where 查询条件 group by 分组列 having 分组后条件 order by 排序列 asc[desc] 如：查询部门10的雇员 ​ select * from emp where deptno=10; 二、行号（rownum） 每个表都有一个虚</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@
       <pubDate>Wed, 22 Nov 2017 13:23:45 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/</guid>
-      <description>一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &#39;文件路径&#39; size 文件大小 如： cerate tablespace myspace datafile &#39;D:\myspace.dbf&#39; size10MB; 删除表空间： drop tablespace myspace incluiding contents and datafile; 二、创建用户 格式</description>
+      <description>一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &amp;lsquo;文件路径&amp;rsquo; size 文件大小 如： cerate tablespace myspace datafile &amp;#39;D:\myspace.dbf&amp;#39; size10MB; 删除表空间： drop tablespace myspace</description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@
       <pubDate>Tue, 21 Nov 2017 18:33:44 +0000</pubDate>
       
       <guid>https://no-sky.github.io/posts/oracle%E7%AC%94%E8%AE%B0-%E4%B8%80/</guid>
-      <description>配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器） &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;开始菜单中</description>
+      <description>配置Oracle 1 首先打开Oracle服务 2 配置监听器（这个是因为教室的电脑Oracle安装有问题，没有配置好监听器）开始菜单中找到net configration assistant添加一个监听器 3 用system用户登录sq</description>
     </item>
     
   </channel>

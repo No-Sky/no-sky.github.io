@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="java实现二维码开发 java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; /"/>
+  <meta name="description" content="java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; //图片高度和宽度 int height2 ="/>
   
 
   
@@ -164,78 +164,63 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown"><h1>java实现二维码开发</h1>
-
+        <div class="post_content markdown"><!-- raw HTML omitted -->
 <p>java开发二维码的流程</p>
-
 <p>1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。</p>
-
 <pre><code>	core-3.1.0.jar
-</code></pre>
+</code></pre><p>2、编写二维码核心类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">zxingImg</span><span style="color:#f92672">(</span>String content<span style="color:#f92672">,</span>HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">{</span>
 
-<p>2、编写二维码核心类</p>
+	    <span style="color:#66d9ef">int</span> width2 <span style="color:#f92672">=</span> 200<span style="color:#f92672">;</span>   <span style="color:#75715e">//图片高度和宽度
+</span><span style="color:#75715e"></span>	    <span style="color:#66d9ef">int</span> height2 <span style="color:#f92672">=</span> 200<span style="color:#f92672">;</span> 
 
-<pre><code class="language-java">	public static void zxingImg(String content,HttpServletResponse response) throws IOException{
+	    <span style="color:#75715e">//二维码的图片格式 
+</span><span style="color:#75715e"></span>	    String format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gif&#34;</span><span style="color:#f92672">;</span> 
 
-	    int width2 = 200;   //图片高度和宽度
-	    int height2 = 200; 
+	    Hashtable hints <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hashtable<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> 
 
-	    //二维码的图片格式 
-	    String format = &quot;gif&quot;; 
+	    <span style="color:#75715e">//内容所使用编码 
+</span><span style="color:#75715e"></span>	    hints<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>EncodeHintType<span style="color:#f92672">.</span><span style="color:#a6e22e">CHARACTER_SET</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> 
 
-	    Hashtable hints = new Hashtable(); 
+	    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+		    BitMatrix bitMatrix <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MultiFormatWriter<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span>content<span style="color:#f92672">,</span>BarcodeFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">QR_CODE</span><span style="color:#f92672">,</span> width2<span style="color:#f92672">,</span> height2<span style="color:#f92672">,</span> hints<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-	    //内容所使用编码 
-	    hints.put(EncodeHintType.CHARACTER_SET, &quot;UTF-8&quot;); 
+		    <span style="color:#66d9ef">int</span> width <span style="color:#f92672">=</span> bitMatrix<span style="color:#f92672">.</span><span style="color:#a6e22e">getWidth</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> 
+		    <span style="color:#66d9ef">int</span> height <span style="color:#f92672">=</span> bitMatrix<span style="color:#f92672">.</span><span style="color:#a6e22e">getHeight</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> 
 
-	    try {
-		    BitMatrix bitMatrix = new MultiFormatWriter().encode(content,BarcodeFormat.QR_CODE, width2, height2, hints);
+		    BufferedImage image <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedImage<span style="color:#f92672">(</span>width<span style="color:#f92672">,</span> height<span style="color:#f92672">,</span> BufferedImage<span style="color:#f92672">.</span><span style="color:#a6e22e">TYPE_INT_RGB</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> 
 
-		    int width = bitMatrix.getWidth(); 
-		    int height = bitMatrix.getHeight(); 
+			    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> x <span style="color:#f92672">&lt;</span> width<span style="color:#f92672">;</span> x<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+			        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> y <span style="color:#f92672">&lt;</span> height<span style="color:#f92672">;</span> y<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+			            image<span style="color:#f92672">.</span><span style="color:#a6e22e">setRGB</span><span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">,</span> bitMatrix<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> 0xFF000000 <span style="color:#f92672">:</span> 0xFFFFFFFF<span style="color:#f92672">)</span><span style="color:#f92672">;</span> <span style="color:#75715e">//二维码图片为黑白两色
+</span><span style="color:#75715e"></span>			    	<span style="color:#f92672">}</span> 
+				<span style="color:#f92672">}</span>
+		    <span style="color:#75715e">//输出二维码图片流
+</span><span style="color:#75715e"></span>		    ImageIO<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>image<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;gif&#34;</span><span style="color:#f92672">,</span>response<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-		    BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB); 
-
-			    for (int x = 0; x &lt; width; x++) { 
-			        for (int y = 0; y &lt; height; y++) { 
-			            image.setRGB(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF); //二维码图片为黑白两色
-			    	} 
-				}
-		    //输出二维码图片流
-		    ImageIO.write(image,&quot;gif&quot;,response.getOutputStream());
-
-		    //在本地生成二维码图片 
-		    //File outputFile = new File(&quot;d:&quot;+File.separator+&quot;new.gif&quot;); 
-		    //MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);
-
-			} catch (WriterException e) {
-			    e.printStackTrace();
-			} 
-		}
-</code></pre>
-
-<p>3、使用二维码核心类</p>
-
+		    <span style="color:#75715e">//在本地生成二维码图片 
+</span><span style="color:#75715e"></span>		    <span style="color:#75715e">//File outputFile = new File(&#34;d:&#34;+File.separator+&#34;new.gif&#34;); 
+</span><span style="color:#75715e"></span>		    <span style="color:#75715e">//MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);
+</span><span style="color:#75715e"></span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>WriterException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			    e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span> 
+		<span style="color:#f92672">}</span>
+</code></pre></div><p>3、使用二维码核心类</p>
 <p>1）可以在Servlet中使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doPost</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    <span style="color:#75715e">//设置编码
+</span><span style="color:#75715e"></span>	    request<span style="color:#f92672">.</span><span style="color:#a6e22e">setCharacterEncoding</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    response<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentType</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text/html;charset=UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-	    //设置编码
-	    request.setCharacterEncoding(&quot;UTF-8&quot;);
-	    response.setContentType(&quot;text/html;charset=UTF-8&quot;);
-
-	    String content = new String(request.getParameter(&quot;content&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);
-	    QrcodeUtil.QrcodeImg(content, response);
-	}
-</code></pre>
-
-<p>2）使用SpringMVC(后续添加)</p>
-
+	    String content <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>request<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;content&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ISO-8859-1&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    QrcodeUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">QrcodeImg</span><span style="color:#f92672">(</span>content<span style="color:#f92672">,</span> response<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>2）使用SpringMVC(后续添加)</p>
 <p>4、在网页中显示</p>
-
-<pre><code class="language-html">	&lt;img src=&quot;QrcodeServlet?content=&lt;%=content %&gt;&quot; /&gt;
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;QrcodeServlet?content=&lt;%=content %&gt;&#34;</span> /&gt;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

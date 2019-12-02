@@ -164,87 +164,81 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="多表连接-二-组函数-分组查询">多表连接（二）、组函数、分组查询</h1>
-
-<h2 id="一-不等连接">一、不等连接</h2>
-
+        <div class="post_content markdown"><h1 id="heading">多表连接（二）、组函数、分组查询</h1>
+<h2 id="heading1">一、不等连接</h2>
 <p><strong>拿一个表作为另一表的查询条件或范围</strong></p>
-
 <p>如：显示雇员名称，工资和所属工资等级。</p>
-
-<pre><code class="language-SQL">select e.ename,e.sal,s.grade from emp e,salgrade s where e.sal between s.losal and s.hisal;
-</code></pre>
-
-<h2 id="二-自连接">二、自连接</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> e.ename,e.sal,s.grade <span style="color:#66d9ef">from</span> emp e,salgrade s <span style="color:#66d9ef">where</span> e.sal <span style="color:#66d9ef">between</span> s.losal <span style="color:#66d9ef">and</span> s.hisal;
+</code></pre></div><h2 id="heading2">二、自连接</h2>
 <p><strong>自连接就是一个表，同本身进行连接。对于自连接可以想像存在两个相同的表(表和表的副本)，可以通过不同的别名区别两个相同的表（其它就是内连接)</strong></p>
-
 <p>如：显示雇员名称和雇员的经理名称</p>
-
-<pre><code class="language-SQL">select worker.ename||'的经理是'||manager.ename as 雇员经理 from emp worker,emp manager where worker.mgr=manager.empno;
-</code></pre>
-
-<h2 id="三-组函数">三、组函数</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> worker.ename<span style="color:#f92672">|</span><span style="color:#f92672">|</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">的经理是</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">|</span><span style="color:#f92672">|</span>manager.ename <span style="color:#66d9ef">as</span> <span style="color:#960050;background-color:#1e0010">雇</span><span style="color:#960050;background-color:#1e0010">员</span><span style="color:#960050;background-color:#1e0010">经</span><span style="color:#960050;background-color:#1e0010">理</span> <span style="color:#66d9ef">from</span> emp worker,emp manager <span style="color:#66d9ef">where</span> worker.mgr<span style="color:#f92672">=</span>manager.empno;
+</code></pre></div><h2 id="heading3">三、组函数</h2>
 <p>**
 组函数只能应用于SELECT子句、HAVING子句或ORDER BY子句中。
 组函数也可以称为统计函数。
 组函数忽略列的空值。
 对组可以应用组函数。
-在组函数中可使用DISTINCT或ALL关键字。<br />
-ALL表示对所有非NULL值(可重复)进行运算。<br />
+在组函数中可使用DISTINCT或ALL关键字。  <br>
+ALL表示对所有非NULL值(可重复)进行运算。      <br>
 DISTINCT 表示对每一个非NULL值，如果存在重复值，则组函数只运算一次。如果不指明上述关键字，默认为ALL。
 **</p>
-
-<p>|函数|说明|
-|-|-|
-|AVG|求平均值|
-|COUNT|求计数值，返回非空行数，*表示返回所有行|
-|MAX|求最大值|
-|MIN|求最小值|
-|SUM|求和|
-|SIDDEV|求标准偏差，是根据差的平方根得到的|
-|VARIANCE|求统计方差|</p>
-
-<h2 id="四-分组查询">四、分组查询</h2>
-
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVG</td>
+<td>求平均值</td>
+</tr>
+<tr>
+<td>COUNT</td>
+<td>求计数值，返回非空行数，*表示返回所有行</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>求最大值</td>
+</tr>
+<tr>
+<td>MIN</td>
+<td>求最小值</td>
+</tr>
+<tr>
+<td>SUM</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>SIDDEV</td>
+<td>求标准偏差，是根据差的平方根得到的</td>
+</tr>
+<tr>
+<td>VARIANCE</td>
+<td>求统计方差</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading4">四、分组查询</h2>
 <p><strong>1、如：按职务统计工资总和。</strong></p>
-
-<pre><code class="language-SQL">select deptno,job,sum(sal) from emp group by deptno,job;
-</code></pre>
-
-<p><strong>2、多列分组</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> deptno,job,<span style="color:#66d9ef">sum</span>(sal) <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno,job;
+</code></pre></div><p><strong>2、多列分组</strong></p>
 <p>如：按部门和职务分组统计工资总和。:</p>
-
-<pre><code class="language-SQL">select deptno,job,sum(sal) from emp group by deptno,job;
-</code></pre>
-
-<p><strong>3、HAVING</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> deptno,job,<span style="color:#66d9ef">sum</span>(sal) <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno,job;
+</code></pre></div><p><strong>3、HAVING</strong>
 <em>HAVING从句过滤分组后的结果，它只能出现在GROUP BY从句之后，而WHERE从句要出现在GROUP BY从句之前。</em></p>
-
 <p>如：统计各部门的最高工资，排除最高工资小于3000的部门。</p>
-
-<pre><code class="language-SQL">select deptno,max(sal) from emp group by deptno having max(sal)&gt;=3000;
-</code></pre>
-
-<p><strong>4、分组统计结果排序</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> deptno,<span style="color:#66d9ef">max</span>(sal) <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno <span style="color:#66d9ef">having</span> <span style="color:#66d9ef">max</span>(sal)<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3000</span>;
+</code></pre></div><p><strong>4、分组统计结果排序</strong>
 <em>可以使用ORDER BY从句对统计的结果进行排序，ORDER BY从句要出现在语句的最后。</em></p>
-
 <p>如：按职务统计工资总和并排序。</p>
-
-<pre><code class="language-SQL">select job 职务, sum(sal) 工资总和 from emp group by job order by sum(sal);
-</code></pre>
-
-<p><strong>5、组函数的嵌套使用</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> job <span style="color:#960050;background-color:#1e0010">职</span><span style="color:#960050;background-color:#1e0010">务</span>, <span style="color:#66d9ef">sum</span>(sal) <span style="color:#960050;background-color:#1e0010">工</span><span style="color:#960050;background-color:#1e0010">资</span><span style="color:#960050;background-color:#1e0010">总</span><span style="color:#960050;background-color:#1e0010">和</span> <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> job <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#66d9ef">sum</span>(sal);
+</code></pre></div><p><strong>5、组函数的嵌套使用</strong></p>
 <p>如：求各部门平均工资的最高值。</p>
-
-<pre><code class="language-SQL">select max(avg(sal)) from emp group by deptno;
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">max</span>(<span style="color:#66d9ef">avg</span>(sal)) <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

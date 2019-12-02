@@ -164,77 +164,64 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="子查询-集合运算">子查询、集合运算</h1>
-
-<h2 id="一-子查询">一、子查询</h2>
-
+        <div class="post_content markdown"><h1 id="heading">子查询、集合运算</h1>
+<h2 id="heading1">一、子查询</h2>
 <p><strong>通过把一个查询的结果作为另一个查询的一部分,子查询一般出现在SELECT语句的WHERE子句中，Oracle也支持在FROM或HAVING子句中出现子查询。
 子查询比主查询先执行，结果作为主查询的条件，在书写上要用圆括号扩起来，并放在比较运算符的右侧。</strong></p>
-
-<h3 id="1-单行子查询">1、单行子查询</h3>
-
+<h3 id="1">1、单行子查询</h3>
 <p>如：查询比SCOTT工资高的雇员名字和工资。</p>
-
-<pre><code class="language-SQL">select ename,sal from emp where sal&gt;(select sal from emp where empno=7788);
-</code></pre>
-
-<h3 id="2-多行子查询">2、多行子查询*</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename,sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> sal<span style="color:#f92672">&gt;</span>(<span style="color:#66d9ef">select</span> sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> empno<span style="color:#f92672">=</span><span style="color:#ae81ff">7788</span>);
+</code></pre></div><h3 id="2">2、多行子查询*</h3>
 <p><strong>如果子查询返回多行的结果，则我们称它为多行子查询。多行子查询要使用不同的比较运算符号，它们是IN、ANY和ALL。</strong></p>
-
 <p>如:查询工资低于任意一个“CLERK”的工资的雇员信息。</p>
-
-<pre><code class="language-SQL">select empno,ename,job,sal from emp where sal &lt; any (select sal from emp where job = 'CLERK') and job &lt;&gt; 'CLERK';
-</code></pre>
-
-<p>如：  查询工资比所有的“SALESMAN”都高的雇员的编号、名字和工资。</p>
-
-<pre><code class="language-SQL">select empno,ename,job from emp where job in (select job from emp where deptno = 10) and deptno = 20;
-</code></pre>
-
-<h3 id="3-多列子查询">3.多列子查询</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno,ename,job,sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> sal <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">any</span> (<span style="color:#66d9ef">select</span> sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> job <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLERK</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">and</span> job <span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLERK</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>如：	查询工资比所有的“SALESMAN”都高的雇员的编号、名字和工资。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno,ename,job <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> job <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> job <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">and</span> deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</code></pre></div><h3 id="3">3.多列子查询</h3>
 <p>**如果子查询返回多列，则对应的比较条件中也应该出现多列，这种查询称为多列子查询。以下是多列子查询的训练实例。
 **
 如： 查询职务和部门与SCOTT相同的雇员的信息。</p>
-
-<pre><code class="language-SQL">select empno, ename,sal from emp where (job,deptno) = (select job,deptno from emp where empno = 7788);
-</code></pre>
-
-<h3 id="4-在from从句中使用子查询">4．在FROM从句中使用子查询</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> empno, ename,sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> (job,deptno) <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> job,deptno <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> empno <span style="color:#f92672">=</span> <span style="color:#ae81ff">7788</span>);
+</code></pre></div><h3 id="4from">4．在FROM从句中使用子查询</h3>
 <p><strong>在FROM从句中也可以使用子查询，在原理上这与在WHERE条件中使用子查询类似。有的时候我们可能要求从雇员表中按照雇员出现的位置来检索雇员，很容易想到的是使用rownum虚列。比如我们要求显示雇员表中6～9位置上的雇员，可以用以下方法</strong></p>
-
 <p>如：查询雇员表中排在第6～9位置上的雇员。</p>
-
-<pre><code class="language-SQL">select ename, sal, from (select rownum as num,ename,sal from emp where rownum&lt;=9) where num&gt;=6;
-</code></pre>
-
-<h2 id="二-集合运算">二、集合运算</h2>
-
-<p>|操作|描述|
-|-|-|
-|union|并集，合并两个操作的结果，去掉重复的部分|
-|union all|并集，合并两个操作的结果，保留重复的部分|
-|minus|差集，从前面的操作结果中去掉与后面操作结果相同的部分|
-|intersect|交集，取两个操作结果中相同的部分|</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> ename, sal, <span style="color:#66d9ef">from</span> (<span style="color:#66d9ef">select</span> rownum <span style="color:#66d9ef">as</span> num,ename,sal <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> rownum<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">where</span> num<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>;
+</code></pre></div><h2 id="heading2">二、集合运算</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>union</td>
+<td>并集，合并两个操作的结果，去掉重复的部分</td>
+</tr>
+<tr>
+<td>union all</td>
+<td>并集，合并两个操作的结果，保留重复的部分</td>
+</tr>
+<tr>
+<td>minus</td>
+<td>差集，从前面的操作结果中去掉与后面操作结果相同的部分</td>
+</tr>
+<tr>
+<td>intersect</td>
+<td>交集，取两个操作结果中相同的部分</td>
+</tr>
+</tbody>
+</table>
 <p>如：查询部门10和部门20的所有职务。</p>
-
-<pre><code class="language-SQL">select job from emp where deptno = 10 
-union
-select job from emp where deptno = 20;
-</code></pre>
-
-<p>如：查询只在部门表中出现，但没有在雇员表中出现的部门编号。</p>
-
-<pre><code class="language-SQL">select deptno from dept
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> job <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> 
+<span style="color:#66d9ef">union</span>
+<span style="color:#66d9ef">select</span> job <span style="color:#66d9ef">from</span> emp <span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</code></pre></div><p>如：查询只在部门表中出现，但没有在雇员表中出现的部门编号。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> dept
 minus
-select deptno from emp;
-</code></pre>
-</div>
+<span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> emp;
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

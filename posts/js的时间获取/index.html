@@ -164,56 +164,37 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h4 id="js获取系统时间">JS获取系统时间</h4>
-
+        <div class="post_content markdown"><h4 id="js">JS获取系统时间</h4>
 <p><strong>JS自己拥有一个<code>Date</code>类来获取时间</strong></p>
-
-<pre><code class="language-javascript">    var date = new Date();
-</code></pre>
-
-<p><strong>如果直接输出的话，会是这样：</strong></p>
-
-<pre><code>    2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT+0800 (中国标准时间)
-</code></pre>
-
-<p><em>可想而知，我们并不需要这么多的东西，所以<code>Date</code>类还给我们提供了一些方法来对时间进行格式化：</em></p>
-
-<pre><code class="language-javascript">    var year = date.getFullYear();      //获取年份 输出格式为“2017”
-    var month = date.getMonth();        //获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1）
-    var day = date.getDate();         //获取日子（1~31）
-    var week = date.getDay();        //获取星期 （1~7）
-    var hour = date.getHours();        //获取小时数
-    var minute = date.getMinutes();     //获取分钟数
-    var second = date.getSeconds();      //获取秒钟
-</code></pre>
-
-<h4 id="格式化时间">格式化时间</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</code></pre></div><p><strong>如果直接输出的话，会是这样：</strong></p>
+<pre><code>	2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT+0800 (中国标准时间)
+</code></pre><p><em>可想而知，我们并不需要这么多的东西，所以<code>Date</code>类还给我们提供了一些方法来对时间进行格式化：</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();      <span style="color:#75715e">//获取年份 输出格式为“2017”
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>();        <span style="color:#75715e">//获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1）
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>();         <span style="color:#75715e">//获取日子（1~31）
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">week</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDay</span>();        <span style="color:#75715e">//获取星期 （1~7）
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hour</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();        <span style="color:#75715e">//获取小时数
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minute</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();     <span style="color:#75715e">//获取分钟数
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>();      <span style="color:#75715e">//获取秒钟
+</span></code></pre></div><h4 id="heading">格式化时间</h4>
 <p><strong>因为JS中不提供类似于JAVA中的<code>SimpelDateFormat</code>类，所以我们需要自己写一个格式化时间的方法</strong></p>
-
-<pre><code class="language-javascript">    &lt;script&gt;
-      function Format(){
-        var newDate=new Date();     
-        var year=newDate.getFullYear();
-        var month=(newDate.getMonth()+1)&lt;10?(&quot;0&quot;+(newDate.getMonth()+1)):(newDate.getMonth()+1);
-        var day=newDate.getDate()&lt;10?(&quot;0&quot;+newDate.getDate()):newDate.getDate();
-        var day=newDate.getDay()&lt;10?(&quot;0&quot;+newDate.getDay()):newDate.getDay();
-        var hours=newDate.getHours()&lt;10?(&quot;0&quot;+newDate.getHours()):newDate.getHours();
-        var minuts=newDate.getMinutes()&lt;10?(&quot;0&quot;+newDate.getMinutes()):newDate.getMinutes();
-        var seconds=newDate.getSeconds()&lt;10?(&quot;0&quot;+newDate.getSeconds()):newDate.getSeconds();
-        document.write(year+&quot;-&quot;+month+&quot;-&quot;+day+&quot; &quot;+hours+&quot;:&quot;+minuts+&quot;:&quot;+seconds);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+	  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Format</span>(){
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newDate</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Date();		
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">year</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getFullYear</span>();
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">month</span><span style="color:#f92672">=</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>();
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>();
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>();
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minuts</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>();
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">seconds</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>();
+		document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">year</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">month</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">day</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">hours</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">minuts</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">seconds</span>);
       } 
-    &lt;/script&gt;
-</code></pre>
-
-<p>输出为：</p>
-
-<pre><code>    2017-11-22 14:15:34
-</code></pre>
-
-<p>因为项目需要从前端获取时间存到数据库中，所以需要这种格式。后面再写一下时间字符串如何转化为Date的格式存进数据库。</p>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
+</code></pre></div><p>输出为：</p>
+<pre><code>	2017-11-22 14:15:34
+</code></pre><p>因为项目需要从前端获取时间存到数据库中，所以需要这种格式。后面再写一下时间字符串如何转化为Date的格式存进数据库。</p>
 </div>
         <div class="post_footer">
           

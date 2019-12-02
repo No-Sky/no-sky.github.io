@@ -10,7 +10,7 @@
         content="nosky"/>
 
   
-  <meta name="description" content="一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &#39;文件路径&#39; size 文件大小 如： cerate tablespace myspace datafile &#39;D:\myspace.dbf&#39; size10MB; 删除表空间： drop tablespace myspace incluiding contents and datafile; 二、创建用户 格式"/>
+  <meta name="description" content="一、 创建表空间 （在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间） 格式： create tablespace 表空间名 datafile &amp;lsquo;文件路径&amp;rsquo; size 文件大小 如： cerate tablespace myspace datafile &amp;#39;D:\myspace.dbf&amp;#39; size10MB; 删除表空间： drop tablespace myspace"/>
   
 
   
@@ -164,79 +164,41 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown">
-
-<h2 id="一-创建表空间">一、 创建表空间</h2>
-
+        <div class="post_content markdown"><h2 id="-">一、 创建表空间</h2>
 <p>（在SqlServer中称为创建一个是数据库，而在Oracle中则称为创建一个表空间）</p>
-
-<p><em>格式：    create tablespace 表空间名 datafile '文件路径' size 文件大小</em></p>
-
+<p><em>格式： 	create tablespace 表空间名 datafile &lsquo;文件路径&rsquo; size 文件大小</em></p>
 <p>如：</p>
-
-<pre><code class="language-SQL">cerate tablespace myspace datafile 'D:\myspace.dbf' size10MB;
-</code></pre>
-
-<p>删除表空间：</p>
-
-<pre><code class="language-SQL">drop tablespace myspace incluiding contents and datafile;
-</code></pre>
-
-<h2 id="二-创建用户">二、创建用户</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">cerate tablespace myspace datafile <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">D:\myspace.dbf</span><span style="color:#e6db74">&#39;</span> size10MB;
+</code></pre></div><p>删除表空间：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">drop</span> tablespace myspace incluiding contents <span style="color:#66d9ef">and</span> datafile;
+</code></pre></div><h2 id="heading">二、创建用户</h2>
 <p><em>格式： create user 用户名 identified by 密码 default tablespace 默认表空间</em></p>
-
 <p>如：</p>
-
-<pre><code class="language-SQL">create user user1 identified by user1 default tablespace system;
-</code></pre>
-
-<p><strong>删除用户：</strong></p>
-
-<pre><code class="language-SQL">drop user user1 cascade;
-</code></pre>
-
-<h2 id="三-给用户授权">三、给用户授权</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> user1 identified <span style="color:#66d9ef">by</span> user1 <span style="color:#66d9ef">default</span> tablespace <span style="color:#66d9ef">system</span>;
+</code></pre></div><p><strong>删除用户：</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">user</span> user1 <span style="color:#66d9ef">cascade</span>;
+</code></pre></div><h2 id="heading1">三、给用户授权</h2>
 <p><em>方式一：授予角色</em></p>
-
 <pre><code>connect     //登录
 resource    //普通权限，用于操作
 DBA         //管理员权限（慎用）
-</code></pre>
-
+</code></pre><p>如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">connect</span> <span style="color:#66d9ef">to</span> user1;
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">connect</span>,resource <span style="color:#66d9ef">to</span> user1;
+</code></pre></div><p><em>方式二：授予单个权限</em></p>
 <p>如：</p>
-
-<pre><code class="language-SQL">grant connect to user1;
-grant connect,resource to user1;
-</code></pre>
-
-<p><em>方式二：授予单个权限</em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">to</span> user1;           <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">授</span><span style="color:#960050;background-color:#1e0010">予</span>user1建表的权限
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">to</span> user1;             <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">授</span><span style="color:#960050;background-color:#1e0010">予</span>user1删表的权限
+</code></pre></div><p><em>方式三：将某个对象的权限授予用户</em></p>
 <p>如：</p>
-
-<pre><code class="language-SQL">grant create table to user1;           //授予user1建表的权限
-grant drop table to user1;             //授予user1删表的权限
-</code></pre>
-
-<p><em>方式三：将某个对象的权限授予用户</em></p>
-
-<p>如：</p>
-
-<pre><code class="language-SQL">grant select on scott.emp to user1;      //将scott用户的emp表的查询权限授予user1
-grant all on scott.emp to user1;       //将scott用户的emp表的所有权限授予user1 
-</code></pre>
-
-<p><strong>收回权限：</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">on</span> scott.emp <span style="color:#66d9ef">to</span> user1;      <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">将</span>scott用户的emp表的查询权限授予user1
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> scott.emp <span style="color:#66d9ef">to</span> user1;       <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">将</span>scott用户的emp表的所有权限授予user1 
+</code></pre></div><p><strong>收回权限：</strong></p>
 <p><em>格式： revoke 权限 from 用户</em></p>
-
 <p>如：</p>
-
-<pre><code class="language-SQL">revoke connect from user1;   //收回user1的connect权限
-revoke select on scott.emp from user1;    //收回user1对emp表的查询权限  
-</code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">revoke</span> <span style="color:#66d9ef">connect</span> <span style="color:#66d9ef">from</span> user1;   <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">收</span><span style="color:#960050;background-color:#1e0010">回</span>user1的connect权限
+<span style="color:#66d9ef">revoke</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">on</span> scott.emp <span style="color:#66d9ef">from</span> user1;    <span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">收</span><span style="color:#960050;background-color:#1e0010">回</span>user1对emp表的查询权限  
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

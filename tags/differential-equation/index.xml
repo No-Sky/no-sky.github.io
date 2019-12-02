@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Differential Equation on Note</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 $${y}&#39;&#39;+p{y}&#39;+qy=0$$ 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： 1)不同实根：$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ 2)重根：$r_1=r_2=r,y=C_1</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 通解： ①写出相应的特征方程 $r^2+pr+q=0$ ②求出特征根$r_1,r_2$ ③写出通解： **1)不同实根：**$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$ **2)重根：**$r_1=r_2=</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
       
       <guid>https://no-sky.github.io/posts/first-order-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 $${y}&#39;+P(x)y=Q(x)$$ 解法 ①化为标准形式 ②套公式： $$y = e^{-\int P(x)\mathrm{d}x}(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C)$$ 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原</description>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 标准形式 解法 ①化为标准形式 ②套公式： 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C 例：解方程$x{y}&#39;-y=x^3$ 解：原方程可化为：$</description>
     </item>
     
     <item>

@@ -10,8 +10,8 @@
         content="nosky"/>
 
   
-  <meta name="description" content="Mybatis详解第三弹——联表查询 ** 一对一 **
- 创建表和数据：  CREATE TABLE teacher( t_id INT PRIMARY KEY AUTO_INCREMENT, t_name VARCHAR(20) ); CREATE TABLE class( c_id INT PRIMARY KEY AUTO_INCREMENT, c_name VARCHAR(20), teacher_id INT ); ALTER TABLE class ADD CONSTRAINT fk_teacher_id FOREIGN KEY (teacher_id) REFERENCES teacher(t_id); INSERT INTO teacher(t_name) VALUES(&#39;LS1&#39;); INSERT INTO teacher(t_name) VALUES(&#39;LS2&#39;); INSERT INTO class(c_name, teacher_id) VALUES(&#39;bj_a&#39;, 1); INSERT INTO class(c_name, teacher_id) VALUES(&#39;bj_b&#39;, 2); "/>
+  <meta name="description" content="** 一对一 **
+ 创建表和数据：  CREATE TABLE teacher( t_id INT PRIMARY KEY AUTO_INCREMENT, t_name VARCHAR(20) ); CREATE TABLE class( c_id INT PRIMARY KEY AUTO_INCREMENT, c_name VARCHAR(20), teacher_id INT ); ALTER TABLE class ADD CONSTRAINT fk_teacher_id FOREIGN KEY (teacher_id) REFERENCES teacher(t_id); INSERT INTO teacher(t_name) VALUES(&amp;#39;LS1&amp;#39;); INSERT INTO teacher(t_name) VALUES(&amp;#39;LS2&amp;#39;); INSERT INTO class(c_name, teacher_id) VALUES(&amp;#39;bj_a&amp;#39;, 1); INSERT INTO class(c_name, teacher_id) VALUES(&amp;#39;bj_b&amp;#39;, 2); "/>
   
 
   
@@ -165,197 +165,164 @@ code.has-jax {
           
           
         </div>
-        <div class="post_content markdown"><h1>Mybatis详解第三弹——联表查询</h1>
-
+        <div class="post_content markdown"><!-- raw HTML omitted -->
 <p>** 一对一 **</p>
-
 <ol>
 <li>创建表和数据：</li>
 </ol>
-
-<pre><code class="language-sql">	CREATE TABLE teacher(
-		t_id INT PRIMARY KEY AUTO_INCREMENT, 
-		t_name VARCHAR(20)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">	<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> teacher(
+		t_id INT <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> AUTO_INCREMENT, 
+		t_name VARCHAR(<span style="color:#ae81ff">20</span>)
 	);
-	CREATE TABLE class(
-		c_id INT PRIMARY KEY AUTO_INCREMENT, 
-		c_name VARCHAR(20), 
+	<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">class</span>(
+		c_id INT <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> AUTO_INCREMENT, 
+		c_name VARCHAR(<span style="color:#ae81ff">20</span>), 
 		teacher_id INT
 	);
 
-	ALTER TABLE class ADD CONSTRAINT fk_teacher_id FOREIGN KEY (teacher_id) REFERENCES teacher(t_id);    
-	INSERT INTO teacher(t_name) VALUES('LS1');
-	INSERT INTO teacher(t_name) VALUES('LS2');
-	INSERT INTO class(c_name, teacher_id) VALUES('bj_a', 1);
-	INSERT INTO class(c_name, teacher_id) VALUES('bj_b', 2);
-</code></pre>
-
-<ol>
+	<span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> fk_teacher_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (teacher_id) <span style="color:#66d9ef">REFERENCES</span> teacher(t_id);    
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> teacher(t_name) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LS1</span><span style="color:#e6db74">&#39;</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> teacher(t_name) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LS2</span><span style="color:#e6db74">&#39;</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">class</span>(c_name, teacher_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">bj_a</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">class</span>(c_name, teacher_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">bj_b</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>);
+</code></pre></div><ol start="2">
 <li>定义实体类：</li>
 </ol>
-
-<pre><code class="language-java">	public class Teacher {
-	    private int id;
-	    private String name;
-	}
-	public class Classes {
-	    private int id;
-	    private String name;
-	    private Teacher teacher;
-	}
-</code></pre>
-
-<p>c. 定义sql映射文件ClassMapper.xml：</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Teacher</span> <span style="color:#f92672">{</span>
+	    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Classes</span> <span style="color:#f92672">{</span>
+	    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> Teacher teacher<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>c. 定义sql映射文件ClassMapper.xml：</p>
 <p>方式一：嵌套查询方式, 通过执行另外一个SQL映射语句来返回预期的复杂类型</p>
-
-<pre><code class="language-xml">	&lt;select id=&quot;getClasses&quot; parameterType=&quot;int&quot; resultMap=&quot;ClassesResultMap2&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getClasses&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultMap=</span><span style="color:#e6db74">&#34;ClassesResultMap2&#34;</span><span style="color:#f92672">&gt;</span>
 	    select * from class where c_id=#{id}
-	&lt;/select&gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
 
-	&lt;resultMap type=&quot;CLasses&quot; id=&quot;ClassesResultMap2&quot;&gt;
-	    &lt;id column=&quot;c_id&quot; property=&quot;id&quot;/&gt;
-	    &lt;result column=&quot;c_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot; column=&quot;teacher_id&quot; select=&quot;getTeacher&quot;&gt;&lt;/association&gt;
-	&lt;/resultMap&gt;
+	<span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;CLasses&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ClassesResultMap2&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;association</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;teacher&#34;</span> <span style="color:#a6e22e">javaType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;teacher_id&#34;</span> <span style="color:#a6e22e">select=</span><span style="color:#e6db74">&#34;getTeacher&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;/association&gt;</span>
+	<span style="color:#f92672">&lt;/resultMap&gt;</span>
 
-	&lt;select id=&quot;getTeacher&quot; parameterType=&quot;int&quot; resultType=&quot;Teacher&quot;&gt;
+	<span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getTeacher&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span><span style="color:#f92672">&gt;</span>
 	    select t_id id, t_name name from teacher where t_id=#{id}
-	&lt;/select&gt;
-</code></pre>
-
-<p>方式二：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集</p>
-
-<pre><code class="language-xml">	 &lt;select id=&quot;getClasses2&quot; parameterType=&quot;int&quot; resultMap=&quot;ClassesResultMap&quot;&gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
+</code></pre></div><p>方式二：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	 <span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getClasses2&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultMap=</span><span style="color:#e6db74">&#34;ClassesResultMap&#34;</span><span style="color:#f92672">&gt;</span>
 	        select * from class c,teacher t where c.c_id=#{id} and c.teacher_id=t.t_id; 
-	&lt;/select&gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
 
-	&lt;resultMap type=&quot;Classes&quot; id=&quot;ClassesResultMap&quot;&gt;
-	    &lt;id column=&quot;c_id&quot; property=&quot;id&quot;/&gt;
-	    &lt;result column=&quot;c_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;association column=&quot;teacher_id&quot; property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;
-	        &lt;id column=&quot;t_id&quot; property=&quot;id&quot;/&gt;
-	        &lt;result column=&quot;t_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;/association&gt;
-	&lt;/resultMap&gt;
-</code></pre>
+	<span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Classes&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ClassesResultMap&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;association</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;teacher_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;teacher&#34;</span> <span style="color:#a6e22e">javaType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span><span style="color:#f92672">&gt;</span>
+	        <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;t_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	        <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;t_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;/association&gt;</span>
+	<span style="color:#f92672">&lt;/resultMap&gt;</span>
+</code></pre></div><p>d. 测试：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#a6e22e">@Test</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testQueryOO</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	    SqlSession session <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    Classes c <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectOne</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.test.CTMapper.getClasses&#34;</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-<p>d. 测试：</p>
-
-<pre><code class="language-java">	@Test
-	public void testQueryOO() {
-	    SqlSession session = factory.openSession();
-	    Classes c = sqlSession.selectOne(&quot;com.test.CTMapper.getClasses&quot;, 1);
-	    System.out.println(c);
-	}
-
-	@Test
-	public void testQueryOO2() {
-	    SqlSession session = factory.openSession();
-	    Classes c = sqlSession.selectOne(&quot;com.test.CTMapper.getClasses2&quot;, 1);
-	    System.out.println(c);
-	}
-</code></pre>
-
-<p>** 一对多 **</p>
-
+	<span style="color:#a6e22e">@Test</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testQueryOO2</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	    SqlSession session <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    Classes c <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectOne</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.test.CTMapper.getClasses2&#34;</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>** 一对多 **</p>
 <ol>
 <li>创建表：</li>
 </ol>
-
-<pre><code class="language-SQL">	CREATE TABLE student(
-		s_id INT PRIMARY KEY AUTO_INCREMENT, 
-		s_name VARCHAR(20), 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">	<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> student(
+		s_id INT <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> AUTO_INCREMENT, 
+		s_name VARCHAR(<span style="color:#ae81ff">20</span>), 
 		class_id INT
 	);
 
-	INSERT INTO student(s_name, class_id) VALUES('xs_B', 1);
-	INSERT INTO student(s_name, class_id) VALUES('xs_D', 1);
-	INSERT INTO student(s_name, class_id) VALUES('xs_E', 1);
-	INSERT INTO student(s_name, class_id) VALUES('xs_A', 2);
-	INSERT INTO student(s_name, class_id) VALUES('xs_H', 2);
-	INSERT INTO student(s_name, class_id) VALUES('xs_J', 2);
-</code></pre>
-
-<ol>
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_B</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_D</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_E</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_A</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_H</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>);
+	<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> student(s_name, class_id) <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xs_J</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>);
+</code></pre></div><ol start="2">
 <li>定义实体类：</li>
 </ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
+	    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-<pre><code class="language-java">	public class Student {
-	    private int id;
-	    private String name;
-	}
-
-	public class Classes {
-	    private int id;
-	    private String name;
-	    private Teacher teacher;
-	    private List&lt;Student&gt; students;
-	}
-</code></pre>
-
-<ol>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Classes</span> <span style="color:#f92672">{</span>
+	    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> Teacher teacher<span style="color:#f92672">;</span>
+	    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> students<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><ol start="3">
 <li>定义sql映射文件ClassMapper.xml：(根据classId查询对应的班级信息,包括学生)</li>
 </ol>
-
 <p>集合的嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集</p>
-
-<pre><code class="language-xml">	 &lt;select id=&quot;getClasses3&quot; parameterType=&quot;int&quot; resultMap=&quot;ClassesResultMap3&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	 <span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getClasses3&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultMap=</span><span style="color:#e6db74">&#34;ClassesResultMap3&#34;</span><span style="color:#f92672">&gt;</span>
 	        select * from class c,teacher t, student s where c.c_id=#{id} and c.teacher_id=t.t_id and s.class_id=c.c_id 
-	&lt;/select&gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
 
-	&lt;resultMap type=&quot;Classes&quot; id=&quot;ClassesResultMap3&quot;&gt;
-	    &lt;id column=&quot;c_id&quot; property=&quot;id&quot;/&gt;
-	    &lt;result column=&quot;c_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;association column=&quot;teacher_id&quot; property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;
-	        &lt;id column=&quot;t_id&quot; property=&quot;id&quot;/&gt;
-	        &lt;result column=&quot;t_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;/association&gt;
-	    &lt;collection property=&quot;students&quot; ofType=&quot;Student&quot; javaType=&quot;ArrayList&quot;&gt;
-	        &lt;id property=&quot;id&quot; column=&quot;s_id&quot; /&gt;
-	        &lt;result property=&quot;name&quot; column=&quot;s_name&quot;/&gt;
-	    &lt;/collection&gt;
-	&lt;/resultMap&gt;
-</code></pre>
-
-<p>集合的嵌套查询方式, 通过执行另外一个SQL映射语句来返回预期的复杂类型</p>
-
-<pre><code class="language-xml">	&lt;select id=&quot;getClasses4&quot; parameterType=&quot;int&quot; resultMap=&quot;ClassesResultMap4&quot;&gt;
+	<span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Classes&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ClassesResultMap3&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;association</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;teacher_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;teacher&#34;</span> <span style="color:#a6e22e">javaType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span><span style="color:#f92672">&gt;</span>
+	        <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;t_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	        <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;t_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;/association&gt;</span>
+	    <span style="color:#f92672">&lt;collection</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;students&#34;</span> <span style="color:#a6e22e">ofType=</span><span style="color:#e6db74">&#34;Student&#34;</span> <span style="color:#a6e22e">javaType=</span><span style="color:#e6db74">&#34;ArrayList&#34;</span><span style="color:#f92672">&gt;</span>
+	        <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;s_id&#34;</span> <span style="color:#f92672">/&gt;</span>
+	        <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;s_name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;/collection&gt;</span>
+	<span style="color:#f92672">&lt;/resultMap&gt;</span>
+</code></pre></div><p>集合的嵌套查询方式, 通过执行另外一个SQL映射语句来返回预期的复杂类型</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getClasses4&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultMap=</span><span style="color:#e6db74">&#34;ClassesResultMap4&#34;</span><span style="color:#f92672">&gt;</span>
 	        select * from class c where c.c_id=#{id}
-	&lt;/select&gt;
-	&lt;resultMap type=&quot;CLasses&quot; id=&quot;ClassesResultMap4&quot;&gt;
-	    &lt;id column=&quot;c_id&quot; property=&quot;id&quot;/&gt;
-	    &lt;result column=&quot;c_name&quot; property=&quot;name&quot;/&gt;
-	    &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot; column=&quot;teacher_id&quot; select=&quot;getTeacher&quot;&gt;&lt;/association&gt;
-	    &lt;collection property=&quot;students&quot; ofType=&quot;Teacher&quot; column=&quot;c_id&quot; select=&quot;getStudentsSelect&quot; &gt;&lt;/collection&gt;
-	&lt;/resultMap&gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
+	<span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;CLasses&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ClassesResultMap4&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;id</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_id&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_name&#34;</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+	    <span style="color:#f92672">&lt;association</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;teacher&#34;</span> <span style="color:#a6e22e">javaType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;teacher_id&#34;</span> <span style="color:#a6e22e">select=</span><span style="color:#e6db74">&#34;getTeacher&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;/association&gt;</span>
+	    <span style="color:#f92672">&lt;collection</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;students&#34;</span> <span style="color:#a6e22e">ofType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;c_id&#34;</span> <span style="color:#a6e22e">select=</span><span style="color:#e6db74">&#34;getStudentsSelect&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;/collection&gt;</span>
+	<span style="color:#f92672">&lt;/resultMap&gt;</span>
 
-	&lt;select id=&quot;getTeacher&quot; parameterType=&quot;int&quot; resultType=&quot;Teacher&quot;&gt;
+	<span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getTeacher&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultType=</span><span style="color:#e6db74">&#34;Teacher&#34;</span><span style="color:#f92672">&gt;</span>
 	    select t_id id, t_name name from teacher where t_id=#{id}
-	&lt;/select&gt;
-	&lt;select id=&quot;getStudentsSelect&quot; parameterType=&quot;int&quot; resultType=&quot;Student&quot; &gt;
+	<span style="color:#f92672">&lt;/select&gt;</span>
+	<span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;getStudentsSelect&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;int&#34;</span> <span style="color:#a6e22e">resultType=</span><span style="color:#e6db74">&#34;Student&#34;</span> <span style="color:#f92672">&gt;</span>
 	    select s_id id, s_name name from student where class_id=#{id}
-	&lt;/select&gt;
-</code></pre>
-
-<ol>
-<li>测试：
-```java
-	@Test
-	public void testQueryOT() {
-	    SqlSession session = factory.openSession();
-	    Classes classes = openSession.selectOne(&quot;com.test.OMMapper.getClasses3&quot;, 1);
-	    System.out.println(c);
-	}</li>
+	<span style="color:#f92672">&lt;/select&gt;</span>
+</code></pre></div><ol start="4">
+<li>测试：</li>
 </ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#a6e22e">@Test</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testQueryOT</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	    SqlSession session <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    Classes classes <span style="color:#f92672">=</span> openSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectOne</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.test.OMMapper.getClasses3&#34;</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
 
-<p>	@Test
-	public void testQueryOT2() {
-	    SqlSession session = factory.openSession();
-	    Classes classes = openSession.selectOne(&quot;com.test.OMMapper.getClasses4&quot;, 1);
-	    System.out.println(c);
-	}
-```</p></div>
+	<span style="color:#a6e22e">@Test</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testQueryOT2</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	    SqlSession session <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    Classes classes <span style="color:#f92672">=</span> openSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectOne</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.test.OMMapper.getClasses4&#34;</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div></div>
         <div class="post_footer">
           
           <div class="meta">

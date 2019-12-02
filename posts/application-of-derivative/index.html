@@ -166,63 +166,30 @@ code.has-jax {
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="切线和法线方程">切线和法线方程</h1>
-
+        <div class="post_content markdown"><h1 id="heading">切线和法线方程</h1>
 <p><code>${f}'(x_0)$</code>在几何上表示曲线<code>$y=f(x)$</code>在<code>$(x_0,f(x_0))$</code>处的切线斜率</p>
-
 <p>切线方程：<code>$y-y_0={f}'(x_0)(x-X_0)$</code></p>
-
 <p>法线方程：<code>$y-y_0=-\frac{1}{{f}'(x_0)}(x-x_0)$</code></p>
-
-<h1 id="求隐函数的导数">求隐函数的导数</h1>
-
+<h1 id="heading1">求隐函数的导数</h1>
 <p>（1）定义：显函数<code>$y=f(x)$</code>，隐函数<code>$F(x,y)$</code></p>
-
 <p>（2）方法：方程两边同时对<code>$x$</code>求导，接触<code>${y}'$</code></p>
-
 <p>例：设<code>$x^2y-e^{2x}=\sin y$</code>，求<code>$\frac{\mathrm{d}y}{\mathrm{d}x}$</code>.</p>
-
-<p>解：<code>$方程两边同时对x求导得： \\\\
-     2xy+x^2·{y}'-2·e^{2x}={y}'·\cos y \\\\
-     (x^2-\cos y)·{y}'=2e^{2x}-2xy \\\\
-     {y}'=\frac{2e^{2x}-2xy}{x^2-\cos y}$</code></p>
-
-<h1 id="求幂指函数的导数">求幂指函数的导数</h1>
-
+<p>解：<code>$方程两边同时对x求导得： \\\\ 2xy+x^2·{y}'-2·e^{2x}={y}'·\cos y \\\\ (x^2-\cos y)·{y}'=2e^{2x}-2xy \\\\ {y}'=\frac{2e^{2x}-2xy}{x^2-\cos y}$</code></p>
+<h1 id="heading2">求幂指函数的导数</h1>
 <p>方法一：先取对数再求导（对数求导法）</p>
-
 <p>方法二：化为以<code>$e$</code>为底的指数函数后再求导（<code>$y=u^x=e^{xlnu}$</code>）</p>
-
 <p>例：求<code>$y=x^{\sin x}$</code> 函数的导数<code>$\frac{\mathrm{d}y}{\mathrm{d}x}$</code></p>
-
-<p>解：法一：<code>$方程两边同时取对数：lny=lnx^{\sin x}=\sin xlnx \\\\
-          方程两边同时对x求导：\frac{1}{y}·{y}'=\cos x · lnx+\sin x·\frac{1}{x} \\\\
-          \Rightarrow {y}'=y(\cos x lnx+\frac{\sin x}{x}) \\\\
-          \Rightarrow {y}'=x^{\sin x}(\cos x lnx+\frac{\sin x}{x})$</code></p>
-
-<p>​       法二：<code>$y=x^{\sin x}=e^{\sin xlnx} \\\\
-​              {y}'=e^{\sin xlnx}{(\sin xlnx)}'=x^{\sin x}(\cos xlnx+\frac{\sin x}{x})$</code></p>
-
-<h1 id="求由参数方程确定的函数的导数">求由参数方程确定的函数的导数</h1>
-
+<p>解：法一：<code>$方程两边同时取对数：lny=lnx^{\sin x}=\sin xlnx \\\\ 方程两边同时对x求导：\frac{1}{y}·{y}'=\cos x · lnx+\sin x·\frac{1}{x} \\\\ \Rightarrow {y}'=y(\cos x lnx+\frac{\sin x}{x}) \\\\ \Rightarrow {y}'=x^{\sin x}(\cos x lnx+\frac{\sin x}{x})$</code></p>
+<p>​		法二：<code>$y=x^{\sin x}=e^{\sin xlnx} \\\\ ​              {y}'=e^{\sin xlnx}{(\sin xlnx)}'=x^{\sin x}(\cos xlnx+\frac{\sin x}{x})$</code></p>
+<h1 id="heading3">求由参数方程确定的函数的导数</h1>
 <p>（1）参数方程：<code>$\left\{\begin{matrix} x=\varphi(t) \\\\ y=\psi(t) \end{matrix}\right.$</code></p>
-
-<p>（2）求导方法：<code>$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}=\frac{{\varphi}'(t)}{{\psi}'(t)} \\\\
-             \frac{\mathrm{d^2}y}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}$</code></p>
-
-<h1 id="求微分">求微分</h1>
-
+<p>（2）求导方法：<code>$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}=\frac{{\varphi}'(t)}{{\psi}'(t)} \\\\ \frac{\mathrm{d^2}y}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}$</code></p>
+<h1 id="heading4">求微分</h1>
 <p>1、对于一元函数，可微<code>$\Leftrightarrow$</code>可导</p>
-
 <p>2、函数<code>$y=f(x)$</code>的微分<code>$\mathrm{d}y={f}'(x)\mathrm{d}x$</code></p>
-
 <p>3、求微分方法：先求导，再乘以<code>$\mathrm{d}x$</code></p>
-
-<h1 id="微分在近似计算中的应用">微分在近似计算中的应用</h1>
-
-<p>若<code>$f(x_0)$</code>与<code>${f}'(x_0)$</code>容易计算，用<code>$f(x)\approx f(x_0)+{f}'(x_0)(x-x_0)$</code>近似计算<code>$f(x)$</code></p>
+<h1 id="heading5">微分在近似计算中的应用</h1>
+<p>若<code>$f(x_0)$</code>与<code>${f}'(x_0)$</code>容易计算，用<code>$f(x)\approx f(x_0)+{f}'(x_0)(x-x_0)$ </code>近似计算<code>$f(x)$</code></p>
 </div>
         <div class="post_footer">
           
