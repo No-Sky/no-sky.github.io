@@ -5,7 +5,7 @@
     <link>https://no-sky.github.io/tags/single-variable-integral-calculus/</link>
     <description>Recent content in single variable integral calculus on Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 27 Apr 2019 15:57:22 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/single-variable-integral-calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,23 @@
     
     <item>
       <title>不定积分</title>
-      <link>https://no-sky.github.io/posts/indefinite-integral/</link>
+      <link>https://no-sky.github.io/2019/indefinite-integral/</link>
       <pubDate>Sat, 27 Apr 2019 15:57:22 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/posts/indefinite-integral/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{</description>
+      <guid>https://no-sky.github.io/2019/indefinite-integral/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+ 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{d}x$，则称$F(x)$是$f(x)$在$I$上的一个原函数。
+原函数存在定理 如果函数$f(x)$在区间$I$上连续，那么在区间$I$上存在可导函数$F(x)$，使对任意$x \in I$都有${F}&#39;(x)=f(x)$。
+不定积分 $f(x)$在区间$I$上的原函数全体称为f(x)在$I$上的不定积分，即若$F(x)$是$f(x)$在$I$上的任一原函数，则$\int f(x)\mathrm{d}x=F(x)+C(C为任意常数)$.
+由此定义可得下列关系：
+（1）${\int f(x)\mathrm{d}x}&#39;=f(x)$ 或 $\mathrm{\int f(x)\mathrm{d}x}=f(x)\mathrm{d}x$
+（2）$\int {F}&#39;(x)=F(x)+C$ 或 $\int \mathrm{d}F(x)=F(x)+C$
+不定积分的性质 设$F(x)$是$f(x)$的一个原函数，$k$为非零常数，则有
+（1）$\int kf(x)\mathrm{d}x=k\int f(x)\mathrm{d}x$;
+（2）$\int [f(x) \pm g(x)]\mathrm{d}{x}=\int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x$
+基本积分公式 基本积分公式
+$\tag{1} \int x^n dx = \frac{1}{n+1}x^{n+1},\hspace{1ex}n\neq -1$ $\tag{2} \int \frac{1}{x}dx = \ln |x| $
+$\tag{3} \int u dv = uv - \int v du $ $\tag{4} \int \frac{1}{ax+b}dx = \frac{1}{a} \ln |ax + b|$</description>
     </item>
     
   </channel>

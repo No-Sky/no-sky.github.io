@@ -5,7 +5,7 @@
     <link>https://no-sky.github.io/tags/differential-mean-value-theorem/</link>
     <description>Recent content in Differential mean value theorem on Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Sun, 28 Apr 2019 15:51:26 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/differential-mean-value-theorem/index.xml" rel="self" type="application/rss+xml" />
@@ -13,20 +13,49 @@
     
     <item>
       <title>微分中值定理和导数的应用</title>
-      <link>https://no-sky.github.io/posts/application-of-differential-mean-value-theorem/</link>
+      <link>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</link>
       <pubDate>Sun, 28 Apr 2019 15:51:26 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/posts/application-of-differential-mean-value-theorem/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 利用罗尔中值定理证明根的存在性 例：设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$内可导，且$f(0)=0,f(1)=2$，证明</description>
+      <guid>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+ 利用罗尔中值定理证明根的存在性 例：设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$内可导，且$f(0)=0,f(1)=2$，证明：在$(0,1)$内至少存在一点$\xi$，使得${f}&#39;(\xi )=2\xi +1$成立。
+证：$（思路）构建辅助函数，得出原函数：\left\{\begin{matrix} {f}&#39;=2x+1\\\\ {f}&#39;-2x-1=0&#39;\\\\ f(x)-x^2-x=0 \end{matrix}\right.$
+$①设F(x)=f(x)-x^2-x \\\\ ②\because f(x)在闭区间[0,1]上连续，开区间(0,1)内可导 \\\\ \therefore F(x)在[0,1]上连续，(01,)内可导, \\\\ F(0)=f(0)=0,F(1)=f(1)-1-1=0 \\\\ ③ 故，由罗尔定理可知, \exists \xi \in (0,1),使得{F}&#39;(\xi )=0,即{f}&#39;(\xi )=2\xi +1$
+利用拉格朗日中值定理证明不等式 （1）构造辅助函数$f(x)$将中间部分写成差的形式，确定$f(x)$及区间$[a,b]$.
+（2）验证拉格朗日中值定理的两个条件.
+（3）利用拉格朗日中值定理的结论得到等式.
+（4）利用$\xi$或${f}&#39;(\xi )$的取值范围得到不等式
+例：证明不等式$\frac{m-n}{m}&amp;lt;ln\frac{m}{n}&amp;lt;\frac{m-n}{n}$，其中$n&amp;lt;m$为正整数。
+证：$①令f(0)=lnx,x\in [n,m] \\\\ ②显然f(x)在[n,m]上连续，(n,m)内可导. \\\\ ③故，由拉格朗日中值定理可得，\\\\ \exists \xi \in (n,m),使得{f}&#39;(\xi )=\frac{f(m)-f(n)}{m-n}=\frac{lnm-lnn}{m-n}=\frac{ln\frac{m}{n}}{m-n} \\\\ \because {f}&#39;(x)=\frac{1}{x},{f}&#39;(\xi )=\frac{1}{\xi} \therefore \frac{1}{\xi}=\frac{ln\frac{m}{n}}{m-n} \\\\ ④\because n&amp;lt; \xi &amp;lt;m,\therefore \frac{1}{m}&amp;lt;\frac{1}{\xi}&amp;lt;\frac{1}{n} \\\\ \therefore \frac{1}{m}&amp;lt;\frac{ln\frac{m}{n}}{m-n}&amp;lt;\frac{1}{n} \therefore \frac{m-n}{m}&amp;lt;ln\frac{m}{n}&amp;lt;\frac{m-n}{n}$
+利用单调性证明不等式 （1）构造辅助函数：移项
+（2）求导，判断单调性，若不能判断，继续求导，直至能判断为止（最多三阶可导）
+（3）结合区间端点，利用单调性完成不等式的证明</description>
     </item>
     
     <item>
       <title>微分中值定理与洛必达法则</title>
-      <link>https://no-sky.github.io/posts/mean-value-theorem/</link>
+      <link>https://no-sky.github.io/2019/mean-value-theorem/</link>
       <pubDate>Sun, 28 Apr 2019 14:53:56 +0800</pubDate>
       
-      <guid>https://no-sky.github.io/posts/mean-value-theorem/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章 罗尔定理 如果函数$f(x)$满足 ①在闭区间$[a,b]$上连续 ②在开区间$(a,b)$内可导 ③在区间端点处的函数值相等，即$f(a)=f(b)$，那么</description>
+      <guid>https://no-sky.github.io/2019/mean-value-theorem/</guid>
+      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+ 罗尔定理 如果函数$f(x)$满足
+①在闭区间$[a,b]$上连续
+②在开区间$(a,b)$内可导
+③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b),使得{f}&#39;(\xi )=0$
+拉格朗日中值定理 如果函数$f(x)$满足
+①在闭区间$[a,b]$上连续
+②在开区间$(a,b)$内可导
+那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)，使等式f(b)-f(a)={f}&#39;(\xi )(b-a)成立$
+柯西中值定理 如果函数$f(x)及F(x)$满足
+①在闭区间$[a,b]$上连续
+②在开区间$(a,b)$内可导
+③对任一$x\in (a,b),{F}&#39;(x)\neq 0$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)$，使等式$\frac{f(b)-f(a)}{F(b)-F(a)}=\frac{{f}&#39;(\xi )}{{F}&#39;(\xi )}$
+洛必达法则 设①当$x \Rightarrow a$时，函数$f(x)$及$F(x)$都趋于零；
+②在点a的某去心邻域内，${f}&#39;(x)$及${F}&#39;(x)$都存在且${F}&#39;(x)\neq 0$
+③$\lim_{x \to a} \frac{{f}&#39;(x)}{{F}&#39;(x)}$存在（或为无穷大），那么
+其中$\frac{f(x)}{F(x)}$也可以是$\frac{\infty}{\infty}$型未定式，${f}&#39;(x),{F}&#39;(x)$要存在且${F}&#39;(x)\neq 0$；相同的极限过程可以是$x\rightarrow a,x \rightarrow a^{\pm },x \rightarrow \infty,x\rightarrow \pm \infty $的任何一种，对于$n \rightarrow \infty$，可用于子列极限定理，先化为$x \Rightarrow +\infty$的极限
+对于其余五种非基本型未定式，应先变形或者取对数化为基本型，再用洛必达法则。</description>
     </item>
     
   </channel>

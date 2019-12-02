@@ -5,7 +5,7 @@
     <link>https://no-sky.github.io/tags/qr-code/</link>
     <description>Recent content in QR Code on Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 20 Jan 2018 20:50:43 +0000</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/qr-code/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,14 @@
     
     <item>
       <title>用Java生成二维码</title>
-      <link>https://no-sky.github.io/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
+      <link>https://no-sky.github.io/2018/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
       <pubDate>Sat, 20 Jan 2018 20:50:43 +0000</pubDate>
       
-      <guid>https://no-sky.github.io/posts/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</guid>
-      <description>java开发二维码的流程 1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。 core-3.1.0.jar 2、编写二维码核心类 public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; //图片高度和宽度 int height2 =</description>
+      <guid>https://no-sky.github.io/2018/%E7%94%A8java%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</guid>
+      <description>java开发二维码的流程
+1、导入核心jar包，在这里使用Google的zxing.jar，还有一个是日本开发qrcode就不用了。
+	core-3.1.0.jar 2、编写二维码核心类
+public static void zxingImg(String content,HttpServletResponse response) throws IOException{ int width2 = 200; //图片高度和宽度 	int height2 = 200; //二维码的图片格式 	String format = &amp;#34;gif&amp;#34;; Hashtable hints = new Hashtable(); //内容所使用编码 	hints.put(EncodeHintType.CHARACTER_SET, &amp;#34;UTF-8&amp;#34;); try { BitMatrix bitMatrix = new MultiFormatWriter().encode(content,BarcodeFormat.QR_CODE, width2, height2, hints); int width = bitMatrix.getWidth(); int height = bitMatrix.getHeight(); BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB); for (int x = 0; x &amp;lt; width; x++) { for (int y = 0; y &amp;lt; height; y++) { image.</description>
     </item>
     
   </channel>
