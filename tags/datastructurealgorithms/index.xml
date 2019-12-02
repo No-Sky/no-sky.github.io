@@ -6,10 +6,19 @@
     <description>Recent content in DataStructure&amp;Algorithms on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 Nov 2019 10:47:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 21:00:42 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/tags/datastructurealgorithms/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>图的表示：如何存储微博、微信等社交网络中的好友关系</title>
+      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</link>
+      <pubDate>Thu, 21 Nov 2019 21:00:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</guid>
+      <description>图的表示：如何存储微博、微信等社交网络中的好友关系 如何理解“图”？ 图中的元素我们就叫作顶点（vertex） 。 图中的一个顶点可以与任意其他顶点建立连接关系。我们把这种建立的关系叫作边（edge）。 就拿微</description>
+    </item>
     
     <item>
       <title>二叉树基础：什么样的二叉树适合用数组来存储</title>
@@ -27,15 +36,6 @@
       
       <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/red-blac-tree/</guid>
       <description>什么是“平衡二叉查找树”？ 平衡二叉树的严格定义是这样的：二叉树中任意一个节点的左右子树的高度相差不能大于1。从这个定义来看，上一节我们讲的完全二叉树、满二叉树其实都是平衡二叉树，但是非完全二叉树也有可</description>
-    </item>
-    
-    <item>
-      <title>图的表示：如何存储微博、微信等社交网络中的好友关系</title>
-      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</link>
-      <pubDate>Wed, 20 Nov 2019 21:00:42 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/graph/</guid>
-      <description>图的表示：如何存储微博、微信等社交网络中的好友关系 如何理解“图”？ 图中的元素我们就叫作顶点（vertex） 。 图中的一个顶点可以与任意其他顶点建立连接关系。我们把这种建立的关系叫作边（edge）。 就拿微</description>
     </item>
     
     <item>
@@ -126,6 +126,15 @@
       
       <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/stack/</guid>
       <description>栈：如何实现浏览器的前进和后退功能 如何理解“栈”？ 关于“栈”，我有一个非常贴切的例子，就是一摞叠在一起的盘子。我们平时放盘子的时候，都是从下往上一个一个放；取的时候，我们也是从上往下一个一个地依次取，</description>
+    </item>
+    
+    <item>
+      <title>数组：为什么很多编程语言中数组都从0开始编号</title>
+      <link>https://no-sky.github.io/datastructureandalgorithms-geektime/array/</link>
+      <pubDate>Thu, 14 Nov 2019 17:16:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/datastructureandalgorithms-geektime/array/</guid>
+      <description>数组：为什么很多编程语言中数组都从0开始编号 数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。 如何实现随机访问？ 第一要是线性表（Linear List）。顾名</description>
     </item>
     
     <item>
