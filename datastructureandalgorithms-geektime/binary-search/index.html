@@ -112,7 +112,7 @@ code.has-jax {
       </li>
       
       <li>
-        <a href="/posts/">归档</a>
+        <a href="/">归档</a>
       </li>
       
       <li>
@@ -166,48 +166,26 @@ code.has-jax {
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="二分查找-上-如何用最省内存的方式实现快速查找功能">二分查找（上）：如何用最省内存的方式实现快速查找功能</h1>
-
+        <div class="post_content markdown"><h1 id="heading">二分查找（上）：如何用最省内存的方式实现快速查找功能</h1>
 <p>二分查找（Binary Search）算法，也叫折半查找算法。</p>
-
-<h2 id="无处不在的二分思想">无处不在的二分思想</h2>
-
+<h2 id="heading1">无处不在的二分思想</h2>
 <p>二分查找是一种非常简单易懂的快速查找算法，生活中到处可见。比如说，我们现在来做一个猜字游戏。我随机写一个0到99之间的数字，然后你来猜我写的是什么。猜的过程中，你每猜一次，我就会告诉你猜的大了还是小了，直到猜中为止。你来想想，如何快速猜中我写的数字呢？</p>
-
 <p>假设我写的数字是23，你可以按照下面的步骤来试一试。（如果猜测范围的数字有偶数个，中间数有两个，就选择较小的那个。）</p>
-
-<p><img src="https://static001.geekbang.org/resource/image/9d/9b/9dadf04cdfa7b3724e0df91da7cacd9b.jpg" alt="img" /></p>
-
+<p><img src="https://static001.geekbang.org/resource/image/9d/9b/9dadf04cdfa7b3724e0df91da7cacd9b.jpg" alt="img"></p>
 <p>7次就猜出来了，是不是很快？这个例子用的就是二分思想。</p>
-
 <p><strong>二分查找针对的是一个有序的数据集合，查找思想有点类似分治思想。每次都通过跟区间的中间元素对比，将待查找的区间缩小为之前的一半，直到找到要查找的元素，或者区间被缩小为0</strong>。</p>
-
-<h2 id="o-logn-惊人的查找速度">O(logn)惊人的查找速度</h2>
-
+<h2 id="ologn">O(logn)惊人的查找速度</h2>
 <p>二分查找是一种非常高效的查找算法，高效到什么程度呢？我们来分析一下它的时间复杂度。</p>
-
 <p>我们假设数据大小是n，每次查找后数据都会缩小为原来的一半，也就是会除以2。最坏情况下，直到查找区间被缩小为空，才停止。</p>
-
-<p><img src="https://static001.geekbang.org/resource/image/d1/94/d1e4fa1542e187184c87c545c2fe4794.jpg" alt="img" /></p>
-
+<p><img src="https://static001.geekbang.org/resource/image/d1/94/d1e4fa1542e187184c87c545c2fe4794.jpg" alt="img"></p>
 <p>可以看出来，这是一个等比数列。其中n/2k=1时，k的值就是总共缩小的次数。而每一次缩小操作只涉及两个数据的大小比较，所以，经过了k次区间缩小操作，时间复杂度就是O(k)。通过n/2k=1，我们可以求得k=log2n，所以时间复杂度就是O(logn)。 O(logn)这种<strong>对数时间复杂度</strong>。这是一种极其高效的时间复杂度，有的时候甚至比时间复杂度是常量级O(1)的算法还要高效。</p>
-
-<h2 id="二分查找应用场景的局限性">二分查找应用场景的局限性</h2>
-
+<h2 id="heading2">二分查找应用场景的局限性</h2>
 <p><strong>首先，二分查找依赖的是顺序表结构，简单点说就是数组。</strong></p>
-
 <p>二分查找能否依赖其他数据结构呢？比如链表。答案是不可以的，主要原因是二分查找算法需要按照下标随机访问元素。</p>
-
 <p><strong>其次，二分查找针对的是有序数据。</strong></p>
-
 <p>二分查找对这一点的要求比较苛刻，数据必须是有序的。如果数据没有序，我们需要先排序。</p>
-
 <p><strong>再次，数据量太小不适合二分查找。</strong></p>
-
 <p><strong>最后，数据量太大也不适合二分查找。</strong></p>
-
 <p>二分查找的底层需要依赖数组这种数据结构，而数组为了支持随机访问的特性，要求内存空间连续，对内存的要求比较苛刻。比如，我们有1GB大小的数据，如果希望用数组来存储，那就需要1GB的连续内存空间。</p>
 </div>
         <div class="post_footer">

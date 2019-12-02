@@ -112,7 +112,7 @@ code.has-jax {
       </li>
       
       <li>
-        <a href="/posts/">归档</a>
+        <a href="/">归档</a>
       </li>
       
       <li>
@@ -166,33 +166,19 @@ code.has-jax {
           <i class="remixicon-user-star-line"></i> <span class="author">nosky</span>
           
         </div>
-        <div class="post_content markdown">
-
-<h1 id="链表">链表</h1>
-
+        <div class="post_content markdown"><h1 id="heading">链表</h1>
 <p>数组需要一块<strong>连续的内存空间</strong>来存储，对内存的要求比较高。如果我们申请一个100MB大小的数组，当内存中没有连续的、足够大的存储空间时，即便内存的剩余总可用空间大于100MB，仍然会申请失败。</p>
-
 <p>而链表恰恰相反，它并不需要一块连续的内存空间，它通过“指针”将一组<strong>零散的内存块</strong>串联起来使用，所以如果我们申请的是100MB大小的链表，根本不会有问题。</p>
-
-<h2 id="单链表"><strong>单链表</strong></h2>
-
+<h2 id="heading1"><strong>单链表</strong></h2>
 <p>链表通过指针将一组零散的内存块串联在一起。其中，我们把内存块称为链表的“<strong>结点</strong>”。为了将所有的结点串起来，每个链表的结点除了存储数据之外，还需要记录链上的下一个结点的地址。如图所示，我们把这个记录下个结点地址的指针叫作<strong>后继指针next</strong>。</p>
-
-<p><img src="https://static001.geekbang.org/resource/image/b9/eb/b93e7ade9bb927baad1348d9a806ddeb.jpg" alt="img" /></p>
-
+<p><img src="https://static001.geekbang.org/resource/image/b9/eb/b93e7ade9bb927baad1348d9a806ddeb.jpg" alt="img"></p>
 <p>其中有两个结点是比较特殊的，它们分别是第一个结点和最后一个结点。我们习惯性地把第一个结点叫作<strong>头结点</strong>，把最后一个结点叫作<strong>尾结点</strong>。其中，头结点用来记录链表的基地址。有了它，我们就可以遍历得到整条链表。而尾结点特殊的地方是：指针不是指向下一个结点，而是指向一个<strong>空地址NULL</strong>，表示这是链表上最后一个结点。</p>
-
-<p>链表的插入与删除<img src="https://static001.geekbang.org/resource/image/45/17/452e943788bdeea462d364389bd08a17.jpg" alt="img" /></p>
-
-<h2 id="循环链表和双向链表">循环链表和双向链表</h2>
-
+<p>链表的插入与删除<img src="https://static001.geekbang.org/resource/image/45/17/452e943788bdeea462d364389bd08a17.jpg" alt="img"></p>
+<h2 id="heading2">循环链表和双向链表</h2>
 <p><strong>循环链表是一种特殊的单链表</strong>。实际上，循环链表也很简单。它跟单链表唯一的区别就在尾结点。我们知道，单链表的尾结点指针指向空地址，表示这就是最后的结点了。而循环链表的尾结点指针是指向链表的头结点。</p>
-
-<p><img src="https://static001.geekbang.org/resource/image/86/55/86cb7dc331ea958b0a108b911f38d155.jpg" alt="img" /></p>
-
+<p><img src="https://static001.geekbang.org/resource/image/86/55/86cb7dc331ea958b0a108b911f38d155.jpg" alt="img"></p>
 <p>单向链表只有一个方向，结点只有一个后继指针next指向后面的结点。而双向链表，顾名思义，它支持两个方向，每个结点不止有一个后继指针next指向后面的结点，还有一个前驱指针prev指向前面的结点。</p>
-
-<p><img src="https://static001.geekbang.org/resource/image/cb/0b/cbc8ab20276e2f9312030c313a9ef70b.jpg" alt="img" /></p>
+<p><img src="https://static001.geekbang.org/resource/image/cb/0b/cbc8ab20276e2f9312030c313a9ef70b.jpg" alt="img"></p>
 </div>
         <div class="post_footer">
           
