@@ -6,10 +6,244 @@
     <description>Recent content on Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 29 Apr 2019 16:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 10:54:52 +0800</lastBuildDate>
     
 	<atom:link href="https://no-sky.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CDN</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/cdn/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/cdn/</guid>
+      <description>网站的一般访问模式。 当一个用户想访问一个网站的时候，指定这个网站的域名，DNS 就会将这个域名解析为地址，然后用户 请求这个地址，返回一个网页。 那这里面还有没有可以优化的地方呢？ 我们先说，我们的网站访问可</description>
+    </item>
+    
+    <item>
+      <title>DNS协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/dns/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/dns/</guid>
+      <description>DNS 服务器 在网络世界，你需要记得住网站的名称，但是很难记住网站的 IP 地址，因而需要一个地 址簿，就是DNS 服务器。 由此可见，DNS 在日常生活中多么重要。每个人上网，都需要访问它，但是同时，这对它来讲也是非常</description>
+    </item>
+    
+    <item>
+      <title>HTTPDNS协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/httpdns/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/httpdns/</guid>
+      <description>传统 DNS 存在哪些问题？ 域名缓存问题 它可以在本地做一个缓存，也就是说，不是每一个请求，它都会去访问权威 DNS 服务器，而是访问过一 次就把结果缓存到自己本地，当其他人来问的时候，直接就返回这个缓存数据。 域名转发问</description>
+    </item>
+    
+    <item>
+      <title>HTTPS协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/https/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/https/</guid>
+      <description>HTTP协议与HTTPS协议的不同在于HTTPS协议对数据进行了加密处理。常用的加密方法有对称加密，非对称加密。 在对称加密算法中，加密和解密使用的密钥是相同的。也就是说，加密和解密使用的是同一个密钥。</description>
+    </item>
+    
+    <item>
+      <title>HTTP协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/http/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/http/</guid>
+      <description>HTTP请求的准备 HTTP 协议，几乎是每个人上网用的第一个协议，同时也是很容易被人忽略的协议。 既然说看新闻，咱们就先登录 http://www.163.com 。 http://www.163.com 是个 URL，叫作统一资源定位符。之所以叫统一，是因为它是有格式的。HTTP 称为协</description>
+    </item>
+    
+    <item>
+      <title>P2P协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/p2p/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/p2p/</guid>
+      <description>P2P 是什么？ 无论是 HTTP 的方式，还是 FTP 的方式，都有一个比较大的缺点，就是难以解决单一服务器的带宽 压力， 因为它们使用的都是传统的客户端服务器的方式。 后来，一种创新的、称为 P2P 的方式流行起来。P2P就是peer-</description>
+    </item>
+    
+    <item>
+      <title>Socket编程</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/socket/</link>
+      <pubDate>Tue, 26 Nov 2019 10:54:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/socket/</guid>
+      <description>基于 TCP 和 UDP 协议的 Socket 编程 客户端与服务端在通信之前，双方都要建立一个Socket。 在建立 Socket 的时候，应该设置Socket 函数需要指定到底是 IPv4 还是 IPv6，分别对应设置为 AF_INET 和 AF_INET6。Socket 编程</description>
+    </item>
+    
+    <item>
+      <title>ICMP与Ping</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/icmp-protocol/</link>
+      <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/icmp-protocol/</guid>
+      <description>ICMP协议的格式 ping 是基于 ICMP 协议工作的。ICMP全称Internet Control Message Protocol，就是互联网控制报文 协议。 ICMP 报文是封装在 IP 包里面的。因为传输指令的时候，肯定需要源地址和目标地址。它本身非常简 单</description>
+    </item>
+    
+    <item>
+      <title>ICMP与Ping</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/macip/</link>
+      <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/macip/</guid>
+      <description>Mac头和IP头 在 MAC 头里面，先是目标 MAC 地址，然后是源 MAC 地址，然后有一个协议类型，用来说明里面是 IP 协议。在任何一台机器上，当要访问另一个 IP 地址的时候，都会先判断，这个目标 IP 地址，和当前机器的 IP 地址，是否</description>
+    </item>
+    
+    <item>
+      <title>TCP协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/tcp-layer/</link>
+      <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/tcp-layer/</guid>
+      <description>TCP协议 TCP协议作为传输层主要协议之一，具有面向连接，端到端，可靠的全双工通信，面向字节流的数据传输协议。 1、TCP报文段 虽然TCP面向字节流，但TCP传输的数据单元却是报文段。TCP报文段分为T</description>
+    </item>
+    
+    <item>
+      <title>UDP协议</title>
+      <link>https://no-sky.github.io/posts/networkprotocol-geektime/udp-layer/</link>
+      <pubDate>Fri, 22 Nov 2019 16:40:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/networkprotocol-geektime/udp-layer/</guid>
+      <description>TCP 和 UDP 有哪些区别？ TCP 是面向连接的，UDP 是面向无连接的。 什么叫面向连接，什么叫无连接呢？在互通之前，面向连接的协议会先建立连接。 所谓的建立连接，是为了在客户端和服务端维护连接，而建立一定的数据结构来维</description>
+    </item>
+    
+    <item>
+      <title>图的表示：如何存储微博、微信等社交网络中的好友关系</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/graph/</link>
+      <pubDate>Thu, 21 Nov 2019 21:00:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/graph/</guid>
+      <description>图的表示：如何存储微博、微信等社交网络中的好友关系 如何理解“图”？ 图中的元素我们就叫作顶点（vertex） 。 图中的一个顶点可以与任意其他顶点建立连接关系。我们把这种建立的关系叫作边（edge）。 就拿微</description>
+    </item>
+    
+    <item>
+      <title>二叉树基础：什么样的二叉树适合用数组来存储</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-tree/</link>
+      <pubDate>Thu, 21 Nov 2019 10:47:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-tree/</guid>
+      <description>树（Tree） 比如下面这幅图，A节点就是B节点的父节点，B节点是A节点的子节点。B、C、D这三个节点的父节点是同一个节点，所以它们之间互称为兄弟节点。我们把没有父节点的节点叫作根节点，也就是图中的节点</description>
+    </item>
+    
+    <item>
+      <title>红黑树：为什么工程中都用红黑树这种二叉树</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/red-blac-tree/</link>
+      <pubDate>Thu, 21 Nov 2019 10:47:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/red-blac-tree/</guid>
+      <description>什么是“平衡二叉查找树”？ 平衡二叉树的严格定义是这样的：二叉树中任意一个节点的左右子树的高度相差不能大于1。从这个定义来看，上一节我们讲的完全二叉树、满二叉树其实都是平衡二叉树，但是非完全二叉树也有可</description>
+    </item>
+    
+    <item>
+      <title>二分查找（上）：如何用最省内存的方式实现快速查找功能</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-search/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/binary-search/</guid>
+      <description>二分查找（上）：如何用最省内存的方式实现快速查找功能 二分查找（Binary Search）算法，也叫折半查找算法。 无处不在的二分思想 二分查找是一种非常简单易懂的快速查找算法，生活中到处可见。比如说，我们</description>
+    </item>
+    
+    <item>
+      <title>哈希算法：如何防止数据库中的用户信息被脱库</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hash-algrothm/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hash-algrothm/</guid>
+      <description>哈希算法：如何防止数据库中的用户信息被脱库 什么是哈希算法？ 哈希算法的定义和原理非常简单，基本上一句话就可以概括了。将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原</description>
+    </item>
+    
+    <item>
+      <title>排序</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort/</guid>
+      <description>如何分析一个“排序算法”？ 学习排序算法，我们除了学习它的算法原理、代码实现之外，更重要的是要学会如何评价、分析一个排序算法。那分析一个排序算法，要从哪几个方面入手呢？ 排序算法的执行效率 对于排序算法执行</description>
+    </item>
+    
+    <item>
+      <title>排序优化：如何实现一个通用的、高性能的排序函数</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort-optimization/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/sort-optimization/</guid>
+      <description>排序优化：如何实现一个通用的、高性能的排序函数 如何选择合适的排序算法？ 如果要实现一个通用的、高效率的排序函数，我们应该选择哪种排序算法？ 线性排序算法的时间复杂度比较低，适用场景比较特殊。所以如果要写一</description>
+    </item>
+    
+    <item>
+      <title>散列表：Word文档中的单词拼写检查功能是如何实现的</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hashtable/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/hashtable/</guid>
+      <description>散列表：Word文档中的单词拼写检查功能是如何实现的 散列思想 散列表用的是数组支持按照下标随机访问数据的特性，所以散列表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。 散列表</description>
+    </item>
+    
+    <item>
+      <title>跳表</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/skip-list/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/skip-list/</guid>
+      <description>如何理解“跳表”？ 对于一个单链表来讲，即便链表中存储的数据是有序的，如果我们要想在其中查找某个数据，也只能从头到尾遍历链表。这样查找效率就会很低，时间复杂度会很高，是O(n)。 那怎么来提高查找效率呢？</description>
+    </item>
+    
+    <item>
+      <title>递归</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/recursion/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/recursion/</guid>
+      <description>递归 如何理解“递归”？ 递归是一种应用非常广泛的算法（或者编程技巧）。之后我们要讲的很多数据结构和算法的编码实现都要用到递归，比如DFS深度优先搜索、前中后序二叉树遍历等等。 周末你带着女朋友去电影院看电</description>
+    </item>
+    
+    <item>
+      <title>队列：队列在线程池等有限资源池中的应用</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/queue/</link>
+      <pubDate>Tue, 19 Nov 2019 22:44:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/queue/</guid>
+      <description>队列：队列在线程池等有限资源池中的应用 如何理解“队列”？ 队列这个概念非常好理解。你可以把它想象成排队买票，先来的先买，后来的人只能站末尾，不允许插队。先进者先出，这就是典型的队列。 我们知道，栈只支持两</description>
+    </item>
+    
+    <item>
+      <title>链表</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/linkedlist/</link>
+      <pubDate>Mon, 18 Nov 2019 22:35:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/linkedlist/</guid>
+      <description>链表 数组需要一块连续的内存空间来存储，对内存的要求比较高。如果我们申请一个100MB大小的数组，当内存中没有连续的、足够大的存储空间时，即便内存的剩余总可用空间大于100MB，仍然会申请失败。 而链表恰</description>
+    </item>
+    
+    <item>
+      <title>栈：如何实现浏览器的前进和后退功能</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/stack/</link>
+      <pubDate>Mon, 18 Nov 2019 22:16:52 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/stack/</guid>
+      <description>栈：如何实现浏览器的前进和后退功能 如何理解“栈”？ 关于“栈”，我有一个非常贴切的例子，就是一摞叠在一起的盘子。我们平时放盘子的时候，都是从下往上一个一个放；取的时候，我们也是从上往下一个一个地依次取，</description>
+    </item>
+    
+    <item>
+      <title>数组：为什么很多编程语言中数组都从0开始编号</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/array/</link>
+      <pubDate>Thu, 14 Nov 2019 17:16:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/array/</guid>
+      <description>数组：为什么很多编程语言中数组都从0开始编号 数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。 如何实现随机访问？ 第一要是线性表（Linear List）。顾名</description>
+    </item>
+    
+    <item>
+      <title>复杂度分析：如何分析算法的执行效率和资源消耗</title>
+      <link>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/complexity-analysis/</link>
+      <pubDate>Wed, 13 Nov 2019 21:00:42 +0800</pubDate>
+      
+      <guid>https://no-sky.github.io/posts/datastructureandalgorithms-geektime/complexity-analysis/</guid>
+      <description>复杂度分析：如何分析算法的执行效率和资源消耗 大O复杂度表示法 ​ $T(n) = O(f(n))$ 其中，T(n)表示代码执行的时间；n表示数据规模的大小；f(n)表示每行代码执行的次数总和。因为这是一个公式，所以用f(n)来表示。</description>
+    </item>
     
     <item>
       <title> 导数的应用</title>
