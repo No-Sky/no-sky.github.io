@@ -1,269 +1,38 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  <meta name="author" content="nosky">
-  <meta name="description" content="nosky 的个人学习笔记">
-  <meta name="keywords" content="[note 笔记 nosky]">
-  
-  <link rel="prev" href="https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/" />
-  <link rel="next" href="https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/" />
-  <link rel="canonical" href="https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           JS的时间获取 | Note
-       
-  </title>
-  <meta name="title" content="JS的时间获取 | Note">
-    
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
-
-
-  
-  
- 
-
-<script type="application/ld+json">
- "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/no-sky.github.io"
-    },
-    "articleSection" : "posts",
-    "name" : "JS的时间获取",
-    "headline" : "JS的时间获取",
-    "description" : "JS获取系统时间 JS自己拥有一个Date类来获取时间\nvar date = new Date(); 如果直接输出的话，会是这样：\n\t2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT\x2b0800 (中国标准时间) 可想而知，我们并不需要这么多的东西，所以Date类还给我们提供了一些方法来对时间进行格式化：\nvar year = date.getFullYear(); \/\/获取年份 输出格式为“2017” \tvar month = date.getMonth(); \/\/获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1） \tvar day = date.getDate(); \/\/获取日子（1~31） \tvar week = date.getDay(); \/\/获取星期 （1~7） \tvar hour = date.getHours(); \/\/获取小时数 \tvar minute = date.getMinutes(); \/\/获取分钟数 \tvar second = date.getSeconds(); \/\/获取秒钟 格式化时间 因为JS中不提供类似于JAVA中的SimpelDateFormat类，所以我们需要自己写一个格式化时间的方法\n\x26lt;script\x26gt; function Format(){ var newDate=new Date();\tvar year=newDate.",
-    "inLanguage" : "en-us",
-    "author" : "nosky",
-    "creator" : "nosky",
-    "publisher": "nosky",
-    "accountablePerson" : "nosky",
-    "copyrightHolder" : "nosky",
-    "copyrightYear" : "2017",
-    "datePublished": "2017-11-22 13:43:49 \x2b0000 UTC",
-    "dateModified" : "2017-11-22 13:43:49 \x2b0000 UTC",
-    "url" : "https:\/\/no-sky.github.io\/2017\/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96\/",
-    "wordCount" : "85",
-    "keywords" : [ "javascript", "Note"]
-}
-</script>
-
-</head>
-
-  
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://no-sky.github.io">Note</a>
-        </div>
-        <div class="menu navbar-right">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://no-sky.github.io">Note</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">JS的时间获取</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://no-sky.github.io" rel="author">nosky</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=2017-11-22 itemprop="datePublished">November 22, 2017</time>
-                </span>
-                in
-                
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          <h4 id="js">JS获取系统时间</h4>
-<p><strong>JS自己拥有一个<code>Date</code>类来获取时间</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-</code></pre></div><p><strong>如果直接输出的话，会是这样：</strong></p>
-<pre><code>	2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT+0800 (中国标准时间)
-</code></pre><p><em>可想而知，我们并不需要这么多的东西，所以<code>Date</code>类还给我们提供了一些方法来对时间进行格式化：</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();      <span style="color:#75715e">//获取年份 输出格式为“2017”
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>();        <span style="color:#75715e">//获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1）
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>();         <span style="color:#75715e">//获取日子（1~31）
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">week</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDay</span>();        <span style="color:#75715e">//获取星期 （1~7）
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hour</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();        <span style="color:#75715e">//获取小时数
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minute</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();     <span style="color:#75715e">//获取分钟数
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>();      <span style="color:#75715e">//获取秒钟
-</span></code></pre></div><h4 id="heading">格式化时间</h4>
-<p><strong>因为JS中不提供类似于JAVA中的<code>SimpelDateFormat</code>类，所以我们需要自己写一个格式化时间的方法</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-	  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Format</span>(){
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newDate</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Date();		
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">year</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getFullYear</span>();
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">month</span><span style="color:#f92672">=</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDate</span>();
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getDay</span>();
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getHours</span>();
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minuts</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getMinutes</span>();
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">seconds</span><span style="color:#f92672">=</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">?</span>(<span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>())<span style="color:#f92672">:</span><span style="color:#a6e22e">newDate</span>.<span style="color:#a6e22e">getSeconds</span>();
-		document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">year</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">month</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">day</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">hours</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">minuts</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">seconds</span>);
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://no-sky.github.io/images/favicon.ico><meta name=robots content="noodp"><meta name=author content="nosky"><meta name=description content="nosky 的个人学习笔记"><meta name=keywords content="[note 笔记 nosky]"><link rel=prev href=https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/><link rel=next href=https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/><link rel=canonical href=https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>JS的时间获取 | Note</title><meta name=title content="JS的时间获取 | Note"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/no-sky.github.io"},"articleSection":"posts","name":"JS的时间获取","headline":"JS的时间获取","description":"JS获取系统时间 JS自己拥有一个Date类来获取时间\nvar date = new Date(); 如果直接输出的话，会是这样：\n\t2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT\x2b0800 (中国标准时间) 可想而知，我们并不需要这么多的东西，所以Date类还给我们提供了一些方法来对时间进行格式化：\nvar year = date.getFullYear(); \/\/获取年份 输出格式为“2017” \tvar month = date.getMonth(); \/\/获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1） \tvar day = date.getDate(); \/\/获取日子（1~31） \tvar week = date.getDay(); \/\/获取星期 （1~7） \tvar hour = date.getHours(); \/\/获取小时数 \tvar minute = date.getMinutes(); \/\/获取分钟数 \tvar second = date.getSeconds(); \/\/获取秒钟 格式化时间 因为JS中不提供类似于JAVA中的SimpelDateFormat类，所以我们需要自己写一个格式化时间的方法\n\x26lt;script\x26gt; function Format(){ var newDate=new Date();\tvar year=newDate.","inLanguage":"en-us","author":"nosky","creator":"nosky","publisher":"nosky","accountablePerson":"nosky","copyrightHolder":"nosky","copyrightYear":"2017","datePublished":"2017-11-22 13:43:49 \x2b0000 UTC","dateModified":"2017-11-22 13:43:49 \x2b0000 UTC","url":"https:\/\/no-sky.github.io\/2017\/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96\/","wordCount":"85","keywords":["javascript","Note"]}</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href=https://no-sky.github.io>Note</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/tags/>Tags</a>
+<a class=menu-item href=/about/>About</a></div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href=https://no-sky.github.io>Note</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/tags/>Tags</a>
+<a class=menu-item href=/about/>About</a></div></div></nav><main class=main><div class=container><article class=post-warp itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">JS的时间获取</h1><div class=post-meta>Written by <a itemprop=name href=https://no-sky.github.io rel=author>nosky</a> with ♥
+<span class=post-time>on <time datetime=2017-11-22 itemprop=datePublished>November 22, 2017</time></span>
+in</div></header><div class=post-content><h4 id=js>JS获取系统时间</h4><p><strong>JS自己拥有一个<code>Date</code>类来获取时间</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>date</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Date();
+</code></pre></div><p><strong>如果直接输出的话，会是这样：</strong></p><pre><code>	2017-11-03 13:59:25Wed Nov 22 2017 13:59:25 GMT+0800 (中国标准时间)
+</code></pre><p><em>可想而知，我们并不需要这么多的东西，所以<code>Date</code>类还给我们提供了一些方法来对时间进行格式化：</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>year</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getFullYear</span>();      <span style=color:#75715e>//获取年份 输出格式为“2017”
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>month</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMonth</span>();        <span style=color:#75715e>//获取月份 输出格式为“10”（类定义0~11为1~12月，所以输出10位11月，实际使用注意在后面加1）
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>day</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getDate</span>();         <span style=color:#75715e>//获取日子（1~31）
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>week</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getDay</span>();        <span style=color:#75715e>//获取星期 （1~7）
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>hour</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getHours</span>();        <span style=color:#75715e>//获取小时数
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>minute</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMinutes</span>();     <span style=color:#75715e>//获取分钟数
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>second</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getSeconds</span>();      <span style=color:#75715e>//获取秒钟
+</span></code></pre></div><h4 id=heading>格式化时间</h4><p><strong>因为JS中不提供类似于JAVA中的<code>SimpelDateFormat</code>类，所以我们需要自己写一个格式化时间的方法</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>	<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span><span style=color:#f92672>&gt;</span>
+	  <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>Format</span>(){
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>newDate</span><span style=color:#f92672>=</span><span style=color:#66d9ef>new</span> Date();		
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>year</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getFullYear</span>();
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>month</span><span style=color:#f92672>=</span>(<span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMonth</span>()<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span>(<span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMonth</span>()<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>))<span style=color:#f92672>:</span>(<span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMonth</span>()<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>);
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>day</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDate</span>()<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDate</span>())<span style=color:#f92672>:</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDate</span>();
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>day</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDay</span>()<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDay</span>())<span style=color:#f92672>:</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getDay</span>();
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>hours</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getHours</span>()<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getHours</span>())<span style=color:#f92672>:</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getHours</span>();
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>minuts</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMinutes</span>()<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMinutes</span>())<span style=color:#f92672>:</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getMinutes</span>();
+		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>seconds</span><span style=color:#f92672>=</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getSeconds</span>()<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span><span style=color:#f92672>?</span>(<span style=color:#e6db74>&#34;0&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getSeconds</span>())<span style=color:#f92672>:</span><span style=color:#a6e22e>newDate</span>.<span style=color:#a6e22e>getSeconds</span>();
+		document.<span style=color:#a6e22e>write</span>(<span style=color:#a6e22e>year</span><span style=color:#f92672>+</span><span style=color:#e6db74>&#34;-&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>month</span><span style=color:#f92672>+</span><span style=color:#e6db74>&#34;-&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>day</span><span style=color:#f92672>+</span><span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>hours</span><span style=color:#f92672>+</span><span style=color:#e6db74>&#34;:&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>minuts</span><span style=color:#f92672>+</span><span style=color:#e6db74>&#34;:&#34;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>seconds</span>);
       } 
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
-</code></pre></div><p>输出为：</p>
-<pre><code>	2017-11-22 14:15:34
-</code></pre><p>因为项目需要从前端获取时间存到数据库中，所以需要这种格式。后面再写一下时间字符串如何转化为Date的格式存进数据库。</p>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>nosky </span>
-                </p>
-            
-           
-             
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/>https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/</span>
-            </p>
-            
-             
-            <p class="copyright-item lincese">
-                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://no-sky.github.io/tags/javascript/">
-                    #javascript</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://no-sky.github.io">home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/" class="prev" rel="prev" title="Oracle笔记 （二）"><i class="iconfont icon-left"></i>&nbsp;Oracle笔记 （二）</a>
-         
-        
-        <a href="https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/" class="next" rel="next" title="Oracle笔记 （三）">Oracle笔记 （三）&nbsp;<i class="iconfont icon-right"></i></a>
-        
-    </div>
-
-    <div class="post-comment">
-          
-                 
-          
-    </div>
-</article>
-          </div>
-		   </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2016 - 2019</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i> 
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://no-sky.github.io">nosky</a> | </span> 
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
-    
-  
-
-
-
-     </div>
-  </body>
-</html>
+    <span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>c</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>i</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>&gt;</span>
+</code></pre></div><p>输出为：</p><pre><code>	2017-11-22 14:15:34
+</code></pre><p>因为项目需要从前端获取时间存到数据库中，所以需要这种格式。后面再写一下时间字符串如何转化为Date的格式存进数据库。</p></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
+<span>nosky</span></p><p class=copyright-item><span>Link:</span>
+<a href=https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/>https://no-sky.github.io/2017/js%E7%9A%84%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96/</span></p><p class="copyright-item lincese">本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p></div><div class=post-tags><section><i class="iconfont icon-tag"></i>Tag(s):
+<span class=tag><a href=https://no-sky.github.io/tags/javascript/>#javascript</a></span></section><section><a href=javascript:window.history.back();>back</a></span> ·
+<span><a href=https://no-sky.github.io>home</a></span></section></div><div class=post-nav><a href=https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%BA%8C/ class=prev rel=prev title="Oracle笔记 （二）"><i class="iconfont icon-left"></i>&nbsp;Oracle笔记 （二）</a>
+<a href=https://no-sky.github.io/2017/oracle%E7%AC%94%E8%AE%B0-%E4%B8%89/ class=next rel=next title="Oracle笔记 （三）">Oracle笔记 （三）&nbsp;<i class="iconfont icon-right"></i></a></div><div class=post-comment></div></article></div></main><footer class=footer><div class=copyright>&copy;
+<span itemprop=copyrightYear>2016 - 2019</span>
+<span class=with-love><i class="iconfont icon-love"></i></span><span class=author itemprop=copyrightHolder><a href=https://no-sky.github.io>nosky</a> |</span>
+<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a> & <a href=https://github.com/liuzc/leaveit target=_blank rel="external nofollow">LeaveIt</a></span></div></footer><script src=/js/vendor_no_gallery.min.js async></script></div></body></html>

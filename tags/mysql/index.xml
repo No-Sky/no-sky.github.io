@@ -1,25 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>mysql on Note</title>
-    <link>https://no-sky.github.io/tags/mysql/</link>
-    <description>Recent content in mysql on Note</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 17 Nov 2017 21:28:50 +0000</lastBuildDate>
-    
-	<atom:link href="https://no-sky.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Mysql高版本连接问题</title>
-      <link>https://no-sky.github.io/2017/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 17 Nov 2017 21:28:50 +0000</pubDate>
-      
-      <guid>https://no-sky.github.io/2017/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid>
-      <description>Java使用mysql-jdbc连接MySQL出现如下警告： 　Establishing SSL connection without server&#39;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&#39;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &amp;lsquo;false&amp;rsquo;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification. 在mysql连接字符串url中加入ssl=true或者false即可，如下所示。
-url=jdbc:mysql://127.0.0.1:3306/framework?characterEncoding=utf8&amp;amp;useSSL=true</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mysql on Note</title><link>https://no-sky.github.io/tags/mysql/</link><description>Recent content in mysql on Note</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Nov 2017 21:28:50 +0000</lastBuildDate><atom:link href="https://no-sky.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>Mysql高版本连接问题</title><link>https://no-sky.github.io/2017/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</link><pubDate>Fri, 17 Nov 2017 21:28:50 +0000</pubDate><guid>https://no-sky.github.io/2017/mysql%E9%AB%98%E7%89%88%E6%9C%AC%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid><description>Java使用mysql-jdbc连接MySQL出现如下警告： 　Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &amp;lsquo;false&amp;rsquo;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification. 在mysql连接字符串url中加入ssl=true或者false即可，如下所示。
+url=jdbc:mysql://127.0.0.1:3306/framework?characterEncoding=utf8&amp;amp;useSSL=true</description></item></channel></rss>

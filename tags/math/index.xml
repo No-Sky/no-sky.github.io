@@ -1,123 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Math on Note</title>
-    <link>https://no-sky.github.io/tags/math/</link>
-    <description>Recent content in Math on Note</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 16:22:53 +0800</lastBuildDate>
-    
-	<atom:link href="https://no-sky.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title> 导数的应用</title>
-      <link>https://no-sky.github.io/2019/application-of-derivative/</link>
-      <pubDate>Mon, 29 Apr 2019 16:22:53 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/application-of-derivative/</guid>
-      <description>切线和法线方程 ${f}&#39;(x_0)$在几何上表示曲线$y=f(x)$在$(x_0,f(x_0))$处的切线斜率
-切线方程：$y-y_0={f}&#39;(x_0)(x-X_0)$
-法线方程：$y-y_0=-\frac{1}{{f}&#39;(x_0)}(x-x_0)$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math on Note</title><link>https://no-sky.github.io/tags/math/</link><description>Recent content in Math on Note</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Apr 2019 16:22:53 +0800</lastBuildDate><atom:link href="https://no-sky.github.io/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title> 导数的应用</title><link>https://no-sky.github.io/2019/application-of-derivative/</link><pubDate>Mon, 29 Apr 2019 16:22:53 +0800</pubDate><guid>https://no-sky.github.io/2019/application-of-derivative/</guid><description>切线和法线方程 ${f}'(x_0)$在几何上表示曲线$y=f(x)$在$(x_0,f(x_0))$处的切线斜率
+切线方程：$y-y_0={f}'(x_0)(x-X_0)$
+法线方程：$y-y_0=-\frac{1}{{f}'(x_0)}(x-x_0)$
 求隐函数的导数 （1）定义：显函数$y=f(x)$，隐函数$F(x,y)$
-（2）方法：方程两边同时对$x$求导，接触${y}&#39;$
+（2）方法：方程两边同时对$x$求导，接触${y}'$
 例：设$x^2y-e^{2x}=\sin y$，求$\frac{\mathrm{d}y}{\mathrm{d}x}$.
-解：$方程两边同时对x求导得： \\\\ 2xy+x^2·{y}&#39;-2·e^{2x}={y}&#39;·\cos y \\\\ (x^2-\cos y)·{y}&#39;=2e^{2x}-2xy \\\\ {y}&#39;=\frac{2e^{2x}-2xy}{x^2-\cos y}$
+解：$方程两边同时对x求导得： \\\\ 2xy+x^2·{y}'-2·e^{2x}={y}'·\cos y \\\\ (x^2-\cos y)·{y}'=2e^{2x}-2xy \\\\ {y}'=\frac{2e^{2x}-2xy}{x^2-\cos y}$
 求幂指函数的导数 方法一：先取对数再求导（对数求导法）
 方法二：化为以$e$为底的指数函数后再求导（$y=u^x=e^{xlnu}$）
 例：求$y=x^{\sin x}$ 函数的导数$\frac{\mathrm{d}y}{\mathrm{d}x}$
-解：法一：$方程两边同时取对数：lny=lnx^{\sin x}=\sin xlnx \\\\ 方程两边同时对x求导：\frac{1}{y}·{y}&#39;=\cos x · lnx+\sin x·\frac{1}{x} \\\\ \Rightarrow {y}&#39;=y(\cos x lnx+\frac{\sin x}{x}) \\\\ \Rightarrow {y}&#39;=x^{\sin x}(\cos x lnx+\frac{\sin x}{x})$
-​	法二：$y=x^{\sin x}=e^{\sin xlnx} \\\\ ​ {y}&#39;=e^{\sin xlnx}{(\sin xlnx)}&#39;=x^{\sin x}(\cos xlnx+\frac{\sin x}{x})$
+解：法一：$方程两边同时取对数：lny=lnx^{\sin x}=\sin xlnx \\\\ 方程两边同时对x求导：\frac{1}{y}·{y}'=\cos x · lnx+\sin x·\frac{1}{x} \\\\ \Rightarrow {y}'=y(\cos x lnx+\frac{\sin x}{x}) \\\\ \Rightarrow {y}'=x^{\sin x}(\cos x lnx+\frac{\sin x}{x})$
+​ 法二：$y=x^{\sin x}=e^{\sin xlnx} \\\\ ​ {y}'=e^{\sin xlnx}{(\sin xlnx)}'=x^{\sin x}(\cos xlnx+\frac{\sin x}{x})$
 求由参数方程确定的函数的导数 （1）参数方程：$\left\{\begin{matrix} x=\varphi(t) \\\\ y=\psi(t) \end{matrix}\right.$
-（2）求导方法：$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}=\frac{{\varphi}&#39;(t)}{{\psi}&#39;(t)} \\\\ \frac{\mathrm{d^2}y}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}$
-求微分 1、对于一元函数，可微$\Leftrightarrow$可导</description>
-    </item>
-    
-    <item>
-      <title>微分中值定理和导数的应用</title>
-      <link>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</link>
-      <pubDate>Sun, 28 Apr 2019 15:51:26 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 利用罗尔中值定理证明根的存在性 例：设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$内可导，且$f(0)=0,f(1)=2$，证明：在$(0,1)$内至少存在一点$\xi$，使得${f}&#39;(\xi )=2\xi +1$成立。
-证：$（思路）构建辅助函数，得出原函数：\left\{\begin{matrix} {f}&#39;=2x+1\\\\ {f}&#39;-2x-1=0&#39;\\\\ f(x)-x^2-x=0 \end{matrix}\right.$
-$①设F(x)=f(x)-x^2-x \\\\ ②\because f(x)在闭区间[0,1]上连续，开区间(0,1)内可导 \\\\ \therefore F(x)在[0,1]上连续，(01,)内可导, \\\\ F(0)=f(0)=0,F(1)=f(1)-1-1=0 \\\\ ③ 故，由罗尔定理可知, \exists \xi \in (0,1),使得{F}&#39;(\xi )=0,即{f}&#39;(\xi )=2\xi +1$
+（2）求导方法：$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}=\frac{{\varphi}'(t)}{{\psi}'(t)} \\\\ \frac{\mathrm{d^2}y}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}$
+求微分 1、对于一元函数，可微$\Leftrightarrow$可导</description></item><item><title>微分中值定理和导数的应用</title><link>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</link><pubDate>Sun, 28 Apr 2019 15:51:26 +0800</pubDate><guid>https://no-sky.github.io/2019/application-of-differential-mean-value-theorem/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+利用罗尔中值定理证明根的存在性 例：设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$内可导，且$f(0)=0,f(1)=2$，证明：在$(0,1)$内至少存在一点$\xi$，使得${f}'(\xi )=2\xi +1$成立。
+证：$（思路）构建辅助函数，得出原函数：\left\{\begin{matrix} {f}'=2x+1\\\\ {f}'-2x-1=0'\\\\ f(x)-x^2-x=0 \end{matrix}\right.$
+$①设F(x)=f(x)-x^2-x \\\\ ②\because f(x)在闭区间[0,1]上连续，开区间(0,1)内可导 \\\\ \therefore F(x)在[0,1]上连续，(01,)内可导, \\\\ F(0)=f(0)=0,F(1)=f(1)-1-1=0 \\\\ ③ 故，由罗尔定理可知, \exists \xi \in (0,1),使得{F}'(\xi )=0,即{f}'(\xi )=2\xi +1$
 利用拉格朗日中值定理证明不等式 （1）构造辅助函数$f(x)$将中间部分写成差的形式，确定$f(x)$及区间$[a,b]$.
 （2）验证拉格朗日中值定理的两个条件.
 （3）利用拉格朗日中值定理的结论得到等式.
-（4）利用$\xi$或${f}&#39;(\xi )$的取值范围得到不等式
+（4）利用$\xi$或${f}'(\xi )$的取值范围得到不等式
 例：证明不等式$\frac{m-n}{m}&amp;lt;ln\frac{m}{n}&amp;lt;\frac{m-n}{n}$，其中$n&amp;lt;m$为正整数。
-证：$①令f(0)=lnx,x\in [n,m] \\\\ ②显然f(x)在[n,m]上连续，(n,m)内可导. \\\\ ③故，由拉格朗日中值定理可得，\\\\ \exists \xi \in (n,m),使得{f}&#39;(\xi )=\frac{f(m)-f(n)}{m-n}=\frac{lnm-lnn}{m-n}=\frac{ln\frac{m}{n}}{m-n} \\\\ \because {f}&#39;(x)=\frac{1}{x},{f}&#39;(\xi )=\frac{1}{\xi} \therefore \frac{1}{\xi}=\frac{ln\frac{m}{n}}{m-n} \\\\ ④\because n&amp;lt; \xi &amp;lt;m,\therefore \frac{1}{m}&amp;lt;\frac{1}{\xi}&amp;lt;\frac{1}{n} \\\\ \therefore \frac{1}{m}&amp;lt;\frac{ln\frac{m}{n}}{m-n}&amp;lt;\frac{1}{n} \therefore \frac{m-n}{m}&amp;lt;ln\frac{m}{n}&amp;lt;\frac{m-n}{n}$
+证：$①令f(0)=lnx,x\in [n,m] \\\\ ②显然f(x)在[n,m]上连续，(n,m)内可导. \\\\ ③故，由拉格朗日中值定理可得，\\\\ \exists \xi \in (n,m),使得{f}'(\xi )=\frac{f(m)-f(n)}{m-n}=\frac{lnm-lnn}{m-n}=\frac{ln\frac{m}{n}}{m-n} \\\\ \because {f}'(x)=\frac{1}{x},{f}'(\xi )=\frac{1}{\xi} \therefore \frac{1}{\xi}=\frac{ln\frac{m}{n}}{m-n} \\\\ ④\because n&amp;lt; \xi &amp;lt;m,\therefore \frac{1}{m}&amp;lt;\frac{1}{\xi}&amp;lt;\frac{1}{n} \\\\ \therefore \frac{1}{m}&amp;lt;\frac{ln\frac{m}{n}}{m-n}&amp;lt;\frac{1}{n} \therefore \frac{m-n}{m}&amp;lt;ln\frac{m}{n}&amp;lt;\frac{m-n}{n}$
 利用单调性证明不等式 （1）构造辅助函数：移项
 （2）求导，判断单调性，若不能判断，继续求导，直至能判断为止（最多三阶可导）
-（3）结合区间端点，利用单调性完成不等式的证明</description>
-    </item>
-    
-    <item>
-      <title>微分中值定理与洛必达法则</title>
-      <link>https://no-sky.github.io/2019/mean-value-theorem/</link>
-      <pubDate>Sun, 28 Apr 2019 14:53:56 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/mean-value-theorem/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 罗尔定理 如果函数$f(x)$满足
+（3）结合区间端点，利用单调性完成不等式的证明</description></item><item><title>微分中值定理与洛必达法则</title><link>https://no-sky.github.io/2019/mean-value-theorem/</link><pubDate>Sun, 28 Apr 2019 14:53:56 +0800</pubDate><guid>https://no-sky.github.io/2019/mean-value-theorem/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+罗尔定理 如果函数$f(x)$满足
 ①在闭区间$[a,b]$上连续
 ②在开区间$(a,b)$内可导
-③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b),使得{f}&#39;(\xi )=0$
+③在区间端点处的函数值相等，即$f(a)=f(b)$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b),使得{f}'(\xi )=0$
 拉格朗日中值定理 如果函数$f(x)$满足
 ①在闭区间$[a,b]$上连续
 ②在开区间$(a,b)$内可导
-那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)，使等式f(b)-f(a)={f}&#39;(\xi )(b-a)成立$
+那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)，使等式f(b)-f(a)={f}'(\xi )(b-a)成立$
 柯西中值定理 如果函数$f(x)及F(x)$满足
 ①在闭区间$[a,b]$上连续
 ②在开区间$(a,b)$内可导
-③对任一$x\in (a,b),{F}&#39;(x)\neq 0$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)$，使等式$\frac{f(b)-f(a)}{F(b)-F(a)}=\frac{{f}&#39;(\xi )}{{F}&#39;(\xi )}$
+③对任一$x\in (a,b),{F}'(x)\neq 0$，那么在$(a,b)$内至少有一点$\xi (a&amp;lt; \xi &amp;lt;b)$，使等式$\frac{f(b)-f(a)}{F(b)-F(a)}=\frac{{f}'(\xi )}{{F}'(\xi )}$
 洛必达法则 设①当$x \Rightarrow a$时，函数$f(x)$及$F(x)$都趋于零；
-②在点a的某去心邻域内，${f}&#39;(x)$及${F}&#39;(x)$都存在且${F}&#39;(x)\neq 0$
-③$\lim_{x \to a} \frac{{f}&#39;(x)}{{F}&#39;(x)}$存在（或为无穷大），那么
-其中$\frac{f(x)}{F(x)}$也可以是$\frac{\infty}{\infty}$型未定式，${f}&#39;(x),{F}&#39;(x)$要存在且${F}&#39;(x)\neq 0$；相同的极限过程可以是$x\rightarrow a,x \rightarrow a^{\pm },x \rightarrow \infty,x\rightarrow \pm \infty $的任何一种，对于$n \rightarrow \infty$，可用于子列极限定理，先化为$x \Rightarrow +\infty$的极限
-对于其余五种非基本型未定式，应先变形或者取对数化为基本型，再用洛必达法则。</description>
-    </item>
-    
-    <item>
-      <title>不定积分</title>
-      <link>https://no-sky.github.io/2019/indefinite-integral/</link>
-      <pubDate>Sat, 27 Apr 2019 15:57:22 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/indefinite-integral/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}&#39;(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{d}x$，则称$F(x)$是$f(x)$在$I$上的一个原函数。
-原函数存在定理 如果函数$f(x)$在区间$I$上连续，那么在区间$I$上存在可导函数$F(x)$，使对任意$x \in I$都有${F}&#39;(x)=f(x)$。
+②在点a的某去心邻域内，${f}'(x)$及${F}'(x)$都存在且${F}'(x)\neq 0$
+③$\lim_{x \to a} \frac{{f}'(x)}{{F}'(x)}$存在（或为无穷大），那么
+其中$\frac{f(x)}{F(x)}$也可以是$\frac{\infty}{\infty}$型未定式，${f}'(x),{F}'(x)$要存在且${F}'(x)\neq 0$；相同的极限过程可以是$x\rightarrow a,x \rightarrow a^{\pm },x \rightarrow \infty,x\rightarrow \pm \infty $的任何一种，对于$n \rightarrow \infty$，可用于子列极限定理，先化为$x \Rightarrow +\infty$的极限
+对于其余五种非基本型未定式，应先变形或者取对数化为基本型，再用洛必达法则。</description></item><item><title>不定积分</title><link>https://no-sky.github.io/2019/indefinite-integral/</link><pubDate>Sat, 27 Apr 2019 15:57:22 +0800</pubDate><guid>https://no-sky.github.io/2019/indefinite-integral/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+原函数与不定积分的概念 原函数 若对于某区间$I$上任意一点$x$，均有${F}'(x)=f(x)或\mathrm{d}F(x)=f(x)\mathrm{d}x$，则称$F(x)$是$f(x)$在$I$上的一个原函数。
+原函数存在定理 如果函数$f(x)$在区间$I$上连续，那么在区间$I$上存在可导函数$F(x)$，使对任意$x \in I$都有${F}'(x)=f(x)$。
 不定积分 $f(x)$在区间$I$上的原函数全体称为f(x)在$I$上的不定积分，即若$F(x)$是$f(x)$在$I$上的任一原函数，则$\int f(x)\mathrm{d}x=F(x)+C(C为任意常数)$.
 由此定义可得下列关系：
-（1）${\int f(x)\mathrm{d}x}&#39;=f(x)$ 或 $\mathrm{\int f(x)\mathrm{d}x}=f(x)\mathrm{d}x$
-（2）$\int {F}&#39;(x)=F(x)+C$ 或 $\int \mathrm{d}F(x)=F(x)+C$
+（1）${\int f(x)\mathrm{d}x}'=f(x)$ 或 $\mathrm{\int f(x)\mathrm{d}x}=f(x)\mathrm{d}x$
+（2）$\int {F}'(x)=F(x)+C$ 或 $\int \mathrm{d}F(x)=F(x)+C$
 不定积分的性质 设$F(x)$是$f(x)$的一个原函数，$k$为非零常数，则有
 （1）$\int kf(x)\mathrm{d}x=k\int f(x)\mathrm{d}x$;
 （2）$\int [f(x) \pm g(x)]\mathrm{d}{x}=\int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x$
 基本积分公式 基本积分公式
 $\tag{1} \int x^n dx = \frac{1}{n+1}x^{n+1},\hspace{1ex}n\neq -1$ $\tag{2} \int \frac{1}{x}dx = \ln |x| $
-$\tag{3} \int u dv = uv - \int v du $ $\tag{4} \int \frac{1}{ax+b}dx = \frac{1}{a} \ln |ax + b|$</description>
-    </item>
-    
-    <item>
-      <title>二阶常系数齐次线性微分方程</title>
-      <link>https://no-sky.github.io/2019/second-order-constant-coefficient-homogeneous-linear-differential-equation/</link>
-      <pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 标准形式 通解： ①写出相应的特征方程 $r^2+pr+q=0$
+$\tag{3} \int u dv = uv - \int v du $ $\tag{4} \int \frac{1}{ax+b}dx = \frac{1}{a} \ln |ax + b|$</description></item><item><title>二阶常系数齐次线性微分方程</title><link>https://no-sky.github.io/2019/second-order-constant-coefficient-homogeneous-linear-differential-equation/</link><pubDate>Fri, 26 Apr 2019 17:08:07 +0800</pubDate><guid>https://no-sky.github.io/2019/second-order-constant-coefficient-homogeneous-linear-differential-equation/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+标准形式 通解： ①写出相应的特征方程 $r^2+pr+q=0$
 ②求出特征根$r_1,r_2$
 ③写出通解：
 **1)不同实根：**$r_1 \neq r_2, y=C_1e^{r_1x}+C_2e^{r_2x}$
 **2)重根：**$r_1=r_2=r,y=C_1e^{rx}+C_2xe^{rx}$
 **2)共轭复根：**$r_{1,2}=\alpha \pm \beta i, y=e^{\alpha x}(C_1\cos \beta x + C_2 \sin \beta x)$
-例1：求微分方程${y}&#39;&#39;+2{y}&#39;+y=0$的通解
+例1：求微分方程${y}''+2{y}'+y=0$的通解
 解：由题意得：$特征方程：r^2+2r+1=0 \\\\ \Rightarrow r_1=r_2=-1 \\\\ \therefore y=C_1e^{-x}+C_2xe^{-x}$
-例2：求微分方程${y}&#39;&#39;-4y=0$得通解
+例2：求微分方程${y}''-4y=0$得通解
 解：由题意得：$特征方程：r^2-4=0 \\\\ \Rightarrow r_1=2，r_2=-2 \\\\ \therefore y=C_1e^{2x}+C-2e^{-2x}$
 例3： 求微分方程$2\frac{\mathrm{d}^2 y}{\mathrm{d} x^2}+4\frac{\mathrm{d} y}{\mathrm{d} x}+3y=0$的通解
 解：由题意得：$特征方程：2r^2+4r+3=0 \\\\ \Rightarrow r=-1 \pm \frac{\sqrt{2}}{2}i \\\\ \therefore y=e^{-x}(C_1\cos \frac{\sqrt{2}}{2}x+C_2\sin \frac{\sqrt{2}}{2}x)$
@@ -125,80 +70,35 @@ $\tag{3} \int u dv = uv - \int v du $ $\tag{4} \int \frac{1}{ax+b}dx = \frac{1}{
 ②写出特征方程
 ③写出微分方程
 例：写出通解为$y=C_1e^{-x}+C_2e^{3x}(C_1,C_2为任意常数)$的二阶线性常系数齐次微分方程
-解：由题意得：$特征根：r_1=-1,r_2=3 \\\\ 特征方程：(r+1)(r-3)=0 \\\\ \Rightarrow r^2-2r-3=0 \\\\ 微分方程：{y}&#39;&#39;-2{y}&#39;-3y=0$</description>
-    </item>
-    
-    <item>
-      <title>可降阶的高阶微分方程</title>
-      <link>https://no-sky.github.io/2019/reduced-order-higher-order-differential-equation/</link>
-      <pubDate>Fri, 26 Apr 2019 16:33:33 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/reduced-order-higher-order-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- $y^{(n)}=f(x)$型 解法：作n次不定积分
-例：求微分方程${y}&#39;&#39;&#39;=24x$通解
-解：对原方程连续积分可得：${y}&#39;&#39;=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}&#39;=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$
-${y}&#39;&#39;=f(x,{y}&#39;)$型 解法：令${y}&#39;=P$，两边对x求导，${y}&#39;&#39;=P$，然后代入原方程转化为一阶微分方程求解
-例：求微分方程$x{y}&#39;&#39;+{y}&#39;=4x$的通解
-解：$令{y}&#39;=P,{y}&#39;&#39;={P}&#39; \\\\ 代入原方程得：x{P}&#39;+P=4x \\\\ \Rightarrow {P}&#39;+\frac{1}{x}P=4 \\\\ 可得：P=e^{-\int \frac{1}{x}\mathrm{d}x}(\int 4e^{\int \frac{1}{x}}\mathrm{d}x+C-1) \\\\ =e^{-lnx}(\int 4e^{lnx}\mathrm{d}x+C_1) \\\\ =\frac{1}{x}(\int 4x\mathrm{d}x+C_1) \\\\ =\frac{1}{x}(2x^2+C_1) \\\\ =2x+C_1\frac{1}{x} \\\\ \Rightarrow {y}&#39;=2x+\frac{C_1}{x} \\\\ \Rightarrow y = \int (2x+\frac{C_1}{x})\mathrm{d}x \\\\ \Rightarrow y=x^2+C_1ln|x|+C-2$
-${y}&#39;&#39;=f(y,{y}&#39;)$型 解法：令${y}&#39;=P$，两边对x求导，${y}&#39;&#39;=\frac{\mathrm{d}P}{\mathrm{d}x}=\frac{\mathrm{d}P}{\mathrm{d}y}·\frac{\mathrm{d}y}{\mathrm{d}x}=P\frac{\mathrm{d}P}{\mathrm{d}y}$，然后代入原方程，转化为一阶微分方程求解
-例：求微分方程$y{y}&#39;&#39;-({y}&#39;)^2=0$的通解
-解：$令{y}&#39;=P,{y}&#39;&#39;=P·\frac{\mathrm{d}P}{\mathrm{d}y} 代入原方程得：\\\\ y·P·\frac{\mathrm{d}P}{\mathrm{d}y}-P^2=0 \\\\ \Rightarrow y·\frac{\mathrm{d}P}{\mathrm{d}y}=P \\\\ \Rightarrow \frac{\mathrm{d}P}{P}=\frac{\mathrm{d}y}{y} \\\\ \Rightarrow \int \frac{\mathrm{d}P}{P}=\int \frac{\mathrm{d}y}{y} \\\\ \Rightarrow ln|P|=ln|y|+ln|C_1| \\\\ \Rightarrow P=C_1y \Rightarrow {y}&#39;=C_1y \\\\ \Rightarrow \frac{\mathrm{d}y}{\mathrm{d}x}=C_1y \\\\ \Rightarrow \frac{\mathrm{d}y}{y}=C_1\mathrm{d}x \\\\ \Rightarrow \int \frac{\mathrm{d}y}{y}=\int C_1\mathrm{d}x \\\\ \Rightarrow ln|y|=C_1x+ln|C_2| \\\\ \Rightarrow y=C_2e^{C_1x}$</description>
-    </item>
-    
-    <item>
-      <title>一阶线性微分方程</title>
-      <link>https://no-sky.github.io/2019/first-order-linear-differential-equation/</link>
-      <pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/first-order-linear-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 标准形式 解法 ①化为标准形式
+解：由题意得：$特征根：r_1=-1,r_2=3 \\\\ 特征方程：(r+1)(r-3)=0 \\\\ \Rightarrow r^2-2r-3=0 \\\\ 微分方程：{y}''-2{y}'-3y=0$</description></item><item><title>可降阶的高阶微分方程</title><link>https://no-sky.github.io/2019/reduced-order-higher-order-differential-equation/</link><pubDate>Fri, 26 Apr 2019 16:33:33 +0800</pubDate><guid>https://no-sky.github.io/2019/reduced-order-higher-order-differential-equation/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+$y^{(n)}=f(x)$型 解法：作n次不定积分
+例：求微分方程${y}'''=24x$通解
+解：对原方程连续积分可得：${y}''=\int 24x\mathrm{d}x=12x^2+C_1 \\\\ {y}'=\int (12x^2+C_1)\mathrm{d}x=4x^3+C_1x+C_2 \\\\ y=\int (4x^3+C_1x+C_2)\mathrm{d}x=x^4+C_1\frac{x^2}{2}+C_2x+C3$
+${y}''=f(x,{y}')$型 解法：令${y}'=P$，两边对x求导，${y}''=P$，然后代入原方程转化为一阶微分方程求解
+例：求微分方程$x{y}''+{y}'=4x$的通解
+解：$令{y}'=P,{y}''={P}' \\\\ 代入原方程得：x{P}'+P=4x \\\\ \Rightarrow {P}'+\frac{1}{x}P=4 \\\\ 可得：P=e^{-\int \frac{1}{x}\mathrm{d}x}(\int 4e^{\int \frac{1}{x}}\mathrm{d}x+C-1) \\\\ =e^{-lnx}(\int 4e^{lnx}\mathrm{d}x+C_1) \\\\ =\frac{1}{x}(\int 4x\mathrm{d}x+C_1) \\\\ =\frac{1}{x}(2x^2+C_1) \\\\ =2x+C_1\frac{1}{x} \\\\ \Rightarrow {y}'=2x+\frac{C_1}{x} \\\\ \Rightarrow y = \int (2x+\frac{C_1}{x})\mathrm{d}x \\\\ \Rightarrow y=x^2+C_1ln|x|+C-2$
+${y}''=f(y,{y}')$型 解法：令${y}'=P$，两边对x求导，${y}''=\frac{\mathrm{d}P}{\mathrm{d}x}=\frac{\mathrm{d}P}{\mathrm{d}y}·\frac{\mathrm{d}y}{\mathrm{d}x}=P\frac{\mathrm{d}P}{\mathrm{d}y}$，然后代入原方程，转化为一阶微分方程求解
+例：求微分方程$y{y}''-({y}')^2=0$的通解
+解：$令{y}'=P,{y}''=P·\frac{\mathrm{d}P}{\mathrm{d}y} 代入原方程得：\\\\ y·P·\frac{\mathrm{d}P}{\mathrm{d}y}-P^2=0 \\\\ \Rightarrow y·\frac{\mathrm{d}P}{\mathrm{d}y}=P \\\\ \Rightarrow \frac{\mathrm{d}P}{P}=\frac{\mathrm{d}y}{y} \\\\ \Rightarrow \int \frac{\mathrm{d}P}{P}=\int \frac{\mathrm{d}y}{y} \\\\ \Rightarrow ln|P|=ln|y|+ln|C_1| \\\\ \Rightarrow P=C_1y \Rightarrow {y}'=C_1y \\\\ \Rightarrow \frac{\mathrm{d}y}{\mathrm{d}x}=C_1y \\\\ \Rightarrow \frac{\mathrm{d}y}{y}=C_1\mathrm{d}x \\\\ \Rightarrow \int \frac{\mathrm{d}y}{y}=\int C_1\mathrm{d}x \\\\ \Rightarrow ln|y|=C_1x+ln|C_2| \\\\ \Rightarrow y=C_2e^{C_1x}$</description></item><item><title>一阶线性微分方程</title><link>https://no-sky.github.io/2019/first-order-linear-differential-equation/</link><pubDate>Fri, 26 Apr 2019 16:17:39 +0800</pubDate><guid>https://no-sky.github.io/2019/first-order-linear-differential-equation/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+标准形式 解法 ①化为标准形式
 ②套公式：
 注：在此公式中，解不定积分时，不加绝对值，也不加任意常数C
-例：解方程$x{y}&#39;-y=x^3$
-解：原方程可化为：${y}&#39;-\frac{1}{x}y=x^2 \\\\ 由公式得：y=e^{-\int \frac{1}{x}\mathrm{d}x}(\int x^2e^{-\int \frac{1}{x}\mathrm{d}x}\mathrm{d}x+C) \\\\ =e^{lnx}(\int x^2e^{-lnx}\mathrm{d}x+C) \\\\ =x(\int x^2·\frac{1}{x}\mathrm{d}x+C) \\\\ =x(\frac{x^2}{2}+C) \\\\ =\frac{x^3}{2}+Cx \\\\ 即 y=\frac{x^3}{2}+Cx$</description>
-    </item>
-    
-    <item>
-      <title>齐次方程</title>
-      <link>https://no-sky.github.io/2019/homogeneous-equation/</link>
-      <pubDate>Fri, 26 Apr 2019 15:56:15 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/homogeneous-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 解法 ①化为标准形式：${y}&#39;=f(\frac{y}{x})$
+例：解方程$x{y}'-y=x^3$
+解：原方程可化为：${y}'-\frac{1}{x}y=x^2 \\\\ 由公式得：y=e^{-\int \frac{1}{x}\mathrm{d}x}(\int x^2e^{-\int \frac{1}{x}\mathrm{d}x}\mathrm{d}x+C) \\\\ =e^{lnx}(\int x^2e^{-lnx}\mathrm{d}x+C) \\\\ =x(\int x^2·\frac{1}{x}\mathrm{d}x+C) \\\\ =x(\frac{x^2}{2}+C) \\\\ =\frac{x^3}{2}+Cx \\\\ 即 y=\frac{x^3}{2}+Cx$</description></item><item><title>齐次方程</title><link>https://no-sky.github.io/2019/homogeneous-equation/</link><pubDate>Fri, 26 Apr 2019 15:56:15 +0800</pubDate><guid>https://no-sky.github.io/2019/homogeneous-equation/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+解法 ①化为标准形式：${y}'=f(\frac{y}{x})$
 ②代入$u=\frac{y}{x}$，代入方程小区y
 ③化为x与u的可分离变量的微分方程，求解
-例1：求$x{y}&#39;-x\sin\frac{y}{x}-y=0$的通解。
-解：原方程可化为：${y}&#39;-\sin\frac{y}{x}=0 \Rightarrow {y}&#39;=\sin\frac{y}{x}+\frac{y}{x} \\\\ 令\frac{y}{x}=u, y=xu, {y}&#39;=u+xu \\\\ 代入原方程得：u+x{u}&#39;=\sin u+u \\\\ \Rightarrow x\frac{\mathrm{d} u}{\mathrm{d} x} = \sin u \\\\ \Rightarrow \frac{\mathrm{d} u}{\sin u} = \frac{\mathrm{d} x}{x} \\\\ \Rightarrow \int \frac{1}{\sin u}\mathrm{d} u = \int \frac{1}{x}\mathrm{d} x \\\\ \Rightarrow ln|\csc u - \cot u| = ln|x| + ln|C| \\\\ \Rightarrow \csc u - \cot u = Cx \\\\ \Rightarrow \csc\frac{y}{x}-\cot\frac{y}{x}=Cx \\\\ 即原方程的通解是\csc\frac{y}{x}-\cot\frac{y}{x}=Cx$</description>
-    </item>
-    
-    <item>
-      <title>常微分方程</title>
-      <link>https://no-sky.github.io/2019/ordinary-differential-equation/</link>
-      <pubDate>Fri, 26 Apr 2019 15:10:23 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/ordinary-differential-equation/</guid>
-      <description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
- 常微分方程的解 若$y=\varphi (x)$代入方程成为恒等式，则称$y=\varphi (x)$为方程的一个解。
+例1：求$x{y}'-x\sin\frac{y}{x}-y=0$的通解。
+解：原方程可化为：${y}'-\sin\frac{y}{x}=0 \Rightarrow {y}'=\sin\frac{y}{x}+\frac{y}{x} \\\\ 令\frac{y}{x}=u, y=xu, {y}'=u+xu \\\\ 代入原方程得：u+x{u}'=\sin u+u \\\\ \Rightarrow x\frac{\mathrm{d} u}{\mathrm{d} x} = \sin u \\\\ \Rightarrow \frac{\mathrm{d} u}{\sin u} = \frac{\mathrm{d} x}{x} \\\\ \Rightarrow \int \frac{1}{\sin u}\mathrm{d} u = \int \frac{1}{x}\mathrm{d} x \\\\ \Rightarrow ln|\csc u - \cot u| = ln|x| + ln|C| \\\\ \Rightarrow \csc u - \cot u = Cx \\\\ \Rightarrow \csc\frac{y}{x}-\cot\frac{y}{x}=Cx \\\\ 即原方程的通解是\csc\frac{y}{x}-\cot\frac{y}{x}=Cx$</description></item><item><title>常微分方程</title><link>https://no-sky.github.io/2019/ordinary-differential-equation/</link><pubDate>Fri, 26 Apr 2019 15:10:23 +0800</pubDate><guid>https://no-sky.github.io/2019/ordinary-differential-equation/</guid><description>因为文章中包含大量数学公式，推荐使用电脑阅读本文章
+常微分方程的解 若$y=\varphi (x)$代入方程成为恒等式，则称$y=\varphi (x)$为方程的一个解。
 通解 含有相互独立（不能合并，$y=C_1x+C_2x^2与y=C_1x+C_2x$）的任意常数，且任意常数的个数与方程的阶数相同的微分方程的解。
 特解 不含任意常数的解。
-例：已知微分方程${y}&#39;+ay=e^x$的一个特解为$y=xe^x$,则a=__.
-解：${y}&#39;=e^x+x·e^x=(1+x)e^x \\\\ 代入微分方程得: (1+x)e^x+a·xe^x=e^x \\\\ \Rightarrow (1+x+ax)e^x=e^x \\\\ \Rightarrow a=-1$
+例：已知微分方程${y}'+ay=e^x$的一个特解为$y=xe^x$,则a=__.
+解：${y}'=e^x+x·e^x=(1+x)e^x \\\\ 代入微分方程得: (1+x)e^x+a·xe^x=e^x \\\\ \Rightarrow (1+x+ax)e^x=e^x \\\\ \Rightarrow a=-1$
 可分离变量的微分方程 标准形式 解法 ①分离变量，化为标准形式
 ②两边同时积分
 例1：求方程$\sec^2x+\tan y \mathrm{d} x + \sec^2 y \tan x \mathrm{d} y = 0$的通解
-解：原方程可化为：$\sec^2x+\tan y \mathrm{d} x = - \sec^2 y \tan x \mathrm{d} y \\\\ \Rightarrow \frac{\sec^2 x}{\tan x} \mathrm{d} x = - \frac{\sec^2 y}{\tan y} \mathrm{d} x \\\\ \Rightarrow \int \frac{\sec^2 x}{\tan x} \mathrm{d} x = - \int \frac{\sec^2 y}{\tan y} \mathrm{d} x \\\\ \Rightarrow \int \frac{1}{\tan x} \mathrm{d} (\tan x) = - \int \frac{1}{\tan y} \mathrm{d} (\tan y) \\\\ \Rightarrow ln|\tan x| = - ln|(\tan y)| + ln|C| \\\\ \Rightarrow ln|\tan x| + ln|(\tan y)|= ln|C| \\\\ \Rightarrow ln|\tan x \tan y= ln|C| \\\\ \Rightarrow \tan x \tan y= C \\\\ 即原微分方程的通解是: \tan x \tan y= C$</description>
-    </item>
-    
-    <item>
-      <title>空间曲面及其方程</title>
-      <link>https://no-sky.github.io/2019/space-surface-equation/</link>
-      <pubDate>Thu, 25 Apr 2019 17:32:01 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/space-surface-equation/</guid>
-      <description>球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为：
+解：原方程可化为：$\sec^2x+\tan y \mathrm{d} x = - \sec^2 y \tan x \mathrm{d} y \\\\ \Rightarrow \frac{\sec^2 x}{\tan x} \mathrm{d} x = - \frac{\sec^2 y}{\tan y} \mathrm{d} x \\\\ \Rightarrow \int \frac{\sec^2 x}{\tan x} \mathrm{d} x = - \int \frac{\sec^2 y}{\tan y} \mathrm{d} x \\\\ \Rightarrow \int \frac{1}{\tan x} \mathrm{d} (\tan x) = - \int \frac{1}{\tan y} \mathrm{d} (\tan y) \\\\ \Rightarrow ln|\tan x| = - ln|(\tan y)| + ln|C| \\\\ \Rightarrow ln|\tan x| + ln|(\tan y)|= ln|C| \\\\ \Rightarrow ln|\tan x \tan y= ln|C| \\\\ \Rightarrow \tan x \tan y= C \\\\ 即原微分方程的通解是: \tan x \tan y= C$</description></item><item><title>空间曲面及其方程</title><link>https://no-sky.github.io/2019/space-surface-equation/</link><pubDate>Thu, 25 Apr 2019 17:32:01 +0800</pubDate><guid>https://no-sky.github.io/2019/space-surface-equation/</guid><description>球面 球心在点$M_0(x_0,y_0,z_0)$，半径为R的球面方程为：
 **球面的一般方程：**$Ax^2+Ay^2+Az^2+Dx+Ey+Fz+G=0$
 **平面方程的特点：**①三元二次方程；②缺交叉项③平方项系数相同
 柱面 定义：直线（母线）沿着定曲线（准线）平行移动所产生的曲面
@@ -209,16 +109,7 @@ ${y}&#39;&#39;=f(y,{y}&#39;)$型 解法：令${y}&#39;=P$，两边对x求导，$
 **双叶双曲面：**$\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$
 **锥面：**$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$
 **椭圆抛物面：**$\frac{x^2}{2p}+\frac{y^2}{2q}=z(p,q同号)$
-**双曲抛物线：**$\frac{x^2}{2p}-\frac{y^2}{2q}=z(p,q同号)$</description>
-    </item>
-    
-    <item>
-      <title>空间直线方程</title>
-      <link>https://no-sky.github.io/2019/spatial-straight-line-equation/</link>
-      <pubDate>Thu, 25 Apr 2019 16:51:06 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/spatial-straight-line-equation/</guid>
-      <description>空间直线的方程 直线的一般方程 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有：
+**双曲抛物线：**$\frac{x^2}{2p}-\frac{y^2}{2q}=z(p,q同号)$</description></item><item><title>空间直线方程</title><link>https://no-sky.github.io/2019/spatial-straight-line-equation/</link><pubDate>Thu, 25 Apr 2019 16:51:06 +0800</pubDate><guid>https://no-sky.github.io/2019/spatial-straight-line-equation/</guid><description>空间直线的方程 直线的一般方程 直线的点向式方程 已知有一点$M_0(x_0,y_0,z_0)$，方向向量$\vec{s}=(m,n,p)$，则有：
 直线的参数方程 直线的两点式方程 空间中两直线的位置关系 $L_1: \frac{x-x_1}{m_1}=\frac{y-y_1}{n_1}=\frac{z-z_1}{p_1}$ $\vec{s_1}=(m_1,n_1,p_1)$
 $L_2: \frac{x-x_2}{m_2}=\frac{y-y_2}{n_2}=\frac{z-z_2}{p_2}$ $\vec{s_2}=(m_2,n_2,p_2)$
 ①$\frac{m_1}{m_2}=\frac{n_1}{n_2}=\frac{p_1}{p_2} \Leftrightarrow \vec{s_1} // \vec{s_2} L_1 // L_2 $
@@ -229,34 +120,16 @@ $\pi: Ax+Bx+Cz+D=0$ $\vec{n}={A,B,C}$
 ①$\frac{A}{m}=\frac{B}{n}=\frac{C}{p} \Leftrightarrow \vec{n} // \vec{s} \Leftrightarrow L \perp \pi$
 ②$Am+Bn+Cp=0 \Leftrightarrow \vec{n} \perp \vec{s} \Leftrightarrow \pi$
 ​ 将直线上已知点的坐标$(x_0,y_0,z_0)$代入平面的方程中，若恒成立，则直线在平面上，否则，平行。
-③$\sin\phi = \cos(\vec{s},\vec{n}) = \frac{|\vec{s}·\vec{n}|}{|\vec{s}|·|\vec{n}|},\phi \in [0,\frac{\pi}{2}]$</description>
-    </item>
-    
-    <item>
-      <title>空间中两平面的位置关系</title>
-      <link>https://no-sky.github.io/2019/positional-relationship-between-two-planes/</link>
-      <pubDate>Thu, 25 Apr 2019 15:57:33 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/positional-relationship-between-two-planes/</guid>
-      <description>两平面的位置关系 平面$\pi_{1}$： $A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \\\\ \vec{n_{1}} = (A_{1}, B_{1}, C_{1}) $
+③$\sin\phi = \cos(\vec{s},\vec{n}) = \frac{|\vec{s}·\vec{n}|}{|\vec{s}|·|\vec{n}|},\phi \in [0,\frac{\pi}{2}]$</description></item><item><title>空间中两平面的位置关系</title><link>https://no-sky.github.io/2019/positional-relationship-between-two-planes/</link><pubDate>Thu, 25 Apr 2019 15:57:33 +0800</pubDate><guid>https://no-sky.github.io/2019/positional-relationship-between-two-planes/</guid><description>两平面的位置关系 平面$\pi_{1}$： $A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \\\\ \vec{n_{1}} = (A_{1}, B_{1}, C_{1}) $
 平面$\pi_{2}$: $A_{2}x + B_{2}y + C_{2}z + D_{2} = 0 \\\\ \vec{n_{2}} = (A_{2}, B_{2}, C_{2})$
 ① $\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} \Leftrightarrow \vec{n_{1}} // \vec{n_{2}} \Leftrightarrow \pi_{1} // \pi_{2} $
 ​ 若$\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} = \frac{D_{1}}{D_{2}} ,\pi_{1}与\pi_{2}$重合
 ​ 若$\frac{A_{1}}{A_{2}} = \frac{B_{1}}{B_{2}} = \frac{C_{1}}{C_{2}} \neq \frac{D_{1}}{D_{2}} ,\pi_{1}与\pi_{2}$平行不重合
-②$A_{1}A_{2} + B_{1}B_{2} + C_{1}C_{2} = 0 \Leftrightarrow \vec{n_{1}} \perp \vec{n_{2}} \Leftrightarrow \pi_{1} \perp \pi_{2}$</description>
-    </item>
-    
-    <item>
-      <title>向量的线性运算</title>
-      <link>https://no-sky.github.io/2019/vector-and-linear-operations_2/</link>
-      <pubDate>Tue, 23 Apr 2019 14:20:06 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/vector-and-linear-operations_2/</guid>
-      <description>加法 **定义1：**设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为
+②$A_{1}A_{2} + B_{1}B_{2} + C_{1}C_{2} = 0 \Leftrightarrow \vec{n_{1}} \perp \vec{n_{2}} \Leftrightarrow \pi_{1} \perp \pi_{2}$</description></item><item><title>向量的线性运算</title><link>https://no-sky.github.io/2019/vector-and-linear-operations_2/</link><pubDate>Tue, 23 Apr 2019 14:20:06 +0800</pubDate><guid>https://no-sky.github.io/2019/vector-and-linear-operations_2/</guid><description>加法 **定义1：**设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，定义它们的加法为
 定义1：设$\vec{a} = (a_1, a_2, a_3)$，$\vec{b} = (b_1, b_2, b_3)$是三维向量空间$R^3$中的两个向量，定义它们的加法为：
-​	一般的，设$\vec{a} = (a_1,a_2,···,a_n),\vec{b} = (b_1,b_2,···,b_n)$是n维向量空间$R^n$中的两个向量，定义它们的加法为：
+​ 一般的，设$\vec{a} = (a_1,a_2,···,a_n),\vec{b} = (b_1,b_2,···,b_n)$是n维向量空间$R^n$中的两个向量，定义它们的加法为：
 运算规律：
-​	数乘 定义3：设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，$\lambda$是实数，定义$\lambda$与$\vec{a}$的数乘为：
+​ 数乘 定义3：设$\vec{a} = (a_1, a_2)$，$\vec{b} = (b_1, b_2)$是二维空间向量$R^2$中的两个向量，$\lambda$是实数，定义$\lambda$与$\vec{a}$的数乘为：
 设$\vec{a}$是非零向量，$\lambda$是非零实数，记$\vec{b} = \lambda \vec{a}$，则有
 定义4：设$\vec{a} = (a_1, a_2, a_3)$，$\vec{b} = (b_1, b_2, b_3)$是三维空间向量$R^3$中的两个向量，$\lambda$是实数，定义$\lambda$与$\vec{a}$的数乘为：
 一般的，对于n维向量与实数的数乘以此类推。
@@ -268,16 +141,7 @@ $\pi: Ax+Bx+Cz+D=0$ $\vec{n}={A,B,C}$
 （2）存在实数$\lambda$，使得$\vec{b} = \lambda \vec{a}$
 （3）$\vec{a}与\vec{b}$对应分量成比例
 （4）存在不全为零的常数$k_1,k_2$，使得$k_1\vec{a} + k_2\vec{b} = 0$
-例：设$\vec{a} = (2,1),\vec{b} = (-3,1)$，求$\vec{c} = \vec{a}+2\vec{b}$的单位向量</description>
-    </item>
-    
-    <item>
-      <title>向量的基本概念</title>
-      <link>https://no-sky.github.io/2019/vector-and-linear-operations_1/</link>
-      <pubDate>Mon, 22 Apr 2019 17:03:01 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/vector-and-linear-operations_1/</guid>
-      <description>向量的基本概念 向量：既有大小，又有方向的量。
+例：设$\vec{a} = (2,1),\vec{b} = (-3,1)$，求$\vec{c} = \vec{a}+2\vec{b}$的单位向量</description></item><item><title>向量的基本概念</title><link>https://no-sky.github.io/2019/vector-and-linear-operations_1/</link><pubDate>Mon, 22 Apr 2019 17:03:01 +0800</pubDate><guid>https://no-sky.github.io/2019/vector-and-linear-operations_1/</guid><description>向量的基本概念 向量：既有大小，又有方向的量。
 数量：只有大小，没有方向的量。
 向量表示法：用一条带箭头的线段（即有向线段）表示
 如：$\overrightarrow{AB}$ A为起点，B为终点
@@ -299,31 +163,13 @@ $\pi: Ax+Bx+Cz+D=0$ $\vec{n}={A,B,C}$
 方向余弦：$\cos\alpha , \cos\beta, \cos\gamma$
 空间中的向量也由他的分量唯一确定。因此一个空间的向量通常表示为
 并且称它为一个三位向量，且有：
-$|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}$  $\cos\alpha = \frac{a_1}{\sqrt{a_1^2 + a_2^2 + a_3^2}}$</description>
-    </item>
-    
-    <item>
-      <title>空间中两点的距离</title>
-      <link>https://no-sky.github.io/2019/distance-between-two-points/</link>
-      <pubDate>Mon, 22 Apr 2019 16:26:42 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/distance-between-two-points/</guid>
-      <description>前置：数轴上两点的距离 前置：平面上两点的距离 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$`,$M_2$为$(x_2, y_2, z_2)$`，则距离公示为：
+$|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}$ $\cos\alpha = \frac{a_1}{\sqrt{a_1^2 + a_2^2 + a_3^2}}$</description></item><item><title>空间中两点的距离</title><link>https://no-sky.github.io/2019/distance-between-two-points/</link><pubDate>Mon, 22 Apr 2019 16:26:42 +0800</pubDate><guid>https://no-sky.github.io/2019/distance-between-two-points/</guid><description>前置：数轴上两点的距离 前置：平面上两点的距离 空间中两点的距离 假设空间中两点，$M_1$为$(x_1, y_1, z_1)$`,$M_2$为$(x_2, y_2, z_2)$`，则距离公示为：
 特别的，点M(x, y, z)到原点O(0, 0, 0)的距离为：
 例题1 在z轴上求两点A(3，1，-4)和B(5，3，2)等距离的点。
 解：设z轴上点为M(0, 0, z)，由题意|MA| = |MB|，即
-​ $$\sqrt{(3-0)^2 + (1-0)^2 + (-4 - z)^2} = \sqrt{(5-0)^2 + (3-0)^2 + (2-z)^2}$$解得，z = 1，所求点位为M(0,0,1)。</description>
-    </item>
-    
-    <item>
-      <title>空间直角坐标系</title>
-      <link>https://no-sky.github.io/2019/spatial-rectangular-coordinate-system/</link>
-      <pubDate>Mon, 22 Apr 2019 15:30:00 +0800</pubDate>
-      
-      <guid>https://no-sky.github.io/2019/spatial-rectangular-coordinate-system/</guid>
-      <description>前言：空间直角坐标系
+​ $$\sqrt{(3-0)^2 + (1-0)^2 + (-4 - z)^2} = \sqrt{(5-0)^2 + (3-0)^2 + (2-z)^2}$$解得，z = 1，所求点位为M(0,0,1)。</description></item><item><title>空间直角坐标系</title><link>https://no-sky.github.io/2019/spatial-rectangular-coordinate-system/</link><pubDate>Mon, 22 Apr 2019 15:30:00 +0800</pubDate><guid>https://no-sky.github.io/2019/spatial-rectangular-coordinate-system/</guid><description>前言：空间直角坐标系
 过空间中一定点O，作三条互相垂直的数轴构成的坐标系称为空间直角坐标系。
- 坐标原点：O点 坐标轴：x轴，y轴，z轴 右手坐标系：用右手握住z轴，使大拇指的方向指向Z轴的正向，其他手指的方向就是从x轴的正向到y轴的正向 坐标面：xOy平面，yOz平面，xOz平面， 卦限：八个卦限    空间中点的坐标
+坐标原点：O点 坐标轴：x轴，y轴，z轴 右手坐标系：用右手握住z轴，使大拇指的方向指向Z轴的正向，其他手指的方向就是从x轴的正向到y轴的正向 坐标面：xOy平面，yOz平面，xOz平面， 卦限：八个卦限 空间中点的坐标
 点M &amp;lt;————&amp;gt; 有序三元数组(x, y, z)
 有序三元数组(x, y, z)称为点M的坐标
 x - 横坐标；y - 纵坐标；z - 竖坐标
@@ -331,10 +177,6 @@ x - 横坐标；y - 纵坐标；z - 竖坐标
 所有的有序三元数组的集合记作：
 $R^3 = \{(x,y,z)|x\epsilon R,y\epsilon R,z\epsilon R\}$
 坐标轴：
-  x轴 $\leftrightarrow \begin{cases} y= 0 \\\\ z= 0 \end{cases}$ y轴 $\leftrightarrow \begin{cases} z= 0 \\\\ x= 0 \end{cases}$ z轴 $\leftrightarrow \begin{cases} x= 0 \\\\ y= 0 \end{cases}$
+x轴 $\leftrightarrow \begin{cases} y= 0 \\\\ z= 0 \end{cases}$ y轴 $\leftrightarrow \begin{cases} z= 0 \\\\ x= 0 \end{cases}$ z轴 $\leftrightarrow \begin{cases} x= 0 \\\\ y= 0 \end{cases}$
 坐标面：
-xOy面：$\leftrightarrow$ z = 0 yOz面：$\leftrightarrow$ x = 0 zOx面：$\leftrightarrow$ y = 0</description>
-    </item>
-    
-  </channel>
-</rss>
+xOy面：$\leftrightarrow$ z = 0 yOz面：$\leftrightarrow$ x = 0 zOx面：$\leftrightarrow$ y = 0</description></item></channel></rss>
